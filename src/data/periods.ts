@@ -1,0 +1,104 @@
+import type { AudienceType, PeriodMeta, ThemeGroup } from '../types'
+
+export const PERIODS: PeriodMeta[] = [
+  {
+    id: 'after-first',
+    label: 'After the first journey',
+    years: 'AD 48–49',
+    hint: 'Early Galatians, if the south-Galatia reading holds.',
+  },
+  {
+    id: 'second-journey',
+    label: 'Second journey',
+    years: 'AD 50–52',
+    hint: 'Corinth. Acts 18 and Gallio mark the year.',
+  },
+  {
+    id: 'third-journey',
+    label: 'Third journey',
+    years: 'AD 53–57',
+    hint: 'Ephesus, Macedonia, Corinth again; Romans at the close.',
+  },
+  {
+    id: 'caesarea',
+    label: 'Caesarea',
+    years: 'AD 57–59',
+    hint: 'Two years in custody (Acts 24–26). No letter is securely placed here.',
+  },
+  {
+    id: 'first-roman',
+    label: 'House arrest in Rome',
+    years: 'AD 60–62',
+    hint: 'Acts 28. Consensus cluster: Ephesians, Colossians, Philemon, Philippians.',
+  },
+  {
+    id: 'after-acts',
+    label: 'After Acts',
+    years: 'AD 62–67',
+    hint: '1 Timothy, Titus, and 2 Timothy in the usual evangelical reconstruction.',
+  },
+]
+
+export const AUDIENCE_META: Record<
+  AudienceType,
+  { label: string; short: string; color: string; ink: string }
+> = {
+  planted: {
+    label: 'Church Paul planted',
+    short: 'Planted church',
+    color: '#9a7b3c',
+    ink: '#f7f4ee',
+  },
+  unvisited: {
+    label: 'Church Paul had not visited',
+    short: 'Not visited',
+    color: '#3e6d82',
+    ink: '#f7f4ee',
+  },
+  delegate: {
+    label: 'Coworker / delegate',
+    short: 'Delegate',
+    color: '#7a3333',
+    ink: '#f7f4ee',
+  },
+  household: {
+    label: 'Personal household appeal',
+    short: 'Household',
+    color: '#a05a32',
+    ink: '#f7f4ee',
+  },
+}
+
+export const THEME_GROUPS: { id: ThemeGroup; label: string; hint: string }[] = [
+  { id: 'coming', label: 'Coming', hint: 'The Lord’s return, grief, and hope.' },
+  { id: 'cross', label: 'Cross', hint: 'Justification, the word of the cross, weakness.' },
+  { id: 'christ', label: 'Christ', hint: 'Who Jesus is, and life joined to him.' },
+  { id: 'church', label: 'Church', hint: 'Order, household, a people trained by grace.' },
+]
+
+export const THEME_FILTERS = [
+  'Coming',
+  'Cross',
+  'Justification',
+  'Gospel',
+  'Church order',
+  'Joy',
+  'In Christ',
+  'Christ supreme',
+  'Spiritual gifts',
+  'Armor',
+  'Slavery',
+  'Resurrection',
+  'Freedom',
+  'Holiness',
+  'Weakness',
+  'Jew & Gentile',
+  'Grace',
+  'Scripture',
+  'Household',
+  'Spirit',
+  'Love',
+  'Suffering',
+  'Unity',
+  'Walk',
+]
