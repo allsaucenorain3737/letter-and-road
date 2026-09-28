@@ -88,6 +88,12 @@ export function AboutPage() {
           Natural Earth shaded relief for topography.
         </li>
       </ul>
+      <h2>Privacy</h2>
+      <p>
+        The site uses Google Analytics 4 (Measurement ID G-BDDS3372C2) to understand aggregate
+        visits and which routes people open. IP anonymization is on. No account login is required
+        to use the atlas.
+      </p>
       <p>Not affiliated with a denomination. Built as a public teaching aid for readers, youth groups, and pastors.</p>
     </article>
   )

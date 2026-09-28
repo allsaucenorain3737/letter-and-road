@@ -10,6 +10,7 @@ import {
 import { BIOGRAPHICAL_EVENTS } from '../data/biographical'
 import { LETTER_BY_ID } from '../data/letters'
 import { useReducedMotion } from '../hooks'
+import { trackPageView } from '../lib/analytics'
 import { yearBounds } from '../lib/chronology'
 import type { DatingScheme, Filters, Layers, PeriodId, PlantedFilter, StoryPhase, ViewId } from '../types'
 
@@ -413,6 +414,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     writeHash(state)
+    trackPageView()
   }, [state.view, state.selectedLetterId, state.compare])
 
   useEffect(() => {
