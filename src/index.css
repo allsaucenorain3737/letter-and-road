@@ -242,7 +242,7 @@ a {
 .chip,
 .seg {
   border: 1px solid rgba(26, 42, 51, 0.16);
-  background: transparent;
+  background: var(--parchment-2);
   color: var(--ink-soft);
   border-radius: 4px;
   padding: 5px 10px;
@@ -263,14 +263,16 @@ a {
 }
 .seg-row {
   display: inline-flex;
-  border: 1px solid rgba(239, 228, 207, 0.16);
+  border: 1px solid rgba(26, 42, 51, 0.16);
   border-radius: 4px;
   overflow: hidden;
+  background: var(--parchment-2);
 }
 .seg-row .seg {
   border: 0;
   border-radius: 0;
-  border-right: 1px solid rgba(239, 228, 207, 0.12);
+  border-right: 1px solid rgba(26, 42, 51, 0.12);
+  background: var(--parchment-2);
 }
 .seg-row .seg:last-child {
   border-right: 0;
@@ -495,11 +497,10 @@ a {
 .legend-card,
 .city-card,
 .caption-card {
-  background: rgba(18, 48, 66, 0.88);
-  border: 1px solid rgba(255, 248, 238, 0.18);
+  background: #123042;
+  border: 1px solid rgba(255, 248, 238, 0.22);
   border-radius: var(--radius);
   padding: 10px 12px;
-  backdrop-filter: blur(8px);
   color: var(--parchment);
 }
 .layer-card label {
@@ -515,8 +516,8 @@ a {
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  border: 1px solid rgba(239, 228, 207, 0.14);
-  background: rgba(10, 22, 36, 0.82);
+  border: 1px solid rgba(239, 228, 207, 0.22);
+  background: #0a1624;
   color: var(--parchment);
   cursor: pointer;
 }
@@ -921,7 +922,7 @@ a.scripture-link,
   display: flex;
   gap: 2px;
   flex-wrap: wrap;
-  background: rgba(255, 248, 238, 0.92);
+  background: var(--parchment);
   border-radius: 12px;
   padding: 4px;
   box-shadow: var(--shadow);
@@ -940,7 +941,7 @@ a.scripture-link,
   padding: 8px 14px;
   border: 0;
   border-radius: 12px;
-  background: rgba(255, 248, 238, 0.95);
+  background: var(--parchment);
   color: var(--ink);
   box-shadow: var(--shadow);
   cursor: pointer;
@@ -977,7 +978,7 @@ a.scripture-link,
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: rgba(255, 248, 238, 0.92);
+  background: var(--parchment);
   border: 0;
   border-radius: 12px;
   padding: 8px 12px;
@@ -992,10 +993,8 @@ a.scripture-link,
   left: 12px;
   right: 12px;
   z-index: 34;
-  background: color-mix(in srgb, var(--parchment) 55%, transparent);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(26, 34, 40, 0.08);
+  background: var(--parchment);
+  border: 1px solid rgba(26, 34, 40, 0.12);
   border-radius: 8px;
   box-shadow: var(--shadow);
   padding: 16px 18px 18px;
@@ -1083,10 +1082,8 @@ a.scripture-link,
   font-weight: 600;
   line-height: 1.35;
   color: var(--ink);
-  background: color-mix(in srgb, var(--parchment) 55%, transparent);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(26, 34, 40, 0.08);
+  background: var(--parchment);
+  border: 1px solid rgba(26, 34, 40, 0.12);
   border-radius: 8px;
   box-shadow: var(--shadow);
 }
