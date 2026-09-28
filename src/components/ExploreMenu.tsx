@@ -36,23 +36,23 @@ export function MapChrome() {
             </a>
           ))}
         </nav>
+        {app.phase === 'invite' ? (
+          <button type="button" className="map-options-btn is-active" onClick={app.dismissInvite}>
+            Skip
+          </button>
+        ) : (
+          <button
+            type="button"
+            className={`map-options-btn${app.menuOpen ? ' is-active' : ''}`}
+            aria-expanded={app.menuOpen}
+            aria-controls={MAP_OPTIONS_ID}
+            aria-haspopup="true"
+            onClick={() => app.setMenuOpen(!app.menuOpen)}
+          >
+            {app.menuOpen ? 'Close options' : 'Map options'}
+          </button>
+        )}
       </div>
-      {app.phase === 'invite' ? (
-        <button type="button" className="nav-btn is-active" onClick={app.dismissInvite}>
-          Skip
-        </button>
-      ) : (
-        <button
-          type="button"
-          className={`nav-btn${app.menuOpen ? ' is-active' : ''}`}
-          aria-expanded={app.menuOpen}
-          aria-controls={MAP_OPTIONS_ID}
-          aria-haspopup="true"
-          onClick={() => app.setMenuOpen(!app.menuOpen)}
-        >
-          {app.menuOpen ? 'Close options' : 'Map options'}
-        </button>
-      )}
     </div>
   )
 }

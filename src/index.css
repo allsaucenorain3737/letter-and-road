@@ -929,6 +929,40 @@ a.scripture-link,
 .map-primary-nav .nav-btn {
   text-decoration: none;
 }
+/* Dedicated chip so Map options is not bare text over the map / zoom stack */
+.map-options-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  min-width: 44px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255, 248, 238, 0.95);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: color 200ms var(--ease), background 200ms var(--ease);
+}
+.map-options-btn:hover {
+  background: #fff;
+  color: var(--ink);
+}
+.map-options-btn.is-active {
+  color: var(--parchment);
+  background: var(--accent);
+}
+.map-options-btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
 .map-options-backdrop {
   position: fixed;
   inset: 0;
@@ -1494,9 +1528,23 @@ a.scripture-link,
     font-size: 0.68rem;
     max-width: 46%;
   }
+  /* Zoom stack moves top-right on narrow viewports — keep Map options clear of it */
+  .map-chrome {
+    padding-right: 60px; /* 44px icon + 8px inset + gap */
+  }
+  .map-options-btn {
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
   .map-controls {
     top: 8px;
     right: 8px;
+    bottom: auto;
+  }
+  .map-controls .icon-btn {
+    width: 44px;
+    height: 44px;
   }
   .filter-bar {
     padding: 8px 12px;
