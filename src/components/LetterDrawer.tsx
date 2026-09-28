@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { culturalContextsForLetter } from '../data/cultural'
 import { AUDIENCE_META } from '../data/periods'
 import { LETTER_BY_ID } from '../data/letters'
 import { passageUrl } from '../lib/bible'
@@ -112,12 +113,15 @@ export function LetterDrawer() {
           ))}
         </ol>
 
+
         <h3>Themes</h3>
         <div className="theme-chips">
           {letter.themes.map((t) => (
             <span key={t}>{t}</span>
           ))}
         </div>
+
+        <CulturalSection letterId={letter.id} themes={letter.themes} />
 
         {letter.narrowedAudience && (
           <>
@@ -166,6 +170,46 @@ export function LetterDrawer() {
           </a>
         </div>
       </aside>
+    </>
+  )
+}
+
+
+function CulturalSection({ letterId, themes }: { letterId: string; themes: string[] }) {
+  const app = useApp()
+  const packs = culturalContextsForLetter(letterId, themes)
+  if (!packs.length) return null
+  return (
+    <>
+      <h3>Cultural context</h3>
+      <div className="cultural-list">
+        {packs.map((ctx) => (
+          <details key={ctx.id} className="cultural-item">
+            <summary>
+              <strong>{ctx.title}</strong>
+              <span className="cultural-summary">{ctx.summary}</span>
+            </summary>
+            <div className="cultural-body">
+              <p>{ctx.body}</p>
+              {app.showTeachingNotes && ctx.whyItMattersToday && (
+                <p className="cultural-today">
+                  <em>Why it matters today.</em> {ctx.whyItMattersToday}
+                </p>
+              )}
+              {ctx.scriptureAnchors && ctx.scriptureAnchors.length > 0 && (
+                <ul className="anchor-list">
+                  {ctx.scriptureAnchors.map((r) => (
+                    <li key={r.search}>
+                      <ScriptureLink search={r.search}>{r.label}</ScriptureLink>
+                      {r.note ? <span className="anchor-note"> — {r.note}</span> : null}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </details>
+        ))}
+      </div>
     </>
   )
 }

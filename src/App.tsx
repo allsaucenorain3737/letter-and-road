@@ -1,10 +1,14 @@
 import { AboutPage } from './components/AboutPage'
 import { CompareView } from './components/CompareView'
 import { ExploreMenu, MapChrome, PageHeader } from './components/ExploreMenu'
+import { CityDrawer } from './components/CityDrawer'
+import { InviteOverlay } from './components/InviteOverlay'
 import { LetterDrawer } from './components/LetterDrawer'
+import { LifeTimeline } from './components/LifeTimeline'
 import { MediterraneanMap } from './components/MediterraneanMap'
 import { StoryTimeline } from './components/StoryTimeline'
 import { TimeScrubber } from './components/TimeScrubber'
+import { VoicesPage } from './components/VoicesPage'
 import { AppProvider, useApp } from './state/AppState'
 
 function Shell() {
@@ -24,13 +28,17 @@ function Shell() {
           <>
             <MediterraneanMap />
             {extras && app.showTimeline && <StoryTimeline />}
+            {extras && app.showLifeTimeline && <LifeTimeline />}
             {extras && app.showScrubber && <TimeScrubber />}
           </>
         )}
         {app.view === 'compare' && <CompareView />}
         {app.view === 'about' && <AboutPage />}
+        {app.view === 'voices' && <VoicesPage />}
       </main>
       <LetterDrawer />
+      <CityDrawer />
+      <InviteOverlay />
     </div>
   )
 }

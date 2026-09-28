@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <link href="/node_modules/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
+  <style>
+    html,body{margin:0;height:100%;}
+    .app-shell{display:flex;flex-direction:column;height:100%;}
+    .app-shell.is-map .stage{flex:1;min-height:0;display:flex;flex-direction:column;}
+    .atlas{flex:1;min-height:0;position:relative;overflow:hidden;}
+    .map-wrap{position:absolute;inset:0;background:#f7f4ee;}
+    .map-wrap .maplibregl-map{position:absolute;inset:0;width:100%;height:100%;}
+  </style>
+</head>
+<body>
+<div class="app-shell is-map"><main class="stage"><div class="atlas">
+  <div id="map" class="map-wrap"></div>
+</div></main></div>
+<script type="module">
+  import { Map, setWorkerUrl, getVersion } from '/node_modules/maplibre-gl/dist/maplibre-gl.mjs';
+  setWorkerUrl(`https://cdn.jsdelivr.net/npm/maplibre-gl@${getVersion()}/dist/maplibre-gl-worker.mjs`);
+  const el = document.getElementById('map');
+  const map = new Map({
+    container: el,
+    style: 'https://tiles.openfreemap.org/styles/liberty',
+    center: [25, 37],
+    zoom: 4,
+    pixelRatio: 1,
+    maxCanvasSize: [8192, 8192],
+    fadeDuration: 0,
+  });
+  map.on('load', () => {
+    map.resize();
+    console.log('atlas-layout smoke load OK', map.getCanvas().width, map.getCanvas().height);
+  });
+  map.on('error', (e) => console.error(e.error || e));
+</script>
+</body>
+</html>

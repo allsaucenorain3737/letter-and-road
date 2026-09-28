@@ -1,32 +1,8 @@
 import type { ComparePair, DatingScheme, Letter } from '../types'
 import { datingOf } from '../lib/chronology'
+import data from '../../content/compare.json' with { type: 'json' }
 
-export const PRESET_COMPARISONS: ComparePair[] = [
-  {
-    a: 'romans',
-    b: '1corinthians',
-    insight:
-      'Romans is a reasoned gospel for an unvisited mixed church in the capital; 1 Corinthians is crisis care for a plant Paul knew too well. Write strangers and you argue. Write your own and you intervene. Corinth gets the word of the cross as a rebuke to factions; Rome gets the same gospel as a charter for Jew and Gentile who have never met the apostle.',
-  },
-  {
-    a: 'ephesians',
-    b: 'philemon',
-    insight:
-      'Same prison, same courier circle, utterly different scale. Ephesians addresses the church as a cosmic body and a walk worthy of the calling. Philemon asks one host to take a runaway back as a brother. Chains can produce both the high ecclesiology and the household appeal — the audience decides which letter you get. That is why Philemon is not a miniature Ephesians.',
-  },
-  {
-    a: '1thessalonians',
-    b: '2timothy',
-    insight:
-      'Dawn versus dusk. 1 Thessalonians steadies a young planted church grieving the dead before the parousia; the “you” is plural, the future is shared. 2 Timothy is a last dispatch to one protégé from a cell: names of deserters, a cloak, come before winter. Both are pastoral. Only one is a farewell. Imprisonment and a shrinking audience change the temperature of hope.',
-  },
-  {
-    a: '1timothy',
-    b: 'romans',
-    insight:
-      'Romans theologically builds a people Paul has not met; 1 Timothy tells a delegate how to appoint overseers among people already gathered. Shrink the audience from a capital church to one coworker, and the genre becomes a charge. Church order in 1 Timothy is a field manual. Justification in Romans is a shared confession for strangers about to host a mission to Spain.',
-  },
-]
+export const PRESET_COMPARISONS: ComparePair[] = data.presets as ComparePair[]
 
 export function compareInsight(a: Letter, b: Letter, scheme: DatingScheme): string {
   const ids = [a.id, b.id].sort().join('|')

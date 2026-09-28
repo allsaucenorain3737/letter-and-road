@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head>
+  <link href="/node_modules/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
+  <style>html,body,#map{margin:0;height:100%}#chip{position:absolute;z-index:2;left:8px;top:8px;background:#fff;padding:8px;font:12px monospace}</style>
+</head><body>
+<div id="chip">loading…</div>
+<div id="map"></div>
+<script type="module">
+  import { Map, setWorkerUrl, getVersion } from '/node_modules/maplibre-gl/dist/maplibre-gl.mjs';
+  setWorkerUrl(`https://cdn.jsdelivr.net/npm/maplibre-gl@${getVersion()}/dist/maplibre-gl-worker.mjs`);
+  const map = new Map({
+    container: 'map',
+    style: 'https://tiles.openfreemap.org/styles/liberty',
+    center: [25, 37],
+    zoom: 5,
+  });
+  map.on('load', async () => {
+    const url = '/geo/roman-roads.geojson';
+    const r = await fetch(url);
+    const fc = await r.json();
+    map.addSource('roads', { type: 'geojson', data: fc });
+    map.addLayer({
+      id: 'roads',
+      type: 'line',
+      source: 'roads',
+      paint: { 'line-color': '#7d6b58', 'line-width': 1.4, 'line-opacity': 0.55 },
+    });
+    document.getElementById('chip').textContent = `roads features=${fc.features.length} status=${r.status}`;
+  });
+  map.on('error', (e) => {
+    document.getElementById('chip').textContent = 'ERR ' + (e.error?.message || e);
+  });
+</script>
+</body></html>

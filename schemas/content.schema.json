@@ -1,0 +1,1129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://letter-and-road.local/schemas/content.schema.json",
+  "title": "Letter & Road content schema",
+  "description": "Root definitions for editorial content files under content/.",
+  "$defs": {
+    "ScriptureRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "search"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "search": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "OutlineSection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref",
+        "heading",
+        "summary",
+        "search"
+      ],
+      "properties": {
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "search": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "NamedPerson": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "role"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "search": {
+          "type": "string"
+        }
+      }
+    },
+    "PeriodId": {
+      "type": "string",
+      "enum": [
+        "after-first",
+        "second-journey",
+        "third-journey",
+        "caesarea",
+        "first-roman",
+        "after-acts"
+      ]
+    },
+    "AudienceType": {
+      "type": "string",
+      "enum": [
+        "planted",
+        "unvisited",
+        "delegate",
+        "household"
+      ]
+    },
+    "ThemeGroup": {
+      "type": "string",
+      "enum": [
+        "coming",
+        "cross",
+        "christ",
+        "church"
+      ]
+    },
+    "Dating": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "yearStart",
+        "yearEnd",
+        "yearDisplay",
+        "originId",
+        "originLabel",
+        "period"
+      ],
+      "properties": {
+        "yearStart": {
+          "type": "integer"
+        },
+        "yearEnd": {
+          "type": "integer"
+        },
+        "yearDisplay": {
+          "type": "string",
+          "minLength": 1
+        },
+        "originId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "originLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "originNote": {
+          "type": "string"
+        },
+        "period": {
+          "$ref": "#/$defs/PeriodId"
+        },
+        "debateNote": {
+          "type": "string"
+        },
+        "altOriginId": {
+          "type": "string"
+        },
+        "altOriginLabel": {
+          "type": "string"
+        }
+      }
+    },
+    "Letter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "shortTitle",
+        "sort",
+        "book",
+        "bibleSearch",
+        "destinationId",
+        "destinationLabel",
+        "audienceType",
+        "audiencePortrait",
+        "occasion",
+        "outline",
+        "themes",
+        "themeGroup",
+        "people",
+        "datingNote",
+        "actsAnchors",
+        "letterAnchors",
+        "consensus",
+        "debated",
+        "arcBulge"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "shortTitle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sort": {
+          "type": "integer"
+        },
+        "book": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bibleSearch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "destinationId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "destinationLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "audienceType": {
+          "$ref": "#/$defs/AudienceType"
+        },
+        "audiencePortrait": {
+          "type": "string",
+          "minLength": 1
+        },
+        "occasion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "outline": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/OutlineSection"
+          },
+          "minItems": 1
+        },
+        "themes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "themeGroup": {
+          "$ref": "#/$defs/ThemeGroup"
+        },
+        "narrowedAudience": {
+          "type": "string"
+        },
+        "people": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NamedPerson"
+          }
+        },
+        "datingNote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actsAnchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ScriptureRef"
+          }
+        },
+        "letterAnchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ScriptureRef"
+          }
+        },
+        "otherWitness": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ScriptureRef"
+          }
+        },
+        "consensus": {
+          "$ref": "#/$defs/Dating"
+        },
+        "debated": {
+          "$ref": "#/$defs/Dating"
+        },
+        "arcBulge": {
+          "type": "number"
+        }
+      }
+    },
+    "City": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "shortLabel",
+        "lon",
+        "lat",
+        "kind",
+        "planted",
+        "letterRelevant",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "shortLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lon": {
+          "type": "number"
+        },
+        "lat": {
+          "type": "number"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "city",
+            "region"
+          ]
+        },
+        "planted": {
+          "type": "boolean"
+        },
+        "letterRelevant": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "Journey": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "years",
+        "waypoints"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "years": {
+          "type": "string",
+          "minLength": 1
+        },
+        "waypoints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2
+        }
+      }
+    },
+    "Imprisonment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "cityId",
+        "label",
+        "years",
+        "note",
+        "offset"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cityId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "years": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "offset": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "PeriodMeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "years"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/PeriodId"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "years": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hint": {
+          "type": "string"
+        }
+      }
+    },
+    "AudienceMetaEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "short",
+        "color",
+        "ink"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "short": {
+          "type": "string",
+          "minLength": 1
+        },
+        "color": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ink": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "ThemeGroupMeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "hint"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ThemeGroup"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hint": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "ComparePair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "a",
+        "b",
+        "insight"
+      ],
+      "properties": {
+        "a": {
+          "type": "string",
+          "minLength": 1
+        },
+        "b": {
+          "type": "string",
+          "minLength": 1
+        },
+        "insight": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "TravelMode": {
+      "type": "string",
+      "enum": [
+        "land",
+        "sea"
+      ]
+    },
+    "StoryTravel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "id",
+        "mode",
+        "waypoints",
+        "year",
+        "dates",
+        "duration",
+        "caption"
+      ],
+      "properties": {
+        "type": {
+          "const": "travel"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mode": {
+          "$ref": "#/$defs/TravelMode"
+        },
+        "waypoints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2
+        },
+        "year": {
+          "type": "integer"
+        },
+        "dates": {
+          "type": "string",
+          "minLength": 1
+        },
+        "duration": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "caption": {
+          "type": "string",
+          "minLength": 1
+        },
+        "acts": {
+          "type": "string"
+        }
+      }
+    },
+    "StoryLetter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "id",
+        "letterId",
+        "year",
+        "dates",
+        "duration",
+        "caption"
+      ],
+      "properties": {
+        "type": {
+          "const": "letter"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "letterId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "year": {
+          "type": "integer"
+        },
+        "dates": {
+          "type": "string",
+          "minLength": 1
+        },
+        "duration": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "caption": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "StoryStay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "id",
+        "cityId",
+        "year",
+        "dates",
+        "duration",
+        "caption"
+      ],
+      "properties": {
+        "type": {
+          "const": "stay"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cityId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "year": {
+          "type": "integer"
+        },
+        "dates": {
+          "type": "string",
+          "minLength": 1
+        },
+        "duration": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "caption": {
+          "type": "string",
+          "minLength": 1
+        },
+        "acts": {
+          "type": "string"
+        }
+      }
+    },
+    "StoryEvent": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/StoryTravel"
+        },
+        {
+          "$ref": "#/$defs/StoryLetter"
+        },
+        {
+          "$ref": "#/$defs/StoryStay"
+        }
+      ]
+    },
+    "BiographicalEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "yearStart",
+        "yearDisplay",
+        "summary"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "yearStart": {
+          "type": "integer"
+        },
+        "yearEnd": {
+          "type": "integer"
+        },
+        "yearDisplay": {
+          "type": "string",
+          "minLength": 1
+        },
+        "placeId": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actsAnchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ScriptureRef"
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "CulturalContextSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "CulturalContextAppliesTo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "letterIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "cityIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "themes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "CulturalContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "appliesTo",
+        "summary",
+        "body"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "social",
+            "religious",
+            "political",
+            "theological",
+            "daily-life"
+          ]
+        },
+        "appliesTo": {
+          "$ref": "#/$defs/CulturalContextAppliesTo"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scriptureAnchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ScriptureRef"
+          }
+        },
+        "whyItMattersToday": {
+          "type": "string"
+        },
+        "culturalAssumption": {
+          "type": "string",
+          "enum": [
+            "western",
+            "eastern",
+            "both"
+          ]
+        },
+        "relatedIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CulturalContextSource"
+          }
+        }
+      }
+    },
+    "LettersFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "letters"
+      ],
+      "properties": {
+        "letters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Letter"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "CitiesFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cities"
+      ],
+      "properties": {
+        "cities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/City"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "JourneysFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "journeys",
+        "imprisonments"
+      ],
+      "properties": {
+        "journeys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Journey"
+          }
+        },
+        "imprisonments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Imprisonment"
+          }
+        }
+      }
+    },
+    "StoryFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "story",
+        "startLabelIds"
+      ],
+      "properties": {
+        "story": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/StoryEvent"
+          },
+          "minItems": 1
+        },
+        "startLabelIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "PeriodsFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "periods",
+        "audienceMeta",
+        "themeGroups",
+        "themeFilters"
+      ],
+      "properties": {
+        "periods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PeriodMeta"
+          },
+          "minItems": 1
+        },
+        "audienceMeta": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "planted",
+            "unvisited",
+            "delegate",
+            "household"
+          ],
+          "properties": {
+            "planted": {
+              "$ref": "#/$defs/AudienceMetaEntry"
+            },
+            "unvisited": {
+              "$ref": "#/$defs/AudienceMetaEntry"
+            },
+            "delegate": {
+              "$ref": "#/$defs/AudienceMetaEntry"
+            },
+            "household": {
+              "$ref": "#/$defs/AudienceMetaEntry"
+            }
+          }
+        },
+        "themeGroups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ThemeGroupMeta"
+          },
+          "minItems": 1
+        },
+        "themeFilters": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "CompareFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "presets"
+      ],
+      "properties": {
+        "presets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ComparePair"
+          }
+        }
+      }
+    },
+    "BiographicalFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "events"
+      ],
+      "properties": {
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/BiographicalEvent"
+          }
+        }
+      }
+    },
+    "CulturalFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contexts"
+      ],
+      "properties": {
+        "contexts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CulturalContext"
+          }
+        }
+      }
+    },
+    "JourneyLinks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prevCityIds",
+        "nextCityIds"
+      ],
+      "properties": {
+        "prevCityIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "nextCityIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "CityContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "intro",
+        "politicalStatus",
+        "culturalDistinctive",
+        "paulThere",
+        "letterIds",
+        "themeIds",
+        "journeyLinks",
+        "scriptureAnchors"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Must match a city id in cities.json."
+        },
+        "intro": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Vivid short travel-guide opener."
+        },
+        "politicalStatus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "culturalDistinctive": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paulThere": {
+          "type": "string",
+          "minLength": 1
+        },
+        "letterIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "themeIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Kebab ids aligning with cultural.json interpretive themes."
+        },
+        "journeyLinks": {
+          "$ref": "#/$defs/JourneyLinks"
+        },
+        "scriptureAnchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ScriptureRef"
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CulturalContextSource"
+          }
+        }
+      }
+    },
+    "CityContextsFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cityContexts"
+      ],
+      "properties": {
+        "cityContexts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CityContext"
+          }
+        }
+      }
+    }
+  }
+}

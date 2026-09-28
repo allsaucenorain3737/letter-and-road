@@ -1,582 +1,593 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
+import {
+  Map as MapLibreMap,
+  getVersion,
+  setWorkerUrl,
+  type GeoJSONSource,
+  type MapLayerMouseEvent,
+  type StyleSpecification,
+} from 'maplibre-gl'
+import 'maplibre-gl/dist/maplibre-gl.css'
+
 import { CITIES, CITY_BY_ID } from '../data/cities'
-import { LAND, LAND_ATTRIBUTION } from '../data/coastline'
-import { IMPRISONMENTS, JOURNEYS } from '../data/journeys'
-import { LETTERS } from '../data/letters'
-import { AUDIENCE_META } from '../data/periods'
-import { START_LABEL_IDS, STORY, type StoryEvent } from '../data/story'
+import { CITY_CONTEXT_BY_ID } from '../data/city-contexts'
+import { IMPRISONMENTS } from '../data/journeys'
+import { START_LABEL_IDS } from '../data/story'
 import { useMediaQuery, useReducedMotion } from '../hooks'
-import { arcState, datingOf, lettersForCity, matchesFilters, type ArcState } from '../lib/chronology'
-import { MAP, arcControl, arrowHead, lineToPath, polyToPath, project } from '../lib/geo'
+import { MAP_BOUNDS, offsetToLonLat } from '../lib/geo'
 import { useApp } from '../state/AppState'
-import type { Letter } from '../types'
+import { MediterraneanMapSvg } from './MediterraneanMapSvg'
+
+// MapLibre v6 worker is an ES module that imports a sibling shared chunk.
+// Vite's worker pipeline injects /@vite/client into it in dev and breaks tiles.
+// Load the exact installed version's worker from jsDelivr (cross-origin); MapLibre
+// wraps that in a blob `import` so the CDN sibling shared.mjs resolves correctly.
+const MAPLIBRE_WORKER_URL =
+  `https://cdn.jsdelivr.net/npm/maplibre-gl@${getVersion()}/dist/maplibre-gl-worker.mjs`
+setWorkerUrl(MAPLIBRE_WORKER_URL)
+
+/** Feature flag: set VITE_USE_MAPLIBRE=false to restore the SVG atlas. Default true. */
+const USE_MAPLIBRE = import.meta.env.VITE_USE_MAPLIBRE !== 'false'
+
+const STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty'
+
+const SRC = {
+  roads: 'lr-roman-roads',
+  prisons: 'lr-prisons',
+  cities: 'lr-cities',
+} as const
+
+/** Liberty basemap layers to mute (modern admin / place / POI / road labels). */
+const MUTE_OPACITY: Record<string, number> = {
+  boundary_2: 0.22,
+  boundary_3: 0.12,
+  boundary_disputed: 0.18,
+  label_country_1: 0.28,
+  label_country_2: 0.28,
+  label_country_3: 0.22,
+  label_state: 0.2,
+  label_city: 0.22,
+  label_city_capital: 0.28,
+  label_town: 0.14,
+  label_village: 0.1,
+  label_other: 0.12,
+  water_name_point_label: 0.45,
+  water_name_line_label: 0.4,
+  waterway_line_label: 0.35,
+}
+
+const HIDE_LAYER_IDS = new Set([
+  'poi_r1',
+  'poi_r7',
+  'poi_r20',
+  'poi_transit',
+  'highway-name-path',
+  'highway-name-minor',
+  'highway-name-major',
+  'highway-shield-non-us',
+  'highway-shield-us-interstate',
+  'road_shield_us',
+  'airport',
+  'road_one_way_arrow',
+  'road_one_way_arrow_opposite',
+])
+
+type LonLat = [number, number]
+
+type FeatureProps = Record<string, string | number | boolean | null | undefined>
+
+type Feature = {
+  type: 'Feature'
+  properties: FeatureProps
+  geometry:
+    | { type: 'Point'; coordinates: LonLat }
+    | { type: 'LineString'; coordinates: LonLat[] }
+}
+
+type FC = {
+  type: 'FeatureCollection'
+  features: Feature[]
+}
+
+const EMPTY: FC = { type: 'FeatureCollection', features: [] }
 
 export function MediterraneanMap() {
+  if (!USE_MAPLIBRE) return <MediterraneanMapSvg />
+  return <MediterraneanMapLibre />
+}
+
+function MediterraneanMapLibre() {
   const app = useApp()
   const compact = useMediaQuery('(max-width: 720px)')
   const reduced = useReducedMotion()
   const wrapRef = useRef<HTMLDivElement>(null)
-  const [view, setView] = useState({ x: 0, y: 0, k: 1 })
-  const [panning, setPanning] = useState(false)
-  const didPan = useRef(false)
-  const panRef = useRef<{
-    x: number
-    y: number
-    vx: number
-    vy: number
-    pointers: Map<number, { x: number; y: number }>
-    pinching: boolean
-    startDist: number
-    startK: number
-  }>({ x: 0, y: 0, vx: 0, vy: 0, pointers: new Map(), pinching: false, startDist: 0, startK: 1 })
+  const mapRef = useRef<MapLibreMap | null>(null)
+  const readyRef = useRef(false)
+  const pendingPushRef = useRef<(() => void) | null>(null)
+  const appRef = useRef(app)
+  appRef.current = app
 
-  const scheme = app.filters.datingScheme
-  const visibleLetters = useMemo(
-    () => LETTERS.filter((l) => matchesFilters(l, app.filters)),
-    [app.filters],
-  )
+  const showPrisons = app.phase === 'explore' && app.layers.imprisonments
 
+  // --- Map init ---
   useEffect(() => {
     const el = wrapRef.current
     if (!el) return
-    const onWheel = (e: WheelEvent) => {
-      e.preventDefault()
-      const rect = el.getBoundingClientRect()
-      const mx = e.clientX - rect.left
-      const my = e.clientY - rect.top
-      const factor = e.deltaY < 0 ? 1.12 : 1 / 1.12
-      setView((v) => {
-        const k = Math.min(4.5, Math.max(1, v.k * factor))
-        const x = mx - ((mx - v.x) * k) / v.k
-        const y = my - ((my - v.y) * k) / v.k
-        return clampView({ x, y, k }, rect)
-      })
+
+    setWorkerUrl(MAPLIBRE_WORKER_URL)
+    const map = new MapLibreMap({
+      container: el,
+      style: STYLE_URL,
+      center: [25, 37],
+      zoom: 4,
+      attributionControl: { compact: true },
+      cooperativeGestures: false,
+      fadeDuration: 0,
+      minZoom: 3.5,
+      maxZoom: 10,
+      pixelRatio: 1,
+      maxCanvasSize: [8192, 8192],
+    })
+    mapRef.current = map
+    ;(window as unknown as { __lrMap?: MapLibreMap }).__lrMap = map
+
+    map.dragRotate.disable()
+    map.touchZoomRotate.disableRotation()
+
+    const onLoad = () => {
+      map.resize()
+      map.fitBounds(MAP_BOUNDS, { padding: 24, animate: false })
+      try {
+        muteBasemap(map)
+        addOverlayImages(map)
+        ensureSources(map)
+        ensureLayers(map)
+      } catch (err) {
+        console.error('[maplibre] overlay setup failed', err)
+      }
+      readyRef.current = true
+      pendingPushRef.current?.()
     }
-    el.addEventListener('wheel', onWheel, { passive: false })
-    return () => el.removeEventListener('wheel', onWheel)
+    map.on('load', onLoad)
+    map.on('error', (e) => {
+      console.error('[maplibre]', e.error || e)
+    })
+    requestAnimationFrame(() => {
+      map.resize()
+    })
+
+    const onCityClick = (e: MapLayerMouseEvent) => {
+      const f = e.features?.[0]
+      const id = f?.properties?.id as string | undefined
+      if (id) appRef.current.setCity(id)
+    }
+
+    const setPointer = () => {
+      map.getCanvas().style.cursor = 'pointer'
+    }
+    const clearPointer = () => {
+      map.getCanvas().style.cursor = ''
+    }
+
+    map.on('click', 'cities-circle', onCityClick)
+    map.on('click', 'cities-diamond', onCityClick)
+    map.on('mouseenter', 'cities-circle', setPointer)
+    map.on('mouseleave', 'cities-circle', clearPointer)
+    map.on('mouseenter', 'cities-diamond', setPointer)
+    map.on('mouseleave', 'cities-diamond', clearPointer)
+
+    const ro = new ResizeObserver(() => {
+      map.resize()
+    })
+    ro.observe(el)
+
+    return () => {
+      readyRef.current = false
+      ro.disconnect()
+      map.remove()
+      mapRef.current = null
+    }
+    // Intentionally once: map lifecycle. Click handlers close over stable app setters.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  function onPointerDown(e: React.PointerEvent) {
-    const el = wrapRef.current
-    if (!el) return
-    el.setPointerCapture(e.pointerId)
-    didPan.current = false
-    panRef.current.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
-    if (panRef.current.pointers.size === 2) {
-      const pts = [...panRef.current.pointers.values()]
-      panRef.current.pinching = true
-      panRef.current.startDist = dist(pts[0], pts[1])
-      panRef.current.startK = view.k
-    } else {
-      panRef.current.vx = e.clientX
-      panRef.current.vy = e.clientY
-      panRef.current.x = view.x
-      panRef.current.y = view.y
-      setPanning(true)
+  const prisonData = useMemo((): FC => {
+    if (!showPrisons) return EMPTY
+    return {
+      type: 'FeatureCollection',
+      features: IMPRISONMENTS.map((imp) => {
+        const city = CITY_BY_ID[imp.cityId]
+        if (!city) return null
+        const coordinates = offsetToLonLat(city.lon, city.lat, imp.offset[0], imp.offset[1])
+        return {
+          type: 'Feature' as const,
+          properties: { id: imp.id, label: `${imp.label} · ${imp.years}` },
+          geometry: { type: 'Point' as const, coordinates },
+        }
+      }).filter((f): f is NonNullable<typeof f> => f !== null),
     }
-  }
+  }, [showPrisons])
 
-  function onPointerMove(e: React.PointerEvent) {
-    if (!panRef.current.pointers.has(e.pointerId)) return
-    panRef.current.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
-    const el = wrapRef.current
-    if (!el) return
-    const rect = el.getBoundingClientRect()
-    if (panRef.current.pointers.size === 2 && panRef.current.pinching) {
-      const pts = [...panRef.current.pointers.values()]
-      const d = dist(pts[0], pts[1])
-      const k = Math.min(4.5, Math.max(1, panRef.current.startK * (d / (panRef.current.startDist || 1))))
-      setView((v) => clampView({ ...v, k }, rect))
-      return
+  const cityData = useMemo((): FC => {
+    const cities = CITIES.filter((c) => {
+      if (START_LABEL_IDS.has(c.id)) return true
+      return c.letterRelevant || Boolean(CITY_CONTEXT_BY_ID[c.id])
+    })
+
+    return {
+      type: 'FeatureCollection',
+      features: cities
+        .filter((city) => {
+          const named = START_LABEL_IDS.has(city.id) || city.letterRelevant
+          const selected = app.cityId === city.id
+          if (compact && !named && !selected) return false
+          return true
+        })
+        .map((city) => {
+          const named = START_LABEL_IDS.has(city.id) || city.letterRelevant
+          const selected = app.cityId === city.id
+          return {
+            type: 'Feature' as const,
+            properties: {
+              id: city.id,
+              name: city.name,
+              shortLabel: city.shortLabel,
+              description: city.description,
+              named: named ? 1 : 0,
+              selected: selected ? 1 : 0,
+              planted: city.planted ? 1 : 0,
+              diamond: city.id === 'damascus_road' ? 1 : 0,
+              radius: selected ? (named ? 8.5 : 7) : named ? 6.5 : 4,
+            },
+            geometry: { type: 'Point' as const, coordinates: [city.lon, city.lat] },
+          }
+        }),
     }
-    if (!panning) return
-    const dx = e.clientX - panRef.current.vx
-    const dy = e.clientY - panRef.current.vy
-    if (Math.hypot(dx, dy) > 6) didPan.current = true
-    setView((v) =>
-      clampView({ x: panRef.current.x + dx, y: panRef.current.y + dy, k: v.k }, rect),
-    )
-  }
+  }, [app.cityId, compact])
 
-  function onPointerUp(e: React.PointerEvent) {
-    panRef.current.pointers.delete(e.pointerId)
-    if (panRef.current.pointers.size < 2) panRef.current.pinching = false
-    if (panRef.current.pointers.size === 0) setPanning(false)
-  }
+  useEffect(() => {
+    const map = mapRef.current
+    const push = () => {
+      if (!map || !readyRef.current || !map.isStyleLoaded()) return
+      setSourceData(map, SRC.prisons, prisonData)
+      setSourceData(map, SRC.cities, cityData)
+    }
 
+    pendingPushRef.current = push
+    push()
+  }, [prisonData, cityData])
+
+  function zoomIn() {
+    mapRef.current?.zoomIn({ animate: !reduced })
+  }
+  function zoomOut() {
+    mapRef.current?.zoomOut({ animate: !reduced })
+  }
   function resetView() {
-    setView({ x: 0, y: 0, k: 1 })
+    mapRef.current?.fitBounds(MAP_BOUNDS, {
+      padding: 24,
+      animate: !reduced,
+      duration: reduced ? 0 : 600,
+    })
   }
-
-  function onCityClick(id: string) {
-    if (didPan.current) return
-    const related = lettersForCity(id, scheme).filter((l) => matchesFilters(l, app.filters))
-    if (related.length === 1) app.selectLetter(related[0].id)
-    else app.setCity(id)
-  }
-
-  const storyEvents = app.phase === 'playing' ? STORY.slice(0, app.storyIndex + 1) : []
-  const pastTravels = storyEvents.filter((e): e is Extract<StoryEvent, { type: 'travel' }> => e.type === 'travel')
-  const current = app.currentStoryEvent
-  const revealedLetterIds = new Set(
-    storyEvents.filter((e) => e.type === 'letter').map((e) => e.letterId),
-  )
-  const liveLetterId = current?.type === 'letter' ? current.letterId : null
-
-  const showLetters =
-    app.phase === 'explore' && app.layers.letters && !app.layers.citiesOnly
-  const showJourneys =
-    app.phase === 'explore' && app.layers.journeys && !app.layers.citiesOnly
-  const showPrisons =
-    app.phase === 'explore' && app.layers.imprisonments && !app.layers.citiesOnly
-  const showStoryTravels = app.phase === 'playing'
-  const showStoryLetters = app.phase === 'playing'
-
-  const cityPopover = app.cityId ? CITY_BY_ID[app.cityId] : null
-  const cityLetters = app.cityId
-    ? lettersForCity(app.cityId, scheme).filter((l) => matchesFilters(l, app.filters))
-    : []
 
   return (
     <div className="atlas">
       <div
         ref={wrapRef}
-        className={`map-wrap${panning ? ' is-panning' : ''}`}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerUp}
-      >
-        <svg
-          className="map-svg"
-          viewBox={`0 0 ${MAP.width} ${MAP.height}`}
-          role="img"
-          aria-label="Eastern Mediterranean map with Paul’s letters drawn as directed arcs from origin to destination"
-          preserveAspectRatio="xMidYMid meet"
-          style={{
-            transformOrigin: '0 0',
-            transform: `translate(${view.x}px, ${view.y}px) scale(${view.k})`,
-          }}
-        >
-          <defs>
-            <linearGradient id="sea-fill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#7a92a0" />
-              <stop offset="100%" stopColor="#5e7684" />
-            </linearGradient>
-          </defs>
-
-          <g>
-            <rect width={MAP.width} height={MAP.height} fill="url(#sea-fill)" />
-
-            {LAND.map((poly, i) => (
-              <path key={i} className="land" d={polyToPath(poly)} fillRule="evenodd" />
-            ))}
-
-            {showStoryTravels &&
-              pastTravels.map((ev) => (
-                <TravelPath
-                  key={ev.id}
-                  event={ev}
-                  live={current?.type === 'travel' && current.id === ev.id}
-                  reduced={reduced}
-                />
-              ))}
-
-            {showJourneys &&
-              JOURNEYS.map((j) => {
-                const pts = j.waypoints
-                  .map((id) => CITY_BY_ID[id])
-                  .filter(Boolean)
-                  .map((c) => [c.lon, c.lat] as [number, number])
-                return (
-                  <path key={j.id} className="travel-path is-land is-trail" d={lineToPath(pts)}>
-                    <title>{j.label} · {j.years}</title>
-                  </path>
-                )
-              })}
-
-            {showStoryLetters &&
-              LETTERS.filter((l) => revealedLetterIds.has(l.id)).map((letter) => (
-                <LetterArc
-                  key={letter.id}
-                  letter={letter}
-                  year={app.year}
-                  selected={app.selectedLetterId}
-                  compact={compact}
-                  forceState={liveLetterId === letter.id ? 'current' : 'past'}
-                  packetMs={
-                    liveLetterId === letter.id && current?.type === 'letter'
-                      ? current.duration
-                      : 8000
-                  }
-                  packetOnce={liveLetterId === letter.id}
-                  onSelect={() => {
-                    if (!didPan.current) app.selectLetter(letter.id)
-                  }}
-                />
-              ))}
-
-            {showLetters &&
-              visibleLetters.map((letter) => (
-                <LetterArc
-                  key={letter.id}
-                  letter={letter}
-                  year={app.year}
-                  selected={app.selectedLetterId}
-                  compact={compact}
-                  onSelect={() => {
-                    if (!didPan.current) app.selectLetter(letter.id)
-                  }}
-                />
-              ))}
-
-            {showPrisons &&
-              IMPRISONMENTS.map((imp) => {
-                const city = CITY_BY_ID[imp.cityId]
-                if (!city) return null
-                const p = project(city.lon, city.lat)
-                return (
-                  <g key={imp.id} transform={`translate(${p.x + imp.offset[0]} ${p.y + imp.offset[1]})`}>
-                    <rect className="imprison-mark" x={-7} y={-7} width={14} height={14} rx={2} />
-                    <title>{`${imp.label} · ${imp.years}`}</title>
-                  </g>
-                )
-              })}
-
-            {CITIES.filter((c) => START_LABEL_IDS.has(c.id) || (app.phase === 'explore' && showJourneys)).map(
-              (city) => {
-                const p = project(city.lon, city.lat)
-                const named = START_LABEL_IDS.has(city.id)
-                if (compact && !named) return null
-                return (
-                  <g key={city.id} className="city-dot" onClick={() => onCityClick(city.id)}>
-                    {city.id === 'damascus_road' ? (
-                      <path
-                        d={`M ${p.x} ${p.y - 6.5} L ${p.x + 5} ${p.y} L ${p.x} ${p.y + 6.5} L ${p.x - 5} ${p.y} Z`}
-                        fill="#243f5c"
-                        stroke="#f7f4ee"
-                        strokeWidth={1.1}
-                      />
-                    ) : (
-                      <circle
-                        cx={p.x}
-                        cy={p.y}
-                        r={named ? 4.4 : 2.4}
-                        fill={city.planted ? '#9a7b3c' : '#f7f4ee'}
-                        stroke="#2a3338"
-                        strokeWidth={1.2}
-                      />
-                    )}
-                    {named && (
-                      <text
-                        className="city-label"
-                        x={p.x + (city.id === 'damascus_road' ? 8 : 7)}
-                        y={p.y - 7}
-                      >
-                        {city.shortLabel}
-                      </text>
-                    )}
-                    <title>{city.name}. {city.description}</title>
-                  </g>
-                )
-              },
-            )}
-
-            {app.phase === 'playing' && current && <StoryCaption event={current} />}
-          </g>
-        </svg>
-      </div>
+        className="map-wrap map-wrap--maplibre"
+        role="img"
+        aria-label="Eastern Mediterranean map of cities in the life and letters of Paul"
+      />
 
       <aside className="legend-card" aria-label="Map legend">
-          <div className="legend-row">
-            <span className="swatch is-solid" />
-            Overland — solid
-          </div>
-          <div className="legend-row">
-            <span className="swatch is-dotted" />
-            Ocean — dotted
-          </div>
-          <div className="legend-row">
-            <span className="swatch is-dashed" />
-            Letter — dashed
-          </div>
-        </aside>
+        <div className="legend-row">
+          <span className="swatch is-city" />
+          Pauline place
+        </div>
+        <div className="legend-row">
+          <span className="swatch is-planted" />
+          Church Paul planted
+        </div>
+        <div className="legend-row">
+          <span className="swatch is-road" />
+          Roman road
+        </div>
+      </aside>
 
       <div className="map-controls">
-        <button
-          className="icon-btn"
-          type="button"
-          onClick={() => setView((v) => ({ ...v, k: Math.min(4.5, v.k * 1.25) }))}
-          aria-label="Zoom in"
-        >
+        <button className="icon-btn" type="button" onClick={zoomIn} aria-label="Zoom in">
           +
         </button>
-        <button
-          className="icon-btn"
-          type="button"
-          onClick={() =>
-            setView((v) => {
-              const wrap = wrapRef.current?.getBoundingClientRect()
-              return clampView({ ...v, k: v.k / 1.25 }, wrap ?? new DOMRect())
-            })
-          }
-          aria-label="Zoom out"
-        >
+        <button className="icon-btn" type="button" onClick={zoomOut} aria-label="Zoom out">
           −
         </button>
         <button className="icon-btn" type="button" onClick={resetView} aria-label="Reset map view">
           ⌖
         </button>
       </div>
-
-      {app.phase === 'explore' && visibleLetters.length === 0 && app.layers.letters && (
-        <div className="caption-card" role="status" style={{ whiteSpace: 'normal' }}>
-          No letters match these filters.{' '}
-          <button type="button" className="linkish" onClick={app.clearFilters} style={{ display: 'inline', width: 'auto' }}>
-            Clear filters
-          </button>
-        </div>
-      )}
-
-      {cityPopover && (
-        <div className="city-card" role="dialog" aria-label={cityPopover.name}>
-          <h3>{cityPopover.name}</h3>
-          <p>{cityPopover.description}</p>
-          {cityLetters.length === 0 ? (
-            <p>No letter currently filtered to this place.</p>
-          ) : (
-            cityLetters.map((l) => (
-              <button
-                key={l.id}
-                className="linkish"
-                type="button"
-                onClick={() => app.selectLetter(l.id)}
-              >
-                {l.shortTitle} · {datingOf(l, scheme).originLabel} → {l.destinationLabel}
-              </button>
-            ))
-          )}
-          <button className="linkish" type="button" onClick={() => app.setCity(null)}>
-            Close
-          </button>
-        </div>
-      )}
-
-      <p className="map-credit">{LAND_ATTRIBUTION}</p>
     </div>
   )
 }
 
-function StoryCaption({ event }: { event: StoryEvent }) {
-  const anchor = project(25.05, 33.55)
-  const width = 420
-  const height = 128
-  return (
-    <foreignObject
-      x={anchor.x - width / 2}
-      y={anchor.y}
-      width={width}
-      height={height}
-      className="story-caption-frame"
-    >
-      <div className="play-caption">
-        <div className="play-caption-dates">{event.dates}</div>
-        <div className="play-caption-text">{event.caption}</div>
-      </div>
-    </foreignObject>
-  )
+function setSourceData(map: MapLibreMap, id: string, data: FC) {
+  const src = map.getSource(id) as GeoJSONSource | undefined
+  if (src) src.setData(data as Parameters<GeoJSONSource['setData']>[0])
 }
 
-function PapyrusIcon() {
-  return (
-    <g className="papyrus-icon">
-      <rect x="-5" y="-7" width="10" height="14" rx="1.15" fill="#e8d9b6" stroke="#5c4a38" strokeWidth="0.95" />
-      <path d="M-5 -4.8 Q0 -7.2 5 -4.8" fill="none" stroke="#8a7354" strokeWidth="0.7" />
-      <line x1="-2.6" y1="-1.4" x2="2.6" y2="-1.4" stroke="#8a7354" strokeWidth="0.7" />
-      <line x1="-2.6" y1="1.2" x2="2.6" y2="1.2" stroke="#8a7354" strokeWidth="0.7" />
-      <line x1="-2.6" y1="3.8" x2="1.4" y2="3.8" stroke="#8a7354" strokeWidth="0.7" />
-    </g>
-  )
-}
+function muteBasemap(map: MapLibreMap) {
+  const style = map.getStyle() as StyleSpecification | undefined
+  const layers = style?.layers
+  if (!layers) return
 
-function TravelPath({
-  event,
-  live,
-  reduced,
-}: {
-  event: Extract<StoryEvent, { type: 'travel' }>
-  live: boolean
-  reduced: boolean
-}) {
-  const pts = event.waypoints
-    .map((id) => CITY_BY_ID[id])
-    .filter(Boolean)
-    .map((c) => [c.lon, c.lat] as [number, number])
-  if (pts.length < 2) return null
-  const d = lineToPath(pts)
-  const cls = `travel-path is-${event.mode}${live ? ' is-live' : ' is-trail'}`
-  return (
-    <g>
-      <path className={cls} d={d}>
-        <title>{event.caption}</title>
-      </path>
-      {live && !reduced && (
-        <circle
-          r={5}
-          fill={event.mode === 'sea' ? '#e8eef1' : '#f7f4ee'}
-          stroke={event.mode === 'sea' ? '#2f5d6e' : '#5c4a38'}
-          strokeWidth={2}
-        >
-          <animateMotion dur={`${Math.max(event.duration / 1000, 1.2)}s`} repeatCount="1" fill="freeze" path={d} />
-        </circle>
-      )}
-    </g>
-  )
-}
+  for (const layer of layers) {
+    const id = layer.id
+    if (HIDE_LAYER_IDS.has(id)) {
+      try {
+        map.setLayoutProperty(id, 'visibility', 'none')
+      } catch {
+        /* layer may lack layout */
+      }
+      continue
+    }
 
-function LetterArc({
-  letter,
-  year,
-  selected,
-  compact,
-  onSelect,
-  forceState,
-  packetMs = 8000,
-  packetOnce = false,
-}: {
-  letter: Letter
-  year: number
-  selected: string | null
-  compact: boolean
-  onSelect: () => void
-  forceState?: ArcState
-  packetMs?: number
-  packetOnce?: boolean
-}) {
-  const { filters } = useApp()
-  const reduced = useReducedMotion()
-  const d = datingOf(letter, filters.datingScheme)
-  const from = CITY_BY_ID[d.originId]
-  const to = CITY_BY_ID[letter.destinationId]
-  if (!from || !to) return null
-  const a = project(from.lon, from.lat)
-  const b = project(to.lon, to.lat)
-  const bulge = compact ? letter.arcBulge * 0.72 : letter.arcBulge
-  const c = arcControl(a.x, a.y, b.x, b.y, bulge)
-  const state = forceState ?? arcState(letter, year, filters.datingScheme)
-  const color = AUDIENCE_META[letter.audienceType].color
-  const dim = selected && selected !== letter.id
-  const cls = [
-    'letter-arc',
-    `is-${state}`,
-    selected === letter.id ? 'is-selected' : '',
-    dim ? 'is-dim' : '',
-  ]
-    .filter(Boolean)
-    .join(' ')
-  const path = `M ${a.x.toFixed(1)} ${a.y.toFixed(1)} Q ${c.cx.toFixed(1)} ${c.cy.toFixed(1)} ${b.x.toFixed(1)} ${b.y.toFixed(1)}`
-  const head = arrowHead(a.x, a.y, c.cx, c.cy, b.x, b.y, state === 'current' || selected === letter.id ? 11 : 8)
-  const label = `${letter.shortTitle}, ${d.originLabel} to ${letter.destinationLabel}, ${d.yearDisplay}`
+    const opacity = MUTE_OPACITY[id]
+    if (opacity == null) continue
 
-  const mid = {
-    x: (a.x + 2 * c.cx + b.x) / 4,
-    y: (a.y + 2 * c.cy + b.y) / 4,
-  }
-  const interactive = state !== 'future'
-  const alt = d.altOriginId ? CITY_BY_ID[d.altOriginId] : null
-  const altPath = alt
-    ? (() => {
-        const ao = project(alt.lon, alt.lat)
-        const ac = arcControl(ao.x, ao.y, b.x, b.y, bulge * -0.6)
-        return `M ${ao.x.toFixed(1)} ${ao.y.toFixed(1)} Q ${ac.cx.toFixed(1)} ${ac.cy.toFixed(1)} ${b.x.toFixed(1)} ${b.y.toFixed(1)}`
-      })()
-    : null
-
-  return (
-    <g>
-      {altPath && state !== 'future' && (
-        <path
-          className="letter-arc is-alt"
-          d={altPath}
-          stroke={color}
-          strokeWidth={1.4}
-          fill="none"
-          pointerEvents="none"
-        >
-          <title>{`Alternate origin debated: ${d.altOriginLabel}`}</title>
-        </path>
-      )}
-      {interactive && (
-        <path className="letter-arc-hit" d={path} onClick={onSelect} role="presentation">
-          <title>{label}</title>
-        </path>
-      )}
-      <path
-        className={cls}
-        d={path}
-        stroke={color}
-        strokeWidth={selected === letter.id ? 2.8 : 2.1}
-        fill="none"
-        onClick={interactive ? onSelect : undefined}
-        role={interactive ? 'button' : 'presentation'}
-        tabIndex={interactive ? 0 : undefined}
-        aria-label={interactive ? label : undefined}
-        aria-hidden={interactive ? undefined : true}
-        onKeyDown={
-          interactive
-            ? (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault()
-                  onSelect()
-                }
-              }
-            : undefined
+    try {
+      if (layer.type === 'symbol') {
+        map.setPaintProperty(id, 'text-opacity', opacity)
+        map.setPaintProperty(id, 'icon-opacity', Math.min(opacity, 0.35))
+        // Slightly smaller modern place names so our city labels win.
+        if (id.startsWith('label_')) {
+          const size = map.getLayoutProperty(id, 'text-size')
+          if (typeof size === 'number') {
+            map.setLayoutProperty(id, 'text-size', Math.max(9, size * 0.78))
+          }
         }
-      />
-      <path className={cls} d={head} fill={color} stroke="none" pointerEvents="none" />
-      {state === 'current' && !reduced && (
-        <g pointerEvents="none">
-          <PapyrusIcon />
-          <animateMotion
-            dur={`${Math.max(packetMs / 1000, 4)}s`}
-            repeatCount={packetOnce ? '1' : 'indefinite'}
-            fill={packetOnce ? 'freeze' : undefined}
-            path={path}
-            rotate="auto"
-          />
-        </g>
-      )}
-      {(state === 'current' || selected === letter.id) && !compact && (
-        <text
-          className="city-label"
-          x={mid.x}
-          y={mid.y - 6}
-          textAnchor="middle"
-          fontSize={12}
-          fill="#1a3344"
-          pointerEvents="none"
-        >
-          {letter.shortTitle}
-        </text>
-      )}
-    </g>
-  )
-}
-
-function dist(a: { x: number; y: number }, b: { x: number; y: number }) {
-  return Math.hypot(a.x - b.x, a.y - b.y)
-}
-
-function clampView(
-  v: { x: number; y: number; k: number },
-  rect: DOMRect,
-): { x: number; y: number; k: number } {
-  const k = Math.min(4.5, Math.max(1, v.k))
-  const minX = rect.width - rect.width * k
-  const minY = rect.height - rect.height * k
-  return {
-    k,
-    x: Math.min(0, Math.max(minX, v.x)),
-    y: Math.min(0, Math.max(minY, v.y)),
+      } else if (layer.type === 'line') {
+        map.setPaintProperty(id, 'line-opacity', opacity)
+        map.setPaintProperty(id, 'line-color', '#a8a29a')
+      }
+    } catch (err) {
+      console.warn('[maplibre] mute failed for', id, err)
+    }
   }
+
+  // Keep OpenFreeMap Natural Earth shaded relief (topography) at mid weight.
+  if (map.getLayer('natural_earth')) {
+    try {
+      map.setPaintProperty('natural_earth', 'raster-opacity', [
+        'interpolate',
+        ['exponential', 1.5],
+        ['zoom'],
+        0,
+        0.55,
+        6,
+        0.22,
+      ])
+    } catch {
+      /* ignore */
+    }
+  }
+}
+
+function ensureSources(map: MapLibreMap) {
+  if (!map.getSource(SRC.roads)) {
+    map.addSource(SRC.roads, {
+      type: 'geojson',
+      data: `${import.meta.env.BASE_URL}geo/roman-roads.geojson`,
+      attribution:
+        'Ancient World Mapping Center roads (ODbL 1.0); Barrington Atlas / OSM derived',
+    })
+  }
+  for (const id of [SRC.prisons, SRC.cities]) {
+    if (!map.getSource(id)) {
+      map.addSource(id, { type: 'geojson', data: EMPTY })
+    }
+  }
+}
+
+function ensureLayers(map: MapLibreMap) {
+  // AWMC / Barrington-derived Roman roads (clipped to atlas bbox) — mid weight.
+  if (!map.getLayer('roman-roads-minor')) {
+    map.addLayer({
+      id: 'roman-roads-minor',
+      type: 'line',
+      source: SRC.roads,
+      filter: ['!=', ['get', 'major'], 1],
+      paint: {
+        'line-color': '#9a8b78',
+        'line-width': 0.9,
+        'line-opacity': 0.42,
+      },
+      layout: {
+        'line-cap': 'round',
+        'line-join': 'round',
+      },
+    })
+  }
+  if (!map.getLayer('roman-roads-major')) {
+    map.addLayer({
+      id: 'roman-roads-major',
+      type: 'line',
+      source: SRC.roads,
+      filter: ['==', ['get', 'major'], 1],
+      paint: {
+        'line-color': '#7d6b58',
+        'line-width': [
+          'interpolate',
+          ['linear'],
+          ['zoom'],
+          3.5,
+          1.2,
+          7,
+          2.0,
+        ],
+        'line-opacity': 0.58,
+      },
+      layout: {
+        'line-cap': 'round',
+        'line-join': 'round',
+      },
+    })
+  }
+
+  if (!map.getLayer('prisons-square')) {
+    map.addLayer({
+      id: 'prisons-square',
+      type: 'symbol',
+      source: SRC.prisons,
+      layout: {
+        'icon-image': 'lr-prison',
+        'icon-size': 0.7,
+        'icon-allow-overlap': true,
+        'icon-ignore-placement': true,
+      },
+    })
+  }
+
+  if (!map.getLayer('cities-circle')) {
+    map.addLayer({
+      id: 'cities-circle',
+      type: 'circle',
+      source: SRC.cities,
+      filter: ['!=', ['get', 'diamond'], 1],
+      paint: {
+        'circle-radius': ['get', 'radius'],
+        'circle-color': [
+          'case',
+          ['==', ['get', 'planted'], 1],
+          '#9a7b3c',
+          '#f7f4ee',
+        ],
+        'circle-stroke-color': [
+          'case',
+          ['==', ['get', 'selected'], 1],
+          '#e8c97a',
+          '#1a2a33',
+        ],
+        'circle-stroke-width': [
+          'case',
+          ['==', ['get', 'selected'], 1],
+          2.6,
+          1.5,
+        ],
+        'circle-opacity': 1,
+      },
+    })
+  }
+
+  if (!map.getLayer('cities-diamond')) {
+    map.addLayer({
+      id: 'cities-diamond',
+      type: 'symbol',
+      source: SRC.cities,
+      filter: ['==', ['get', 'diamond'], 1],
+      layout: {
+        'icon-image': 'lr-diamond',
+        'icon-size': [
+          'case',
+          ['==', ['get', 'selected'], 1],
+          0.9,
+          0.75,
+        ],
+        'icon-allow-overlap': true,
+        'icon-ignore-placement': true,
+      },
+    })
+  }
+
+  // Forefront: Pauline atlas city labels — strongest text on the map.
+  if (!map.getLayer('cities-label')) {
+    map.addLayer({
+      id: 'cities-label',
+      type: 'symbol',
+      source: SRC.cities,
+      filter: [
+        'any',
+        ['==', ['get', 'named'], 1],
+        ['==', ['get', 'selected'], 1],
+      ],
+      layout: {
+        'text-field': ['get', 'shortLabel'],
+        'text-size': [
+          'interpolate',
+          ['linear'],
+          ['zoom'],
+          3.5,
+          13,
+          6,
+          15,
+          9,
+          17,
+        ],
+        'text-font': ['Noto Sans Bold'],
+        'text-offset': [1.15, -0.75],
+        'text-anchor': 'left',
+        'text-allow-overlap': true,
+        'text-ignore-placement': true,
+        'symbol-sort-key': 0,
+      },
+      paint: {
+        'text-color': [
+          'case',
+          ['==', ['get', 'selected'], 1],
+          '#fff8ee',
+          '#14222c',
+        ],
+        'text-halo-color': [
+          'case',
+          ['==', ['get', 'selected'], 1],
+          'rgba(36, 63, 92, 0.92)',
+          'rgba(255, 248, 238, 0.95)',
+        ],
+        'text-halo-width': 2.2,
+        'text-opacity': 1,
+      },
+    })
+  }
+}
+
+function addOverlayImages(map: MapLibreMap) {
+  if (!map.hasImage('lr-diamond')) {
+    map.addImage('lr-diamond', drawDiamond(28), { pixelRatio: 2 })
+  }
+  if (!map.hasImage('lr-prison')) {
+    map.addImage('lr-prison', drawPrison(22), { pixelRatio: 2 })
+  }
+}
+
+function drawDiamond(size: number): ImageData {
+  const canvas = document.createElement('canvas')
+  canvas.width = size
+  canvas.height = size
+  const ctx = canvas.getContext('2d')!
+  const cx = size / 2
+  const cy = size / 2
+  const r = size * 0.38
+  ctx.beginPath()
+  ctx.moveTo(cx, cy - r)
+  ctx.lineTo(cx + r * 0.78, cy)
+  ctx.lineTo(cx, cy + r)
+  ctx.lineTo(cx - r * 0.78, cy)
+  ctx.closePath()
+  ctx.fillStyle = '#243f5c'
+  ctx.fill()
+  ctx.strokeStyle = '#f7f4ee'
+  ctx.lineWidth = 1.6
+  ctx.stroke()
+  return ctx.getImageData(0, 0, size, size)
+}
+
+function drawPrison(size: number): ImageData {
+  const canvas = document.createElement('canvas')
+  canvas.width = size
+  canvas.height = size
+  const ctx = canvas.getContext('2d')!
+  const pad = 4
+  ctx.strokeStyle = '#7a2e2e'
+  ctx.lineWidth = 2
+  ctx.strokeRect(pad, pad, size - pad * 2, size - pad * 2)
+  return ctx.getImageData(0, 0, size, size)
 }

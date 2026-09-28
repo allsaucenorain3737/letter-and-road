@@ -1,0 +1,64 @@
+{
+  "presets": [
+    {
+      "a": "romans",
+      "b": "1corinthians",
+      "insight": "Romans addresses an unvisited mixed church in the capital; 1 Corinthians addresses a plant Paul knew well, now in crisis. Reconstruction: occasion and familiarity change the pastoral register—Rome as reasoned charter for strangers, Corinth as intervention among people he had already pastored."
+    },
+    {
+      "a": "ephesians",
+      "b": "philemon",
+      "insight": "Ephesians speaks to the church at cosmic scale; Philemon asks one host to receive a runaway as a brother. Reconstruction / Wider: both are often placed in the same custody circle with Tychicus; audience scale—not a different gospel—explains why one letter reads as ecclesiology and the other as a household appeal."
+    },
+    {
+      "a": "1thessalonians",
+      "b": "2timothy",
+      "insight": "1 Thessalonians steadies a young planted church grieving before the parousia; 2 Timothy is a charge to one protégé from a cell. Reconstruction / Wider: Pastoral dating and the after-Acts imprisonment remain debated; the audience shrink from plural church to single successor is what the texts themselves display."
+    },
+    {
+      "a": "1timothy",
+      "b": "romans",
+      "insight": "Romans builds a people Paul has not met; 1 Timothy tells a delegate how to appoint overseers among people already gathered. Reconstruction / Wider: Romans states a Spain plan (Rom 15:24, 28); whether that journey happened, and how the Pastorals fit custody chronology, are open questions—not settled by atlas chrome."
+    },
+    {
+      "a": "philippians",
+      "b": "philemon",
+      "insight": "Philippians thanks a planted church that has shared his trouble; Philemon asks one household head to receive Onesimus as a brother. Reconstruction: both are shaped by custody; audience—congregation versus host—decides whether the letter addresses partnership at scale or a single relationship under one roof."
+    },
+    {
+      "a": "ephesians",
+      "b": "colossians",
+      "insight": "Ephesians stresses one new humanity and a walk worthy of the calling; Colossians answers a local temptation to add to Christ. Reconstruction / Wider: related prison letters often travel with Tychicus in the debate; shared vocabulary does not erase the different dangers each audience faced."
+    },
+    {
+      "a": "philemon",
+      "b": "2timothy",
+      "insight": "Philemon appeals to a host in a house-arrest season with room to hope for release; 2 Timothy is a final charge when coworkers have scattered. Reconstruction / Wider: whether these are two Roman custody seasons (and how the Pastorals date) remains debated—the audience shrink from host-plus-church to one successor is plain in the letters."
+    },
+    {
+      "a": "galatians",
+      "b": "romans",
+      "insight": "Galatians is urgent pastoral fire for churches Paul planted under threat of another gospel; Romans unfolds that gospel at length for an unvisited mixed church. Reconstruction / Wider: Romans also voices a Spain plan as stated intention, not proven itinerary. Audience—planted under pressure versus unvisited addressees—explains the heat difference."
+    },
+    {
+      "a": "1corinthians",
+      "b": "2corinthians",
+      "insight": "Two letters to the same plant at two stages of a hard relationship: crisis sorting in 1 Corinthians, aftermath and defense in 2 Corinthians. Reconstruction: the city has not changed; recent history between apostle and church has. Occasion and trust reshape how the same pastor speaks to the same people."
+    },
+    {
+      "a": "2corinthians",
+      "b": "philippians",
+      "insight": "2 Corinthians defends weak apostleship under Corinthian skepticism; Philippians rejoices from chains among partners who already share his trouble. Reconstruction: custody frames both, but audience posture—contest versus partnership—decides whether suffering must be defended or can be received as shared labor."
+    },
+    {
+      "a": "1timothy",
+      "b": "titus",
+      "insight": "Both charge delegates left to finish itinerant planting: Timothy at Ephesus, Titus on Crete. Reconstruction / Wider: Pastoral dating remains open; the genre shift to field manuals for coworkers is what the letters show when the audience shrinks from a whole church to one delegate."
+    },
+    {
+      "a": "colossians",
+      "b": "philemon",
+      "insight": "Colossians addresses the Lycus Valley church about Christ’s fullness; Philemon addresses the host of that church about one returning runaway. Reconstruction / Wider: courier and custody windows often link them in the debate; nested audiences explain why congregational teaching and a household plea can travel together."
+    }
+  ]
+}

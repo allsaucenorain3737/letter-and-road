@@ -1,0 +1,1763 @@
+{
+  "cityContexts": [
+    {
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Roman house arrest and prison-letter tradition."
+        },
+        {
+          "label": "John Stott, The Message of Romans",
+          "note": "Gospel for the capital’s Jew–Gentile church."
+        }
+      ],
+      "politicalStatus": "Imperial capital of the Roman Empire; center of Caesar’s cult, law, and patronage.",
+      "paulThere": "Romans (written from Corinth, third journey) addresses an unvisited church: gospel for Jew and Gentile, living sacrifices under empire. After appeal to Caesar, the voyage ends at Rome; Paul spends two years under house arrest preaching the kingdom (Acts 28:14–31). Consensus: from that custody come Ephesians, Colossians, Philemon, and Philippians. After Acts, a final imprisonment under Nero is the traditional setting for 2 Timothy. Rome is destination of the great theological letter and origin of the prison correspondence.",
+      "themeIds": [
+        "jew-gentile-unity",
+        "roman-citizenship",
+        "emperor-cult"
+      ],
+      "id": "rome",
+      "letterIds": [
+        "romans",
+        "ephesians",
+        "colossians",
+        "philemon",
+        "philippians",
+        "2timothy"
+      ],
+      "journeyLinks": {
+        "prevCityIds": [
+          "puteoli"
+        ],
+        "nextCityIds": []
+      },
+      "culturalDistinctive": "House churches in a stratified capital—Jews and Gentiles under Nero’s shadow, slavery commonplace, honor and shame public. Unvisited yet already famous for faith.",
+      "intro": "All roads lead here—and Paul writes to a church he has not yet met, longing to preach in the empire’s heart. Years later he arrives in chains, rents a house under guard, and welcomes all who come. Tradition places the prison letters here, and later a final custody that ends with 2 Timothy’s farewell charge.",
+      "scriptureAnchors": [
+        {
+          "label": "Romans 1:8–15",
+          "search": "Romans 1:8-15"
+        },
+        {
+          "label": "Romans 15:22–33",
+          "search": "Romans 15:22-33"
+        },
+        {
+          "label": "Acts 28:14–31",
+          "search": "Acts 28:14-31"
+        },
+        {
+          "label": "Philippians 1:12–18",
+          "search": "Philippians 1:12-18"
+        },
+        {
+          "label": "2 Timothy 4:6–18",
+          "search": "2 Timothy 4:6-18"
+        }
+      ]
+    },
+    {
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Gallio inscription anchors Acts 18 dating."
+        },
+        {
+          "label": "D. A. Carson / commentaries on 1–2 Corinthians",
+          "note": "Factions, gifts, and apostolic defense in a status culture."
+        }
+      ],
+      "politicalStatus": "Capital of Roman Achaia; refounded as a Roman colony (44 BC) under a proconsul (Gallio in Acts 18).",
+      "paulThere": "On the second journey Paul stayed eighteen months, working tents with Aquila and Priscilla, preaching in the synagogue then next door, and winning a hearing before Gallio (Acts 18:1–18). From Corinth he wrote 1–2 Thessalonians. On the third journey he wintered here again and wrote Romans. 1–2 Corinthians answer factions, immorality, lawsuits, idol food, gifts, and apostolic weakness—every problem shaped by Corinth’s competitive harbor culture.",
+      "themeIds": [
+        "food-offered-to-idols",
+        "spiritual-gifts",
+        "honor-shame"
+      ],
+      "id": "corinth",
+      "letterIds": [
+        "1corinthians",
+        "2corinthians",
+        "romans",
+        "1thessalonians",
+        "2thessalonians"
+      ],
+      "journeyLinks": {
+        "prevCityIds": [
+          "athens",
+          "macedonia"
+        ],
+        "nextCityIds": [
+          "ephesus",
+          "philippi"
+        ]
+      },
+      "culturalDistinctive": "Isthmian commerce and a reputation for sexual license and status-climbing. Patronage, lawsuits, and dining at idol temples were normal civic life—and the letters confront each of them.",
+      "intro": "Two seas meet at the isthmus, and so do every kind of ambition. Sailors, freedmen, athletes, and status-seekers share the same agora; reputation and scandal travel as fast as cargo. Paul planted a church here that looked like the city—gifted, competitive, and in constant need of the cross.",
+      "scriptureAnchors": [
+        {
+          "label": "Acts 18:1–18",
+          "search": "Acts 18:1-18"
+        },
+        {
+          "label": "1 Corinthians 1:10–17",
+          "search": "1 Corinthians 1:10-17"
+        },
+        {
+          "label": "1 Corinthians 8:1–13",
+          "search": "1 Corinthians 8:1-13"
+        },
+        {
+          "label": "2 Corinthians 11:1–15",
+          "search": "2 Corinthians 11:1-15"
+        },
+        {
+          "label": "Romans 16:1–2",
+          "search": "Romans 16:1-2"
+        }
+      ]
+    },
+    {
+      "sources": [
+        {
+          "label": "F. F. Bruce, Paul: Apostle of the Heart Set Free",
+          "note": "Ephesian ministry and Acts 19 chronology."
+        },
+        {
+          "label": "John Stott, The Message of Ephesians",
+          "note": "Christ’s supremacy in an Asia Minor religious climate."
+        }
+      ],
+      "politicalStatus": "Capital of the Roman province of Asia; free city with its own assembly (ekklesia) and strong civic pride under Roman oversight.",
+      "paulThere": "Paul stopped briefly on the second journey (Acts 18:19–21), then returned for about three years on the third (Acts 19). From a lecture hall and house meetings the word spread through Asia; handkerchiefs and aprons became signs of power against the occult; silversmith Demetrius sparked a riot in the theater. From Ephesus he wrote 1 Corinthians to a fractured Corinthian church. Later Timothy was stationed here to guard doctrine (1 Timothy). The letter to the Ephesians, by Consensus written from Roman imprisonment, addresses saints in this Artemis-soaked world with Christ’s cosmic lordship and the church as his body.",
+      "themeIds": [
+        "emperor-cult",
+        "angels-spiritual-powers",
+        "elders-oversight"
+      ],
+      "id": "ephesus",
+      "letterIds": [
+        "1corinthians",
+        "ephesians",
+        "1timothy"
+      ],
+      "journeyLinks": {
+        "prevCityIds": [
+          "corinth",
+          "galatia"
+        ],
+        "nextCityIds": [
+          "caesarea",
+          "troas"
+        ]
+      },
+      "culturalDistinctive": "Artemis of the Ephesians owned the skyline—pilgrimage economy, magic arts, and trade-guild loyalty. Saying “Jesus is Lord” here meant more than private piety; it threatened silver shrines and the city’s identity.",
+      "intro": "Stand in the shadow of Artemis’s temple and you feel why Asia listened when Paul pitched tent here for years. Harbor streets hummed with pilgrims, silversmiths, and magic scrolls—then the gospel emptied shops and set books burning. This is where Paul stayed longest, and where the church first learned to live under Christ’s name in a city that belonged to a goddess.",
+      "scriptureAnchors": [
+        {
+          "label": "Acts 19:1–41",
+          "search": "Acts 19:1-41"
+        },
+        {
+          "label": "Acts 20:17–38",
+          "search": "Acts 20:17-38"
+        },
+        {
+          "label": "1 Corinthians 16:8–9",
+          "search": "1 Corinthians 16:8-9"
+        },
+        {
+          "label": "Ephesians 1:15–23",
+          "search": "Ephesians 1:15-23"
+        },
+        {
+          "label": "1 Timothy 1:3–7",
+          "search": "1 Timothy 1:3-7"
+        }
+      ]
+    },
+    {
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Philippi as Roman colony and Acts 16 narrative."
+        },
+        {
+          "label": "John Stott / evangelical Philippians commentaries",
+          "note": "Citizenship and joy in suffering."
+        }
+      ],
+      "politicalStatus": "Roman colony (colonia) in Macedonia, with ius Italicum privileges and strong civic Roman identity.",
+      "paulThere": "Called by a Macedonian vision, Paul crossed to Philippi on the second journey (Acts 16:11–40). Lydia’s household, an exorcism that cost a slave-girl’s owners money, beating and jail, then conversion of the jailer—the church is born under pressure and partnership. They later fund Paul’s mission repeatedly. Philippians, written from Roman imprisonment (Consensus), thanks them, warns against Judaizing confidence in the flesh, and holds up Christ’s self-emptying as the colony’s true honor code.",
+      "themeIds": [
+        "roman-citizenship",
+        "military-imagery",
+        "suffering"
+      ],
+      "id": "philippi",
+      "letterIds": [
+        "philippians"
+      ],
+      "journeyLinks": {
+        "prevCityIds": [
+          "corinth",
+          "troas"
+        ],
+        "nextCityIds": [
+          "thessalonica",
+          "troas"
+        ]
+      },
+      "culturalDistinctive": "Citizenship and military colony ethos. Honor, chains, and ‘citizenship in heaven’ land differently when your neighbors boast of Rome.",
+      "intro": "Step onto the Via Egnatia and you are in a little Rome: Latin inscriptions, veteran settlers, and a pride of citizenship that fills the air. There was no synagogue large enough to notice—Paul finds praying women by a river. The first European convert is a businesswoman; the jailer’s household follows after an earthquake; and a letter of joy later arrives from a Roman prison.",
+      "scriptureAnchors": [
+        {
+          "label": "Acts 16:11–40",
+          "search": "Acts 16:11-40"
+        },
+        {
+          "label": "Philippians 1:27–30",
+          "search": "Philippians 1:27-30"
+        },
+        {
+          "label": "Philippians 2:5–11",
+          "search": "Philippians 2:5-11"
+        },
+        {
+          "label": "Philippians 3:17–21",
+          "search": "Philippians 3:17-21"
+        },
+        {
+          "label": "Philippians 4:10–20",
+          "search": "Philippians 4:10-20"
+        }
+      ]
+    },
+    {
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Politarchs and Acts 17 historical texture."
+        },
+        {
+          "label": "John Stott, The Message of Thessalonians",
+          "note": "Hope and holiness under persecution."
+        }
+      ],
+      "politicalStatus": "Free city and capital of Macedonia; loyal to Rome, with local politarchs (Acts 17:6 wording matches inscriptions).",
+      "paulThere": "After Philippi, Paul reasoned three Sabbaths in the synagogue; some Jews, many God-fearers and leading women believed (Acts 17:1–9). Jealous opponents drag Jason before the politarchs; Paul and Silas slip to Berea by night. From Corinth he writes 1 Thessalonians—thanksgiving, holiness, and comfort about the dead in Christ—then 2 Thessalonians against idleness and false claims that the day of the Lord has already come. The brief stay left a church that needed clarity on hope under heat.",
+      "themeIds": [
+        "eschatology",
+        "suffering",
+        "jewish-diaspora"
+      ],
+      "id": "thessalonica",
+      "letterIds": [
+        "1thessalonians",
+        "2thessalonians"
+      ],
+      "journeyLinks": {
+        "prevCityIds": [
+          "philippi"
+        ],
+        "nextCityIds": [
+          "berea"
+        ]
+      },
+      "culturalDistinctive": "Busy port on the Via Egnatia; imperial loyalty made ‘another king, Jesus’ a dangerous charge. Short planting, long eschatological pressure.",
+      "intro": "The Via Egnatia pours traffic into a free city’s harbor—and rumors travel just as fast. Paul stays only weeks, yet a church forms that outruns persecution with hope. When believers start grieving and arguing about the Lord’s return, two short letters from Corinth arrive like pastoral fire drills.",
+      "scriptureAnchors": [
+        {
+          "label": "Acts 17:1–9",
+          "search": "Acts 17:1-9"
+        },
+        {
+          "label": "1 Thessalonians 1:2–10",
+          "search": "1 Thessalonians 1:2-10"
+        },
+        {
+          "label": "1 Thessalonians 4:13–18",
+          "search": "1 Thessalonians 4:13-18"
+        },
+        {
+          "label": "2 Thessalonians 2:1–12",
+          "search": "2 Thessalonians 2:1-12"
+        },
+        {
+          "label": "2 Thessalonians 3:6–12",
+          "search": "2 Thessalonians 3:6-12"
+        }
+      ]
+    },
+    {
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Epaphras, Lycus Valley churches, prison setting."
+        },
+        {
+          "label": "ABD / evangelical Colossians studies",
+          "note": "Syncretistic pressures without relativizing the text."
+        }
+      ],
+      "politicalStatus": "Town in the Roman province of Asia (Phrygia), in the Lycus Valley; overshadowed by nearby Laodicea.",
+      "paulThere": "Paul had not visited the Colossian believers in person (Colossians 2:1). Epaphras, a native, founded the church and reported their faith to Paul in prison (Colossians 1:7–8; 4:12–13). From Rome (Consensus) Paul writes Colossians—Christ the fullness, against elemental spirits and human regulations—and Philemon, urging the master to receive Onesimus as a brother. The letters travel together into a valley Paul knew by report, not by road.",
+      "themeIds": [
+        "angels-spiritual-powers",
+        "slavery",
+        "syncretism"
+      ],
+      "id": "colossae",
+      "letterIds": [
+        "colossians",
+        "philemon"
+      ],
+      "journeyLinks": {
+        "prevCityIds": [],
+        "nextCityIds": []
+      },
+      "culturalDistinctive": "Phrygian religious mix—angel speculation, ascetic rules, folk piety—meeting Jewish and pagan currents in a secondary market town.",
+      "intro": "The Lycus Valley once thrived on wool and trade; by Paul’s day Colossae was the quieter neighbor of Laodicea and Hierapolis. You will not find Paul walking these streets—he says so himself. What you will find is a house-church planted by Epaphras, a runaway slave named Onesimus, and a letter that puts Christ above every power the valley’s syncretism could invent.",
+      "scriptureAnchors": [
+        {
+          "label": "Colossians 1:3–8",
+          "search": "Colossians 1:3-8"
+        },
+        {
+          "label": "Colossians 2:1–15",
+          "search": "Colossians 2:1-15"
+        },
+        {
+          "label": "Colossians 2:16–23",
+          "search": "Colossians 2:16-23"
+        },
+        {
+          "label": "Philemon 1–25",
+          "search": "Philemon 1:1-25"
+        },
+        {
+          "label": "Colossians 4:7–17",
+          "search": "Colossians 4:7-17"
+        }
+      ]
+    },
+    {
+      "sources": [
+        {
+          "label": "F. F. Bruce, Commentary on Galatians",
+          "note": "South-Galatia case and Acts correlation."
+        },
+        {
+          "label": "John Stott, The Message of Galatians",
+          "note": "Justification and freedom in Christ."
+        }
+      ],
+      "politicalStatus": "Roman province of Galatia (south including Pisidian and Lycaonian cities; ethnic north around Ancyra). Provincial administration under Rome.",
+      "paulThere": "Consensus: Paul and Barnabas plant south Galatia on the first journey (Acts 13–14); Paul revisits with Silas on the second (Acts 16:1–6) and again on the third (Acts 18:23). Galatians defends an apostleship from Christ and a gospel of grace against teachers demanding Gentile circumcision. Dating Policy: south-Galatia recipients as default; north-Galatia remains a Wider Protestant alternative—note it, do not make it the map’s center.",
+      "themeIds": [
+        "justification",
+        "law-vs-grace",
+        "circumcision"
+      ],
+      "id": "galatia",
+      "letterIds": [
+        "galatians"
+      ],
+      "journeyLinks": {
+        "prevCityIds": [
+          "antioch",
+          "iconium"
+        ],
+        "nextCityIds": [
+          "ephesus",
+          "troas"
+        ]
+      },
+      "culturalDistinctive": "Frontier mix of Roman colony life, local Anatolian cults, and diaspora synagogues. The circumcision crisis hit churches that had heard justification by faith without the boundary markers of Torah.",
+      "intro": "Call it a region, not a single agora: highland roads, Roman colonies, and synagogue towns where Paul left churches that later nearly traded the gospel for circumcision. Consensus pins Galatians on the south—Pisidian Antioch, Iconium, Lystra, Derbe—the Acts 13–14 circuit. Wider Protestant debate still hears a north-Galatia option; this atlas defaults south and labels the disagreement.",
+      "scriptureAnchors": [
+        {
+          "label": "Acts 13:13–14:28",
+          "search": "Acts 13:13-14:28"
+        },
+        {
+          "label": "Acts 16:1–6",
+          "search": "Acts 16:1-6"
+        },
+        {
+          "label": "Galatians 1:1–9",
+          "search": "Galatians 1:1-9"
+        },
+        {
+          "label": "Galatians 2:15–21",
+          "search": "Galatians 2:15-21"
+        },
+        {
+          "label": "Galatians 5:1–12",
+          "search": "Galatians 5:1-12"
+        }
+      ]
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 11:19–30",
+          "search": "Acts 11:19-30"
+        },
+        {
+          "label": "Acts 13:1–3",
+          "search": "Acts 13:1-3"
+        },
+        {
+          "label": "Acts 15:30–35",
+          "search": "Acts 15:30-35"
+        },
+        {
+          "label": "Galatians 2:11–21",
+          "search": "Galatians 2:11-21"
+        },
+        {
+          "label": "Galatians 1:1–9",
+          "search": "Galatians 1:1-9"
+        }
+      ],
+      "politicalStatus": "Capital of Roman Syria; one of the empire’s great cities, under a legate, with a large Jewish community and cosmopolitan trade.",
+      "intro": "Orontes water, Roman streets, and a church that first wore the name “Christian.” Here Jews and Gentiles eat at one table until pressure splits them—and Paul will not let the gospel shrink. From this sending base the roads to Cyprus, Galatia, and the wider world begin.",
+      "id": "antioch",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Antioch as sending church and Galatians 2 incident."
+        },
+        {
+          "label": "Consensus evangelical dating",
+          "note": "Galatians from Antioch after the first journey (south-Galatia default)."
+        }
+      ],
+      "paulThere": "Barnabas fetches Saul from Tarsus; together they teach for a year (Acts 11:25–26). The Spirit sends them out on the first journey; they report back after Galatia. Consensus places Galatians from Antioch after that circuit—Paul’s fierce defense of justification by faith after the Antioch clash with Peter (Galatians 2). Second and third journeys also launch from here. The city’s mixed table shaped the letter’s nerve: one gospel, no second-class Gentiles.",
+      "themeIds": [
+        "jew-gentile-unity",
+        "justification",
+        "apostolic-authority"
+      ],
+      "culturalDistinctive": "Hellenistic metropolis where diaspora Jews and Gentiles mixed daily. The nickname “Christian” sticks here; table fellowship becomes a gospel test.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "jerusalem",
+          "perga"
+        ],
+        "nextCityIds": [
+          "galatia",
+          "salamis",
+          "tarsus"
+        ]
+      },
+      "letterIds": [
+        "galatians"
+      ]
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 15:1–29",
+          "search": "Acts 15:1-29"
+        },
+        {
+          "label": "Acts 21:17–36",
+          "search": "Acts 21:17-36"
+        },
+        {
+          "label": "Galatians 1:18–24",
+          "search": "Galatians 1:18-24"
+        },
+        {
+          "label": "Galatians 2:1–10",
+          "search": "Galatians 2:1-10"
+        },
+        {
+          "label": "Romans 15:25–27",
+          "search": "Romans 15:25-27"
+        }
+      ],
+      "politicalStatus": "Judean capital under Roman prefects/procurators; religious center of Judaism, politically tense in the decades before AD 70.",
+      "intro": "Temple courts, pilgrim crowds, and the mother church that weighed Gentile freedom. Paul brings famine relief, submits the gospel to the pillars, and later walks into arrest for the sake of unity. No Pauline letter is addressed here—yet the collection and the council both run toward this hill.",
+      "id": "jerusalem",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Jerusalem council and Paul’s arrests."
+        },
+        {
+          "label": "Acts 21–23 narrative",
+          "note": "Temple arrest and custody chain toward Caesarea."
+        }
+      ],
+      "paulThere": "After conversion he meets the apostles (Acts 9; Galatians 1). The council affirms Gentile freedom with limited stipulations (Acts 15). On the third journey he delivers the collection and is seized in the temple courts (Acts 21). Consensus: no surviving letter is written to or securely from Jerusalem; Romans and the Corinthian letters still aim the collection at the saints here. The city’s pressures forged Paul’s lifelong burden for Jew–Gentile unity.",
+      "themeIds": [
+        "jew-gentile-unity",
+        "collection-for-the-poor",
+        "circumcision"
+      ],
+      "culturalDistinctive": "Temple, Torah, and pilgrimage identity. Gentile inclusion without full Mosaic boundary markers was a live controversy—settled here, tested everywhere else.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "caesarea"
+        ],
+        "nextCityIds": [
+          "antioch"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 9:1–9",
+          "search": "Acts 9:1-9"
+        },
+        {
+          "label": "Acts 22:6–11",
+          "search": "Acts 22:6-11"
+        },
+        {
+          "label": "Acts 26:12–18",
+          "search": "Acts 26:12-18"
+        },
+        {
+          "label": "Galatians 1:11–17",
+          "search": "Galatians 1:11-17"
+        },
+        {
+          "label": "1 Corinthians 15:8–10",
+          "search": "1 Corinthians 15:8-10"
+        }
+      ],
+      "politicalStatus": "Road corridor under Roman Syria between Judea and Damascus; travel under Jewish leadership’s letters of authorization (Acts 9:1–2).",
+      "intro": "Dust, warrants, and a light that stops a persecutor mid-stride. This is not a city pack so much as a hinge in the road: the risen Jesus names Saul, blinds him, and redirects the whole mission map. Everything Paul later writes about grace starts here.",
+      "id": "damascus_road",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Conversion narratives and Pauline autobiography."
+        },
+        {
+          "label": "Galatians 1",
+          "note": "Revelation of Christ as the source of Paul’s gospel."
+        }
+      ],
+      "paulThere": "Acts 9 (paralleled in Acts 22 and 26): Saul breathes threats, meets the Lord, and is led blind into Damascus. Galatians 1 insists the gospel came by revelation of Jesus Christ, not from Jerusalem’s curriculum. The road explains his lifelong claim to apostolic authority and his shock that anyone would rebuild the law as a second gate to belonging.",
+      "themeIds": [
+        "resurrection",
+        "apostolic-authority",
+        "suffering"
+      ],
+      "culturalDistinctive": "A journey of zeal turned inside out. Resurrection appearance, not philosophical debate, creates an apostle.",
+      "journeyLinks": {
+        "prevCityIds": [],
+        "nextCityIds": []
+      },
+      "letterIds": [
+        "galatians"
+      ]
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 9:10–25",
+          "search": "Acts 9:10-25"
+        },
+        {
+          "label": "Acts 22:12–16",
+          "search": "Acts 22:12-16"
+        },
+        {
+          "label": "Galatians 1:15–17",
+          "search": "Galatians 1:15-17"
+        },
+        {
+          "label": "2 Corinthians 11:32–33",
+          "search": "2 Corinthians 11:32-33"
+        }
+      ],
+      "politicalStatus": "Major city of Roman Syria; large Jewish population with synagogue authority that Saul once carried papers to enlist.",
+      "intro": "An ancient oasis city where a blinded zealot recovers sight, takes baptism, and immediately preaches the Jesus he came to erase. Streets called Straight still run through the story. From here Paul slips the city walls in a basket—and the hunted hunter begins.",
+      "id": "damascus",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Damascus ministry and escape under Aretas."
+        },
+        {
+          "label": "Acts 9 / Galatians 1",
+          "note": "Baptism, preaching, and Arabian interlude."
+        }
+      ],
+      "paulThere": "Ananias lays on hands; Saul is baptized and proclaims Jesus in the synagogues (Acts 9:10–25). Galatians 1 notes a later return to Damascus after Arabia. The city’s first reception of Paul—sight restored, identity rewritten—echoes whenever he argues that baptism and faith, not pedigree, mark belonging to Christ.",
+      "themeIds": [
+        "baptism",
+        "jewish-diaspora",
+        "apostolic-authority"
+      ],
+      "culturalDistinctive": "Diaspora Jewish stronghold on the desert edge of the empire. Hospitality of Ananias meets murderous plots in the same week.",
+      "journeyLinks": {
+        "prevCityIds": [],
+        "nextCityIds": []
+      },
+      "letterIds": [
+        "galatians"
+      ]
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 21:8–14",
+          "search": "Acts 21:8-14"
+        },
+        {
+          "label": "Acts 23:23–35",
+          "search": "Acts 23:23-35"
+        },
+        {
+          "label": "Acts 24:1–27",
+          "search": "Acts 24:1-27"
+        },
+        {
+          "label": "Acts 25:1–12",
+          "search": "Acts 25:1-12"
+        },
+        {
+          "label": "Acts 26:1–32",
+          "search": "Acts 26:1-32"
+        }
+      ],
+      "politicalStatus": "Roman provincial capital of Judea; residence of the procurator, with a mixed Gentile–Jewish population and strong imperial presence.",
+      "intro": "Herod’s showcase harbor—Roman theater, pagan temples, and the governor’s seat. Paul lands here as a free missionary and later sits two years as a chained witness before Felix, Festus, and Agrippa. Consensus places no letter securely from this custody; the city still teaches how citizenship and confession meet.",
+      "id": "caesarea",
+      "sources": [
+        {
+          "label": "journeys.json imprisonments",
+          "note": "Caesarea custody AD 57–59; no letter securely placed."
+        },
+        {
+          "label": "F. F. Bruce",
+          "note": "Felix, Festus, Agrippa hearings."
+        }
+      ],
+      "paulThere": "Philip the evangelist hosts him; Agabus warns of binding in Jerusalem (Acts 21:8–14). After the temple riot, soldiers rush him here (Acts 23). Two years under Felix, defense before Festus and Agrippa, then the voyage to Rome (Acts 24–27). Wider Protestant debate sometimes parks prison letters in Caesarea; Consensus keeps Ephesians, Colossians, Philemon, and Philippians at Rome. What is sure: here Paul practices the citizenship he later theorizes and suffers as a witness under governors.",
+      "themeIds": [
+        "roman-citizenship",
+        "suffering",
+        "apostolic-authority"
+      ],
+      "culturalDistinctive": "Coastal Rome-in-Judea: emperor honor, military force, and Jewish grievance in the same streets. Appeal to Caesar is a legal exit ramp.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "ephesus",
+          "tyre"
+        ],
+        "nextCityIds": [
+          "jerusalem",
+          "sidon"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 16:9–10",
+          "search": "Acts 16:9-10"
+        },
+        {
+          "label": "Acts 20:1–3",
+          "search": "Acts 20:1-3"
+        },
+        {
+          "label": "2 Corinthians 2:12–13",
+          "search": "2 Corinthians 2:12-13"
+        },
+        {
+          "label": "2 Corinthians 7:5–7",
+          "search": "2 Corinthians 7:5-7"
+        },
+        {
+          "label": "2 Corinthians 8:1–5",
+          "search": "2 Corinthians 8:1-5"
+        },
+        {
+          "label": "1 Timothy 1:3",
+          "search": "1 Timothy 1:3"
+        }
+      ],
+      "politicalStatus": "Roman province north of Achaia; key cities include Philippi (colony), Thessalonica (free city), and Berea.",
+      "intro": "Call it a region of roads and partners: Philippi’s colony pride, Thessalonica’s free-city bustle, Berea’s open scrolls. Paul crosses here by vision, suffers here, and later writes from here with a heart cracked open. 2 Corinthians smells like Macedonian travel—comfort after affliction, and a collection that puts Achaea to shame.",
+      "id": "macedonia",
+      "sources": [
+        {
+          "label": "Consensus dating",
+          "note": "2 Corinthians from Macedonia; 1 Timothy/Titus after Acts from a Macedonian window."
+        },
+        {
+          "label": "F. F. Bruce",
+          "note": "Macedonian churches and the collection."
+        }
+      ],
+      "paulThere": "Second journey: Philippi, Thessalonica, Berea (Acts 16–17). Third journey: after Ephesus he passes through Macedonia, finds Titus, and writes 2 Corinthians (Consensus origin). After Acts, Consensus also hears 1 Timothy and Titus written on a Macedonian trajectory—Timothy left in Ephesus, Titus aimed at Crete and a winter at Nicopolis. The region taught Paul how affliction and comfort travel together, and how poor churches can lead the collection.",
+      "themeIds": [
+        "collection-for-the-poor",
+        "suffering",
+        "hospitality"
+      ],
+      "culturalDistinctive": "Via Egnatia corridor; Greek speech under Roman order. Churches here became models of generosity under poverty and partnership under pressure.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "troas"
+        ],
+        "nextCityIds": [
+          "corinth"
+        ]
+      },
+      "letterIds": [
+        "2corinthians",
+        "1timothy",
+        "titus"
+      ]
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Titus 1:5–16",
+          "search": "Titus 1:5-16"
+        },
+        {
+          "label": "Titus 2:1–15",
+          "search": "Titus 2:1-15"
+        },
+        {
+          "label": "Titus 3:1–8",
+          "search": "Titus 3:1-8"
+        },
+        {
+          "label": "Acts 27:7–13",
+          "search": "Acts 27:7-13"
+        }
+      ],
+      "politicalStatus": "Roman province (Crete and Cyrene); strategic Mediterranean island with multiple towns rather than one dominant capital for the church’s work.",
+      "intro": "Long island, short reputations, and towns that still need elders. Paul leaves Titus here to finish what itinerant preaching began—appointing overseers house by house. The letter that follows is island pastoral work: sound doctrine against empty talk, households ordered by grace.",
+      "id": "crete",
+      "sources": [
+        {
+          "label": "Consensus dating",
+          "note": "Titus after Acts; Crete as delegate field."
+        },
+        {
+          "label": "John Stott / evangelical Pastorals",
+          "note": "Elders and grace on Crete."
+        }
+      ],
+      "paulThere": "Acts 27 hugs the coast at Fair Havens on the Rome voyage—storm geography, not yet the Titus mission. Consensus: after Acts, Paul and Titus work on Crete; Paul leaves Titus to appoint elders in every town (Titus 1:5) and writes from a Macedonian / Nicopolis trajectory. The island’s unfinished churches explain why Titus stresses elders, sound teaching, and grace that trains holy living.",
+      "themeIds": [
+        "elders-oversight",
+        "household-codes",
+        "law-vs-grace"
+      ],
+      "culturalDistinctive": "Classical stereotypes of Cretan deceit (quoted in Titus 1:12) meet real synagogue and pagan mix. Church order must be planted town by town.",
+      "journeyLinks": {
+        "prevCityIds": [],
+        "nextCityIds": []
+      },
+      "letterIds": [
+        "titus"
+      ]
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Titus 3:12–15",
+          "search": "Titus 3:12-15"
+        },
+        {
+          "label": "Titus 1:5",
+          "search": "Titus 1:5"
+        },
+        {
+          "label": "2 Timothy 4:10–12",
+          "search": "2 Timothy 4:10-12"
+        }
+      ],
+      "politicalStatus": "Roman city in Epirus (Actium region), founded to commemorate Augustus’s victory; later a regional center on the western Greek coast.",
+      "intro": "Victory City—Augustus’s memorial on the Adriatic after Actium. Paul tells Titus to meet him here for the winter. It is a planning pin on the map more than a long narrative stop: a harbor where pastoral letters aim toward rest, reinforcements, and the next assignment.",
+      "id": "nicopolis",
+      "sources": [
+        {
+          "label": "Consensus dating",
+          "note": "Titus on a trajectory toward wintering at Nicopolis."
+        },
+        {
+          "label": "F. F. Bruce",
+          "note": "After-Acts travels and Pastoral geography."
+        }
+      ],
+      "paulThere": "Titus 3:12: Paul will send Artemas or Tychicus, and Titus is to join him at Nicopolis, where he has decided to winter. Consensus reads this on the after-Acts itinerary shared with 1 Timothy—Macedonia-facing plans, Crete behind Titus, winter ahead. No full Acts scene unfolds here; the letter’s logistics still root pastoral care in real roads and seasons.",
+      "themeIds": [
+        "hospitality",
+        "elders-oversight",
+        "prayer-intercession"
+      ],
+      "culturalDistinctive": "Imperial victory branding and winter-port practicality. Ministry calendars, not monuments, drive Paul’s mention.",
+      "journeyLinks": {
+        "prevCityIds": [],
+        "nextCityIds": []
+      },
+      "letterIds": [
+        "titus"
+      ]
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 17:16–34",
+          "search": "Acts 17:16-34"
+        },
+        {
+          "label": "1 Thessalonians 3:1–2",
+          "search": "1 Thessalonians 3:1-2"
+        },
+        {
+          "label": "Romans 1:18–23",
+          "search": "Romans 1:18-23"
+        }
+      ],
+      "politicalStatus": "Free city famous for culture more than power; under Roman Achaia, living on classical prestige.",
+      "intro": "Idols on every corner and philosophers in the agora—Paul’s spirit is provoked before his mouth is opened. On the Areopagus he names the unknown God and announces a risen man appointed to judge the world. A few believe; most postpone. Then the road bends toward Corinth’s messier harvest.",
+      "id": "athens",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Areopagus address and Athenian setting."
+        },
+        {
+          "label": "Acts 17",
+          "note": "Primary narrative for the stop."
+        }
+      ],
+      "paulThere": "Waiting for Silas and Timothy, Paul reasons in the synagogue and marketplace, then addresses the Areopagus (Acts 17:16–34). Dionysius, Damaris, and others join him; there is no long plant and no letter from Athens. The sermon’s arc—creation, ignorance overlooked, repentance, resurrection—previews how he will later write about idols, conscience, and the risen Christ to churches in denser conflict.",
+      "themeIds": [
+        "resurrection",
+        "syncretism",
+        "jewish-diaspora"
+      ],
+      "culturalDistinctive": "Stoic and Epicurean debate culture; altar piety and intellectual curiosity. Resurrection lands as folly before it lands as faith.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "berea"
+        ],
+        "nextCityIds": [
+          "corinth"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 16:8–10",
+          "search": "Acts 16:8-10"
+        },
+        {
+          "label": "Acts 20:5–12",
+          "search": "Acts 20:5-12"
+        },
+        {
+          "label": "2 Corinthians 2:12–13",
+          "search": "2 Corinthians 2:12-13"
+        },
+        {
+          "label": "2 Timothy 4:13",
+          "search": "2 Timothy 4:13"
+        }
+      ],
+      "politicalStatus": "Roman colony and port (Alexandria Troas) in the province of Asia, gateway toward Macedonia by sea.",
+      "intro": "Aegean hinge between Asia and Macedonia: warehouses, night sermons, and open doors that still leave Paul restless for people. A Macedonian vision launches Europe from here; years later Eutychus falls from a window and rises. Even a cloak left behind makes it into a last letter.",
+      "id": "troas",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Troas as Aegean crossing and Acts 20 narrative."
+        },
+        {
+          "label": "2 Corinthians 2",
+          "note": "Open door and unrest over Titus."
+        }
+      ],
+      "paulThere": "Second journey: the Spirit redirects him here; the Macedonian vision sends the team across (Acts 16:8–10). Third journey: a door for the gospel in Troas while he frets for Titus (2 Corinthians 2:12–13); later a week of fellowship, the breaking of bread, and Eutychus raised (Acts 20:5–12). 2 Timothy 4:13 remembers a cloak and books left with Carpus. The port taught Paul that open doors and aching absences can share the same week.",
+      "themeIds": [
+        "hospitality",
+        "lords-supper",
+        "suffering"
+      ],
+      "culturalDistinctive": "Transit culture—sailors, merchants, and short stays. Mission decisions and pastoral farewells happen in rented upper rooms.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "ephesus",
+          "galatia",
+          "philippi"
+        ],
+        "nextCityIds": [
+          "macedonia",
+          "miletus",
+          "philippi"
+        ]
+      },
+      "letterIds": [
+        "2corinthians",
+        "2timothy"
+      ]
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 13:4–12",
+          "search": "Acts 13:4-12"
+        },
+        {
+          "label": "Acts 13:13",
+          "search": "Acts 13:13"
+        }
+      ],
+      "politicalStatus": "Seat of the Roman proconsul of Cyprus; administrative center of the island province.",
+      "intro": "Western tip of Cyprus, where a proconsul keeps a court magician and the gospel walks in anyway. Paul blinds Elymas and Sergius Paulus believes—the first named Roman official in Acts to turn. From here the team sails for Pamphylia with a new gravity to Paul’s lead.",
+      "id": "cyprus",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Sergius Paulus and the Paphos encounter."
+        },
+        {
+          "label": "Acts 13",
+          "note": "Primary narrative; id cyprus = Paphos on the map."
+        }
+      ],
+      "paulThere": "First journey with Barnabas: after Salamis they reach Paphos; Elymas opposes them before Sergius Paulus; Paul announces temporary blindness and the proconsul believes (Acts 13:4–12). From this point Acts often leads with “Paul and his companions.” No letter is tied to Paphos, but the pattern—gospel versus occult power under Roman eyes—returns in Ephesus and beyond.",
+      "themeIds": [
+        "angels-spiritual-powers",
+        "syncretism",
+        "roman-citizenship"
+      ],
+      "culturalDistinctive": "Aphrodite’s island reputation meets synagogue and court intrigue. Power encounters, not only sermons, mark the advance.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "salamis"
+        ],
+        "nextCityIds": [
+          "perga"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 13:4–5",
+          "search": "Acts 13:4-5"
+        },
+        {
+          "label": "Acts 4:36–37",
+          "search": "Acts 4:36-37"
+        },
+        {
+          "label": "Acts 11:19–20",
+          "search": "Acts 11:19-20"
+        }
+      ],
+      "politicalStatus": "Major city on Cyprus’s east coast under Roman provincial rule; important Jewish community.",
+      "intro": "Eastern Cyprus landfall—Barnabas’s home waters and a string of synagogues along the coast. The first journey does not begin with a riot or a proconsul; it begins with familiar diaspora doors. Salamis is the quiet on-ramp before Paphos’s confrontation.",
+      "id": "salamis",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Barnabas, Cyprus, and first-journey landfall."
+        },
+        {
+          "label": "Acts 13",
+          "note": "Synagogue preaching at Salamis."
+        }
+      ],
+      "paulThere": "Acts 13:4–5: sent from Antioch, they sail to Salamis and proclaim the word in the synagogues, with John Mark as helper. Then they work across the island to Paphos. No letter roots here; the stop models the pattern Paul will repeat from Pisidian Antioch to Corinth—Jew first, then the wider city.",
+      "themeIds": [
+        "jewish-diaspora",
+        "synagogue-vs-house-church",
+        "hospitality"
+      ],
+      "culturalDistinctive": "Diaspora synagogue network as the default first stop. Kinship (Barnabas) and Scripture reading open the mission before Gentile courts do.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "antioch"
+        ],
+        "nextCityIds": [
+          "cyprus"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 9:28–30",
+          "search": "Acts 9:28-30"
+        },
+        {
+          "label": "Acts 11:25–26",
+          "search": "Acts 11:25-26"
+        },
+        {
+          "label": "Acts 21:39",
+          "search": "Acts 21:39"
+        },
+        {
+          "label": "Acts 22:3",
+          "search": "Acts 22:3"
+        },
+        {
+          "label": "Philippians 3:4–9",
+          "search": "Philippians 3:4-9"
+        }
+      ],
+      "politicalStatus": "Capital of Cilicia; free city with noted schools, under Roman provincial structures; Paul’s family held Roman citizenship.",
+      "intro": "Cilician university city and Paul’s hometown—Roman citizenship, Jewish training, and tent-trade skill in one upbringing. After conversion he waits here until Barnabas pulls him to Antioch. The man who will argue law and grace across the empire first learned both Torah and polis streets in this place.",
+      "id": "tarsus",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Tarsus, citizenship, and Paul’s early years."
+        },
+        {
+          "label": "Acts 21–22",
+          "note": "Paul’s self-identification as a Tarsian and citizen."
+        }
+      ],
+      "paulThere": "Born here (Acts 22:3); after Damascus and Jerusalem he is sent to Tarsus for safety (Acts 9:30). Barnabas later seeks him for Antioch’s teaching work (Acts 11:25–26). Second journey: the team passes this way from Antioch toward Derbe and the Galatian towns (Acts 15:41–16:1). No letter is written to Tarsus, yet Philippians 3 and Romans flash the résumé this city helped form—and the gospel that relativized it.",
+      "themeIds": [
+        "roman-citizenship",
+        "jewish-diaspora",
+        "law-vs-grace"
+      ],
+      "culturalDistinctive": "Diaspora Judaism inside a proud Hellenistic city. Citizenship and synagogue formation sit side by side in Paul’s biography.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "antioch"
+        ],
+        "nextCityIds": [
+          "derbe"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Lystra stoning and Timothy’s background."
+        }
+      ],
+      "politicalStatus": "Roman colony in Lycaonia (south Galatia); rural-colonial culture under Rome.",
+      "paulThere": "First journey: healing at Lystra sparks worship of the apostles as Hermes and Zeus; they tear their garments and preach the living God; then Paul is stoned and left for dead, yet enters the city again and goes on to Derbe (Acts 14:8–20). Return visits strengthen disciples. On the second journey Paul circumcises Timothy—son of a Jewish believer and Greek father—because of the Jews in those places (Acts 16:1–3). Lystra’s scars and Timothy’s home feed both Galatians’ southern story and the Pastorals’ personal bond.",
+      "themeIds": [
+        "suffering",
+        "syncretism",
+        "circumcision"
+      ],
+      "id": "lystra",
+      "letterIds": [
+        "galatians"
+      ],
+      "journeyLinks": {
+        "prevCityIds": [
+          "derbe",
+          "iconium"
+        ],
+        "nextCityIds": [
+          "derbe",
+          "iconium"
+        ]
+      },
+      "culturalDistinctive": "Local pagan legend (Zeus/Hermes) meets gospel power; bilingual frontier life; Timothy’s mixed Jewish-Greek household.",
+      "intro": "Out here the crowd still speaks Lycaonian and tells Zeus-and-Hermes stories. When a lame man walks, they nearly sacrifice to Paul and Barnabas as gods—then, swayed by opponents from Antioch and Iconium, they stone Paul and drag him outside the city for dead. From this rough colony comes Timothy, Paul’s true child in the faith.",
+      "scriptureAnchors": [
+        {
+          "label": "Acts 14:8–20",
+          "search": "Acts 14:8-20"
+        },
+        {
+          "label": "Acts 16:1–3",
+          "search": "Acts 16:1-3"
+        },
+        {
+          "label": "2 Timothy 3:10–11",
+          "search": "2 Timothy 3:10-11"
+        },
+        {
+          "label": "Galatians 6:17",
+          "search": "Galatians 6:17"
+        }
+      ]
+    },
+    {
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Derbe as eastern limit of Acts 14."
+        }
+      ],
+      "politicalStatus": "City of Lycaonia in the Roman province of Galatia; frontier town on the southeastern edge of the first-journey circuit.",
+      "paulThere": "After the Lystra stoning, Paul goes to Derbe and preaches; many disciples are made (Acts 14:20–21). Instead of escaping east, they return through Lystra, Iconium, and Pisidian Antioch, appointing elders. On the second journey Derbe is reached again via Tarsus before Lystra and Timothy’s call (Acts 16:1). Derbe completes the Consensus south-Galatia set tied to Galatians.",
+      "themeIds": [
+        "elders-oversight",
+        "jew-gentile-unity",
+        "apostolic-authority"
+      ],
+      "id": "derbe",
+      "letterIds": [
+        "galatians"
+      ],
+      "journeyLinks": {
+        "prevCityIds": [
+          "lystra",
+          "tarsus"
+        ],
+        "nextCityIds": [
+          "lystra"
+        ]
+      },
+      "culturalDistinctive": "End-of-road south-Galatian plant: less drama in Acts, same gospel and later the same Galatians crisis.",
+      "intro": "Derbe is the eastern turn of the first journey—the last new town before Paul and Barnabas double back through danger. No riot is recorded here, only disciples made and later revisited. On the map of south Galatia, Derbe is the quiet hinge where mission turns into pastoral return.",
+      "scriptureAnchors": [
+        {
+          "label": "Acts 14:20–23",
+          "search": "Acts 14:20-23"
+        },
+        {
+          "label": "Acts 16:1–5",
+          "search": "Acts 16:1-5"
+        },
+        {
+          "label": "Galatians 1:1–5",
+          "search": "Galatians 1:1-5"
+        },
+        {
+          "label": "Acts 20:4",
+          "search": "Acts 20:4"
+        }
+      ]
+    },
+    {
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Iconium on the first-journey circuit."
+        }
+      ],
+      "politicalStatus": "Major city of south Galatia (Lycaonian/Phrygian border zone) under Roman provincial rule.",
+      "paulThere": "On the first journey Paul and Barnabas speak in the synagogue; a great number believe; unbelieving Jews poison minds; the apostles stay a long time with bold speech and miracles until a stoning plot drives them to Lystra and Derbe (Acts 14:1–7). They revisit on the return (Acts 14:21–22) and again on the second journey as Paul strengthens the churches (Acts 16:1–5). Iconium belongs to the south-Galatia cluster addressed in Galatians.",
+      "themeIds": [
+        "suffering",
+        "apostolic-authority",
+        "synagogue-vs-house-church"
+      ],
+      "id": "iconium",
+      "letterIds": [
+        "galatians"
+      ],
+      "journeyLinks": {
+        "prevCityIds": [
+          "lystra",
+          "pisidian_antioch"
+        ],
+        "nextCityIds": [
+          "galatia",
+          "lystra",
+          "pisidian_antioch"
+        ]
+      },
+      "culturalDistinctive": "Busy inland hub where Jewish and Gentile hearers split over the apostles—long stay, then sudden danger.",
+      "intro": "Iconium sits on the road between Pisidian Antioch and Lystra—another synagogue, another divided city. Signs and wonders accompany the word; plots force a flight; yet disciples remain. Galatia’s gospel took root in places that learned early how quickly favor can turn to stones.",
+      "scriptureAnchors": [
+        {
+          "label": "Acts 14:1–7",
+          "search": "Acts 14:1-7"
+        },
+        {
+          "label": "Acts 14:21–22",
+          "search": "Acts 14:21-22"
+        },
+        {
+          "label": "Acts 16:1–5",
+          "search": "Acts 16:1-5"
+        },
+        {
+          "label": "2 Timothy 3:10–12",
+          "search": "2 Timothy 3:10-12"
+        }
+      ]
+    },
+    {
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Acts 13 sermon and south-Galatian itinerary."
+        }
+      ],
+      "politicalStatus": "Roman colony in the province of Galatia (Pisidian region); strategic military and administrative center.",
+      "paulThere": "First journey: after Perga, Paul and Barnabas enter the synagogue; Paul’s sermon (Acts 13:16–41) proclaims forgiveness through Jesus. Many believe; the next Sabbath draws crowds; Jewish opposition expels them (Acts 13:42–52). They return strengthening disciples on the way home (Acts 14:21–23). As a south-Galatian plant, this city sits under Galatians’ crisis when circumcision teachers later unsettle the churches.",
+      "themeIds": [
+        "jewish-diaspora",
+        "jew-gentile-unity",
+        "justification"
+      ],
+      "id": "pisidian_antioch",
+      "letterIds": [
+        "galatians"
+      ],
+      "journeyLinks": {
+        "prevCityIds": [
+          "iconium",
+          "perga"
+        ],
+        "nextCityIds": [
+          "iconium",
+          "perga"
+        ]
+      },
+      "culturalDistinctive": "Latin colony pride mixed with a strong Jewish diaspora presence. Synagogue first, then open Gentile hearing—pattern for the Galatian mission.",
+      "intro": "High on the plateau, a Roman colony watches the road from Perga. Paul walks into the synagogue, stands up after the reading, and preaches Jesus from Israel’s story so clearly that the next Sabbath nearly the whole city shows up. Jealousy follows; so does a Gentile church—and dust shaken off toward Iconium.",
+      "scriptureAnchors": [
+        {
+          "label": "Acts 13:13–52",
+          "search": "Acts 13:13-52"
+        },
+        {
+          "label": "Acts 14:21–23",
+          "search": "Acts 14:21-23"
+        },
+        {
+          "label": "Galatians 3:1–14",
+          "search": "Galatians 3:1-14"
+        },
+        {
+          "label": "Galatians 4:12–20",
+          "search": "Galatians 4:12-20"
+        }
+      ]
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 13:13–14",
+          "search": "Acts 13:13-14"
+        },
+        {
+          "label": "Acts 14:24–26",
+          "search": "Acts 14:24-26"
+        },
+        {
+          "label": "Acts 15:37–39",
+          "search": "Acts 15:37-39"
+        }
+      ],
+      "politicalStatus": "Leading city of Pamphylia under Roman rule; coastal plain linked by road to Pisidian Antioch in the mountains.",
+      "intro": "Pamphylian river city south of the Galatian climb—landing after Cyprus, gateway before the highlands. John Mark turns back here; Paul and Barnabas press inland. On the return they speak the word in Perga again before sailing home to Antioch.",
+      "id": "perga",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Pamphylia landing and John Mark’s departure."
+        },
+        {
+          "label": "Acts 13–14",
+          "note": "Outbound and return mentions of Perga."
+        }
+      ],
+      "paulThere": "First journey: from Paphos they come to Perga; John Mark leaves for Jerusalem (Acts 13:13). Paul and Barnabas go on to Pisidian Antioch and the Galatian circuit, then preach again in Perga on the way back (Acts 14:25) before returning to Syrian Antioch. The Mark incident later sparks a sharp disagreement (Acts 15:37–39)—a reminder that even sending churches and trusted cousins can split over the road.",
+      "themeIds": [
+        "suffering",
+        "hospitality",
+        "jewish-diaspora"
+      ],
+      "culturalDistinctive": "Harbor-and-plain culture beneath Anatolian highlands. Team fracture and mission perseverance share the same dock.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "cyprus",
+          "pisidian_antioch"
+        ],
+        "nextCityIds": [
+          "antioch",
+          "pisidian_antioch"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 20:15–38",
+          "search": "Acts 20:15-38"
+        },
+        {
+          "label": "1 Timothy 1:3–7",
+          "search": "1 Timothy 1:3-7"
+        },
+        {
+          "label": "1 Timothy 4:11–16",
+          "search": "1 Timothy 4:11-16"
+        }
+      ],
+      "politicalStatus": "Ancient Ionian port in the province of Asia; still a working harbor in Paul’s day, linked by road to Ephesus.",
+      "intro": "South of Ephesus, a harbor where Paul skips the city he loves to keep the feast timetable—and summons the elders instead. On the beach he rehearses a ministry of tears, warns of wolves, and kneels in prayer. If you want the tone behind the Pastorals’ charge to guard the flock, listen here.",
+      "id": "miletus",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Miletus speech and Ephesian elders."
+        },
+        {
+          "label": "John Stott",
+          "note": "Pastoral charge and tears in Acts 20."
+        }
+      ],
+      "paulThere": "Third journey homeward: Paul bypasses Ephesus, calls the elders to Miletus, and delivers the Acts 20 charge—innocent of blood, watchful for wolves, commended to God and the word of grace (Acts 20:17–38). No letter is written from Miletus, but 1 Timothy’s Ephesian station and the suffering notes of later captivity rhyme with this beach sermon. Tears and oversight travel together from here toward Jerusalem.",
+      "themeIds": [
+        "elders-oversight",
+        "suffering",
+        "prayer-intercession"
+      ],
+      "culturalDistinctive": "Farewell geography: ships waiting, elders gathered, prophecy of chains ahead. Pastoral oversight is personal before it is institutional.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "troas"
+        ],
+        "nextCityIds": [
+          "tyre"
+        ]
+      },
+      "letterIds": [
+        "1timothy"
+      ]
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 27:39–44",
+          "search": "Acts 27:39-44"
+        },
+        {
+          "label": "Acts 28:1–10",
+          "search": "Acts 28:1-10"
+        }
+      ],
+      "politicalStatus": "Island under Roman rule (linked with Sicily’s administration); strategic stop on grain and prisoner routes to Italy.",
+      "intro": "Storm’s end: a bay, a fire, a viper that does not win, and islanders who show unusual kindness. Paul heals the chief man’s father and many others while winter holds the ship. Three months of hospitality turn shipwreck into witness before the voyage resumes toward Sicily.",
+      "id": "malta",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Malta winter and Publius."
+        },
+        {
+          "label": "Acts 28",
+          "note": "Hospitality and healings after shipwreck."
+        }
+      ],
+      "paulThere": "Acts 28:1–10: after the wreck, Maltese hospitality; Paul survives a viper bite; Publius hosts them; healings follow; the islanders honor the party with supplies for the next leg. No letter is written here, but the pattern—suffering, providence, Gentile hospitality—echoes themes Paul had already preached and would keep living unto Rome.",
+      "themeIds": [
+        "hospitality",
+        "suffering",
+        "angels-spiritual-powers"
+      ],
+      "culturalDistinctive": "Local kindness and superstition meet apostolic healing. Survival itself becomes a sign.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "fair_havens"
+        ],
+        "nextCityIds": [
+          "syracuse"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 28:11–16",
+          "search": "Acts 28:11-16"
+        },
+        {
+          "label": "Romans 1:8–15",
+          "search": "Romans 1:8-15"
+        },
+        {
+          "label": "Romans 15:22–29",
+          "search": "Romans 15:22-29"
+        }
+      ],
+      "politicalStatus": "Principal Italian port for Alexandrian grain and eastern traffic under Roman administration; gateway to the capital by road.",
+      "intro": "Italian landfall in the Bay of Naples—grain ships, warehouses, and believers who already wait on the pier. Paul thanks God and takes courage. From here the Appian Way walk begins: Forum of Appius, Three Taverns, then Rome.",
+      "id": "puteoli",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Puteoli landfall and road to Rome."
+        },
+        {
+          "label": "Acts 28",
+          "note": "Brothers at Puteoli and courage renewed."
+        }
+      ],
+      "paulThere": "Acts 28:13–14: after Rhegium, they reach Puteoli and find brothers who invite them to stay seven days. Then the walk to Rome, encouraged by believers from the city who come out to meet him. No letter originates on this dock; Romans had already been written years earlier from Corinth. The landing fulfills the longing of that letter—Paul finally enters Italy as a prisoner and a guest.",
+      "themeIds": [
+        "hospitality",
+        "roman-citizenship",
+        "suffering"
+      ],
+      "culturalDistinctive": "Commercial Italy with an existing network of Christ-followers. Arrival is not into empty territory but into hospitality already prepared.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "rhegium"
+        ],
+        "nextCityIds": [
+          "rome"
+        ]
+      },
+      "letterIds": [
+        "romans"
+      ]
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 17:10–15",
+          "search": "Acts 17:10-15"
+        },
+        {
+          "label": "Acts 20:4",
+          "search": "Acts 20:4"
+        }
+      ],
+      "politicalStatus": "City in Macedonia southwest of Thessalonica; less politically flashy than the provincial capital, still under Roman Macedonia.",
+      "intro": "Off the Via Egnatia’s hottest glare, a synagogue that examines the Scriptures daily. Noble-minded hearers believe—Jews, Greek women of standing, and men—until Thessalonian agitators arrive. Paul is escorted to the coast; Silas and Timothy stay. The town’s gift to the church is a habit: test everything by the Book.",
+      "id": "berea",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Berea’s synagogue and noble-minded hearers."
+        },
+        {
+          "label": "Acts 17",
+          "note": "Primary narrative after Thessalonica."
+        }
+      ],
+      "paulThere": "Acts 17:10–15: after the Thessalonian riot, Paul and Silas come by night; many believe until opponents chase them down. Paul departs for Athens; companions remain. No Pauline letter is addressed to Berea, yet the pattern of Word-centered reception stands behind his later appeals to Scripture and discernment in the Macedonian and Corinthian correspondence.",
+      "themeIds": [
+        "jewish-diaspora",
+        "synagogue-vs-house-church",
+        "women-in-worship"
+      ],
+      "culturalDistinctive": "Scripture-searching diaspora synagogue; receptivity without gullibility. Leading women again appear among the first believers.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "thessalonica"
+        ],
+        "nextCityIds": [
+          "athens"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 27:1–3",
+          "search": "Acts 27:1-3"
+        },
+        {
+          "label": "Acts 21:3–6",
+          "search": "Acts 21:3-6"
+        }
+      ],
+      "politicalStatus": "Ancient Phoenician port under Roman provincial oversight in Syria/Phoenicia; commercial coast city north of Tyre and Caesarea’s sailing lanes.",
+      "intro": "Phoenician coast, first kindness on the prisoner voyage. Julius the centurion lets Paul visit friends who refresh him before the ship pushes west. A small stop—yet Acts refuses to skip the mercy of a harbor and a meal.",
+      "id": "sidon",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Rome-voyage coastal calls."
+        },
+        {
+          "label": "Acts 27",
+          "note": "Sidon refreshment under Julius."
+        }
+      ],
+      "paulThere": "Acts 27:3: sailing from Caesarea toward Rome, they touch at Sidon; Julius allows Paul to go to friends and be cared for. Then the voyage continues under Cyprus toward Myra. No letter is tied to Sidon; the visit simply shows how networks of care already laced the coast before Paul ever saw Italy.",
+      "themeIds": [
+        "hospitality",
+        "suffering",
+        "jewish-diaspora"
+      ],
+      "culturalDistinctive": "Maritime trade and local Christian friends already in place. Custody does not cancel hospitality.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "caesarea"
+        ],
+        "nextCityIds": [
+          "myra"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 27:4–8",
+          "search": "Acts 27:4-8"
+        }
+      ],
+      "politicalStatus": "City of Lycia under Roman rule; key southern Asia Minor harbor on the Egypt–Rome grain route.",
+      "intro": "Lycian transfer port where an Alexandrian grain ship waits for Italy. Paul changes vessels here under guard—logistics that will carry him into Fair Havens and the storm. Empire moves wheat; Providence moves a witness.",
+      "id": "myra",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Alexandrian grain ship and Lycian transfer."
+        },
+        {
+          "label": "Acts 27",
+          "note": "Myra as embarkation for the storm leg."
+        }
+      ],
+      "paulThere": "Acts 27:5–6: after sailing under Cyprus, they land at Myra; Julius finds an Alexandrian ship bound for Italy and embarks the party. From here the slow, contrary voyage toward Crete begins. No letter is written at Myra; the stop is pure Acts itinerary—yet without this transfer there is no Malta story and no Roman witness in the same form.",
+      "themeIds": [
+        "suffering",
+        "hospitality",
+        "roman-citizenship"
+      ],
+      "culturalDistinctive": "Shipping hub culture—centurions, sailors, and cargo schedules. Prisoners travel as freight with a passport of chains.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "sidon"
+        ],
+        "nextCityIds": [
+          "fair_havens"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 27:7–20",
+          "search": "Acts 27:7-20"
+        },
+        {
+          "label": "Acts 27:21–26",
+          "search": "Acts 27:21-26"
+        },
+        {
+          "label": "Titus 1:5",
+          "search": "Titus 1:5"
+        }
+      ],
+      "politicalStatus": "Anchorage on Crete’s south coast under Roman Crete; not a major city, but a seasonal decision point on the Rome run.",
+      "intro": "A Cretan anchorage that is safe enough—and not safe enough for winter. Paul warns; the majority votes for Phoenix; the northeaster wins. Fair Havens is where counsel and commerce disagree, and the storm writes the next chapter.",
+      "id": "fair_havens",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Fair Havens decision and the Euroclydon."
+        },
+        {
+          "label": "Acts 27",
+          "note": "Paul’s warning ignored; storm follows."
+        }
+      ],
+      "paulThere": "Acts 27:7–12: the voyage hugs Crete to Fair Havens near Lasea. Paul advises staying; the helmsman and owner prefer a better winter harbor. They sail, and the tempest called Euroclydon drives them toward shipwreck. Titus later works this same island in peacetime; Fair Havens shows Crete first as storm geography on the way to Rome.",
+      "themeIds": [
+        "suffering",
+        "apostolic-authority",
+        "conscience"
+      ],
+      "culturalDistinctive": "Sailor pragmatism versus apostolic warning. Majority votes do not bind the wind.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "myra"
+        ],
+        "nextCityIds": [
+          "malta"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 28:11–12",
+          "search": "Acts 28:11-12"
+        }
+      ],
+      "politicalStatus": "Major city of Roman Sicily; historic Greek colony turned provincial center and port.",
+      "intro": "Sicily’s great harbor after Malta’s winter—three days to breathe, refit, and aim for the toe of Italy. Acts gives no sermon transcript, only the itinerary of a prisoner still under promise: you must stand before Caesar.",
+      "id": "syracuse",
+      "sources": [
+        {
+          "label": "Acts 28",
+          "note": "Three-day Sicilian stop after Malta."
+        },
+        {
+          "label": "F. F. Bruce",
+          "note": "Final sea legs toward Puteoli."
+        }
+      ],
+      "paulThere": "Acts 28:11–12: after three months on Malta they sail on an Alexandrian ship and put in at Syracuse for three days, then make Rhegium and Puteoli. No letter or extended ministry is recorded; the stop simply stitches Malta’s hospitality to Italy’s road.",
+      "themeIds": [
+        "hospitality",
+        "suffering",
+        "roman-citizenship"
+      ],
+      "culturalDistinctive": "Mediterranean crossroads memory—Greek past, Roman present. Short call, long route still ahead.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "malta"
+        ],
+        "nextCityIds": [
+          "rhegium"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 28:13–14",
+          "search": "Acts 28:13-14"
+        }
+      ],
+      "politicalStatus": "Roman city at Italy’s southern tip (Reggium), controlling the strait toward Sicily.",
+      "intro": "Toe of Italy, strait of Messina—wait for a south wind, then one day to Puteoli. Rhegium is a sailor’s pause with a missionary on board. The map narrows; Rome is almost a walk away.",
+      "id": "rhegium",
+      "sources": [
+        {
+          "label": "Acts 28",
+          "note": "Rhegium to Puteoli on a south wind."
+        },
+        {
+          "label": "F. F. Bruce",
+          "note": "Italian land approach."
+        }
+      ],
+      "paulThere": "Acts 28:13: from Syracuse they come to Rhegium; after one day a south wind springs up, and they reach Puteoli on the second day. Again Acts is spare—no speech, only movement under custody toward the capital Paul had long prayed to see.",
+      "themeIds": [
+        "hospitality",
+        "suffering",
+        "roman-citizenship"
+      ],
+      "culturalDistinctive": "Strait navigation and wind-dependence. Empire’s grain and prisoners share the same favorable breeze.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "syracuse"
+        ],
+        "nextCityIds": [
+          "puteoli"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 21:1–6",
+          "search": "Acts 21:1-6"
+        },
+        {
+          "label": "Acts 21:7–14",
+          "search": "Acts 21:7-14"
+        },
+        {
+          "label": "Acts 20:22–24",
+          "search": "Acts 20:22-24"
+        }
+      ],
+      "politicalStatus": "Major Phoenician port under Roman Syria; commercial rival and twin to Sidon on the Levantine coast.",
+      "intro": "Phoenician quay on the third-journey home stretch. Disciples here warn Paul “through the Spirit” not to go on to Jerusalem—yet he kneels on the beach and sails anyway. Love pleads; vocation answers; the beach holds both.",
+      "id": "tyre",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Tyre beach farewell on the way to Jerusalem."
+        },
+        {
+          "label": "Acts 21",
+          "note": "Seven days with disciples; shore prayer."
+        }
+      ],
+      "paulThere": "Acts 21:3–6: the ship unloads at Tyre; Paul stays seven days with the disciples; they urge him not to go to Jerusalem; with wives and children they escort the team out of the city and pray on the shore. Then Caesarea and the chains Agabus will mime. No letter is written at Tyre; the scene still catechizes suffering—friends may be right about pain and wrong about the path.",
+      "themeIds": [
+        "prayer-intercession",
+        "hospitality",
+        "suffering"
+      ],
+      "culturalDistinctive": "Christian community already planted along trade routes. Prophetic concern and hospitality meet a determined apostle.",
+      "journeyLinks": {
+        "prevCityIds": [
+          "miletus"
+        ],
+        "nextCityIds": [
+          "caesarea"
+        ]
+      },
+      "letterIds": []
+    },
+    {
+      "scriptureAnchors": [
+        {
+          "label": "Acts 18:18–22",
+          "search": "Acts 18:18-22"
+        },
+        {
+          "label": "Romans 16:1–2",
+          "search": "Romans 16:1-2"
+        },
+        {
+          "label": "Romans 16:3–16",
+          "search": "Romans 16:3-16"
+        }
+      ],
+      "politicalStatus": "Eastern port of Corinth in Roman Achaia; paired with Lechaeum on the west for isthmus trade.",
+      "intro": "Corinth’s eastern harbor on the Saronic Gulf—ships for Asia, vows for haircuts, and a deacon named Phoebe. Paul sails from here after eighteen months in Corinth; later he commends Phoebe to Rome as patron and courier. The letter to the Romans likely rode this road in her care.",
+      "id": "cenchreae",
+      "sources": [
+        {
+          "label": "F. F. Bruce",
+          "note": "Cenchreae vow and Phoebe as letter-bearer."
+        },
+        {
+          "label": "Romans 16",
+          "note": "Diakonos and prostatis of Cenchreae."
+        }
+      ],
+      "paulThere": "Acts 18:18: at Cenchreae Paul cuts his hair because of a vow, then sails for Syria via Ephesus. Romans 16:1–2: Phoebe, a diakonos of the church at Cenchreae and prostatis of many (including Paul), is commended to the Roman saints—widely understood as the letter-bearer. No letter is addressed to Cenchreae; Romans still wears her fingerprints. The port shows how Corinth’s gospel spilled into harbor congregations and how women carried both aid and apostolic mail.",
+      "themeIds": [
+        "women-in-worship",
+        "hospitality",
+        "patronage"
+      ],
+      "culturalDistinctive": "Harbor church life tied to Corinth’s orbit. Women’s patronage and service are visible, not theoretical.",
+      "journeyLinks": {
+        "prevCityIds": [],
+        "nextCityIds": []
+      },
+      "letterIds": [
+        "romans"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,760 @@
+{
+  "events": [
+    {
+      "id": "birth-tarsus",
+      "title": "Born in Tarsus",
+      "yearStart": 5,
+      "yearDisplay": "c. AD 5–10",
+      "summary": "Saul of Tarsus is born a Jew of the tribe of Benjamin and a Roman citizen in the university city of Cilicia. Scripture names Tarsus as his birthplace and citizenship; the precise year is reconstructed from later narrative clues, not from a birth notice.",
+      "yearEnd": 10,
+      "placeId": "tarsus",
+      "actsAnchors": [
+        {
+          "label": "Acts 22:3",
+          "search": "Acts 22:3"
+        },
+        {
+          "label": "Acts 21:39",
+          "search": "Acts 21:39"
+        },
+        {
+          "label": "Acts 22:25-28",
+          "search": "Acts 22:25-28"
+        }
+      ],
+      "tags": [
+        "birth",
+        "tarsus",
+        "citizenship"
+      ]
+    },
+    {
+      "id": "gamaliel-pharisee",
+      "title": "Educated under Gamaliel; Pharisee formation",
+      "yearStart": 15,
+      "yearDisplay": "c. AD 15–32",
+      "summary": "Brought up in Jerusalem at the feet of Gamaliel, Paul is trained in the law as a Pharisee—zealous for the traditions of the fathers. His own letters later recall that former life “according to the strictest party” of the Jewish religion.",
+      "yearEnd": 32,
+      "placeId": "jerusalem",
+      "actsAnchors": [
+        {
+          "label": "Acts 22:3",
+          "search": "Acts 22:3"
+        },
+        {
+          "label": "Acts 26:4-5",
+          "search": "Acts 26:4-5"
+        },
+        {
+          "label": "Acts 5:34",
+          "search": "Acts 5:34"
+        }
+      ],
+      "tags": [
+        "education",
+        "pharisee",
+        "jerusalem",
+        "gamaliel"
+      ]
+    },
+    {
+      "id": "stephen-persecution",
+      "title": "Stephen’s martyrdom and Saul’s persecution",
+      "yearStart": 32,
+      "yearDisplay": "c. AD 32–34",
+      "summary": "Witnesses lay their garments at the feet of a young man named Saul as Stephen is stoned. Saul approves the killing and ravages the church, dragging men and women to prison and pursuing believers even to foreign cities.",
+      "yearEnd": 34,
+      "placeId": "jerusalem",
+      "actsAnchors": [
+        {
+          "label": "Acts 7:54-8:3",
+          "search": "Acts 7:54-8:3"
+        },
+        {
+          "label": "Acts 22:4-5",
+          "search": "Acts 22:4-5"
+        },
+        {
+          "label": "Acts 26:9-11",
+          "search": "Acts 26:9-11"
+        }
+      ],
+      "tags": [
+        "stephen",
+        "persecution",
+        "jerusalem"
+      ]
+    },
+    {
+      "id": "damascus-road",
+      "title": "Damascus Road conversion",
+      "yearStart": 33,
+      "yearDisplay": "c. AD 34",
+      "summary": "Near Damascus a light from heaven flashes; the risen Jesus confronts Saul—“Saul, Saul, why are you persecuting me?” Blinded, he is led into the city. The persecutor is claimed as a chosen instrument to the Gentiles.",
+      "yearEnd": 35,
+      "placeId": "damascus_road",
+      "actsAnchors": [
+        {
+          "label": "Acts 9:1-9",
+          "search": "Acts 9:1-9"
+        },
+        {
+          "label": "Acts 22:6-11",
+          "search": "Acts 22:6-11"
+        },
+        {
+          "label": "Acts 26:12-18",
+          "search": "Acts 26:12-18"
+        }
+      ],
+      "tags": [
+        "conversion",
+        "damascus",
+        "calling"
+      ]
+    },
+    {
+      "id": "damascus-anania-baptism",
+      "title": "Ananias, baptism, and early witness in Damascus",
+      "yearStart": 34,
+      "yearDisplay": "c. AD 34",
+      "summary": "The Lord sends Ananias; scales fall from Saul’s eyes; he is baptized and immediately proclaims Jesus in the synagogues—“He is the Son of God.” The hunter becomes a herald in the city he came to raid.",
+      "yearEnd": 34,
+      "placeId": "damascus",
+      "actsAnchors": [
+        {
+          "label": "Acts 9:10-22",
+          "search": "Acts 9:10-22"
+        },
+        {
+          "label": "Acts 22:12-16",
+          "search": "Acts 22:12-16"
+        }
+      ],
+      "tags": [
+        "damascus",
+        "baptism",
+        "early-ministry"
+      ]
+    },
+    {
+      "id": "arabia-return",
+      "title": "Arabia and return to Damascus (Galatians 1)",
+      "yearStart": 34,
+      "yearDisplay": "c. AD 34–37",
+      "summary": "Paul goes away into Arabia and returns again to Damascus. After about three years—counted from his conversion—he is ready for Jerusalem. Scripture gives the sequence; it does not narrate Arabia’s day-to-day ministry.",
+      "yearEnd": 37,
+      "placeId": "damascus",
+      "actsAnchors": [
+        {
+          "label": "Acts 9:23-25",
+          "search": "Acts 9:23-25"
+        }
+      ],
+      "tags": [
+        "arabia",
+        "damascus",
+        "galatians-chronology"
+      ]
+    },
+    {
+      "id": "jerusalem-visit-cephas",
+      "title": "First Jerusalem visit — Cephas and James",
+      "yearStart": 37,
+      "yearDisplay": "c. AD 37",
+      "summary": "Paul goes up to Jerusalem to visit Cephas and remains with him fifteen days; he sees none of the other apostles except James the Lord’s brother. Barnabas introduces him when disciples fear the former persecutor. Hellenistic Jews seek to kill him; brothers send him to Tarsus.",
+      "yearEnd": 37,
+      "placeId": "jerusalem",
+      "actsAnchors": [
+        {
+          "label": "Acts 9:26-30",
+          "search": "Acts 9:26-30"
+        },
+        {
+          "label": "Acts 22:17-21",
+          "search": "Acts 22:17-21"
+        }
+      ],
+      "tags": [
+        "jerusalem",
+        "cephas",
+        "james",
+        "barnabas"
+      ]
+    },
+    {
+      "id": "tarsus-silent-years",
+      "title": "Silent years in Tarsus / Cilicia",
+      "yearStart": 37,
+      "yearDisplay": "c. AD 37–43",
+      "summary": "Paul goes into the regions of Syria and Cilicia. Churches in Judea hear that their former persecutor now preaches the faith. These quieter years prepare the apostle whom Barnabas will later fetch for Antioch.",
+      "yearEnd": 43,
+      "placeId": "tarsus",
+      "actsAnchors": [
+        {
+          "label": "Acts 9:30",
+          "search": "Acts 9:30"
+        },
+        {
+          "label": "Acts 11:25",
+          "search": "Acts 11:25"
+        }
+      ],
+      "tags": [
+        "tarsus",
+        "cilicia",
+        "early-ministry"
+      ]
+    },
+    {
+      "id": "antioch-barnabas",
+      "title": "Barnabas brings Paul to Antioch",
+      "yearStart": 43,
+      "yearDisplay": "c. AD 43–46",
+      "summary": "A great number believe in Antioch; Barnabas goes to Tarsus, finds Saul, and brings him to Antioch. For a whole year they meet with the church and teach—disciples are first called Christians there. Prophets arrive from Jerusalem; Agabus foretells famine, and the disciples determine to send relief to Judea.",
+      "yearEnd": 46,
+      "placeId": "antioch",
+      "actsAnchors": [
+        {
+          "label": "Acts 11:19-30",
+          "search": "Acts 11:19-30"
+        },
+        {
+          "label": "Acts 12:25",
+          "search": "Acts 12:25"
+        }
+      ],
+      "tags": [
+        "antioch",
+        "barnabas",
+        "teaching"
+      ]
+    },
+    {
+      "id": "famine-relief-jerusalem",
+      "title": "Famine relief visit; private meeting with the pillars (Galatians 2)",
+      "yearStart": 46,
+      "yearDisplay": "c. AD 46–47",
+      "summary": "Barnabas and Saul bring Antioch’s relief to the elders in Judea (Acts 11:27–30). On the Consensus early-Galatians reading, Galatians 2:1–10 recalls a related private recognition by James, Cephas, and John—the “pillars”—of Paul’s Gentile mission, distinct from the later public council in Acts 15.",
+      "yearEnd": 47,
+      "placeId": "jerusalem",
+      "actsAnchors": [
+        {
+          "label": "Acts 11:27-30",
+          "search": "Acts 11:27-30"
+        },
+        {
+          "label": "Acts 12:25",
+          "search": "Acts 12:25"
+        }
+      ],
+      "tags": [
+        "jerusalem",
+        "famine-relief",
+        "pillars",
+        "galatians-2",
+        "antioch"
+      ]
+    },
+    {
+      "id": "first-missionary-journey",
+      "title": "First missionary journey",
+      "yearStart": 46,
+      "yearDisplay": "c. AD 46–48",
+      "summary": "The Holy Spirit sets apart Barnabas and Saul. They sail to Cyprus, then through Perga to Pisidian Antioch, Iconium, Lystra, and Derbe—preaching, facing persecution, appointing elders. John Mark turns back from Pamphylia. They return and report all God has done among the Gentiles.",
+      "yearEnd": 48,
+      "placeId": "antioch",
+      "actsAnchors": [
+        {
+          "label": "Acts 13:1-14:28",
+          "search": "Acts 13:1-14:28"
+        }
+      ],
+      "tags": [
+        "missionary-journey",
+        "cyprus",
+        "galatia",
+        "barnabas"
+      ]
+    },
+    {
+      "id": "galatians-written",
+      "title": "Letter to the Galatians written",
+      "yearStart": 48,
+      "yearDisplay": "AD 48–49",
+      "summary": "Paul writes to the churches of Galatia after the first journey, defending justification by faith apart from works of the law. Consensus evangelical dating places Galatians early—from Antioch before the Acts 15 council. In that reading, the Jerusalem contacts Paul recounts in Galatians 1–2 (including the pillars meeting of Galatians 2:1–10) look back to earlier visits, especially the Acts 11 famine-relief context—not forward to Acts 15.",
+      "yearEnd": 49,
+      "placeId": "antioch",
+      "actsAnchors": [
+        {
+          "label": "Acts 13:13-14:23",
+          "search": "Acts 13:13-14:23"
+        }
+      ],
+      "tags": [
+        "letter",
+        "galatians",
+        "antioch",
+        "justification"
+      ]
+    },
+    {
+      "id": "jerusalem-council",
+      "title": "Jerusalem Council",
+      "yearStart": 49,
+      "yearDisplay": "c. AD 49",
+      "summary": "Dissension over circumcision takes Paul, Barnabas, and others from Antioch to Jerusalem. In a public assembly, Peter, James, and the apostles and elders affirm Gentile freedom without requiring circumcision; an apostolic letter goes to Antioch, Syria, and Cilicia (Acts 15). On the Consensus early-Galatians chronology, this council is *after* Galatians was written and is distinct from the private pillars meeting recalled in Galatians 2:1–10.",
+      "yearEnd": 49,
+      "placeId": "jerusalem",
+      "actsAnchors": [
+        {
+          "label": "Acts 15:1-35",
+          "search": "Acts 15:1-35"
+        },
+        {
+          "label": "Acts 16:4-5",
+          "search": "Acts 16:4-5"
+        }
+      ],
+      "tags": [
+        "jerusalem",
+        "council",
+        "gentiles",
+        "circumcision"
+      ]
+    },
+    {
+      "id": "second-journey-begin",
+      "title": "Second missionary journey begins",
+      "yearStart": 49,
+      "yearDisplay": "c. AD 49–50",
+      "summary": "Paul and Barnabas separate over John Mark; Paul chooses Silas. They strengthen churches through Syria and Cilicia, pick up Timothy at Lystra, and deliver the Jerusalem decrees. The Spirit forbids Asia and Bithynia; a Macedonian vision at Troas turns the mission to Europe.",
+      "yearEnd": 50,
+      "placeId": "antioch",
+      "actsAnchors": [
+        {
+          "label": "Acts 15:36-16:10",
+          "search": "Acts 15:36-16:10"
+        }
+      ],
+      "tags": [
+        "missionary-journey",
+        "silas",
+        "timothy",
+        "macedonia-call"
+      ]
+    },
+    {
+      "id": "philippi-founded",
+      "title": "Gospel reaches Philippi",
+      "yearStart": 50,
+      "yearDisplay": "c. AD 50",
+      "summary": "In Roman Philippi, Lydia and her household believe; a slave girl is delivered; Paul and Silas are beaten and jailed; the jailer and his household believe. Released as Roman citizens, they encourage the brothers and depart.",
+      "yearEnd": 50,
+      "placeId": "philippi",
+      "actsAnchors": [
+        {
+          "label": "Acts 16:11-40",
+          "search": "Acts 16:11-40"
+        }
+      ],
+      "tags": [
+        "philippi",
+        "macedonia",
+        "lydia",
+        "missionary-journey"
+      ]
+    },
+    {
+      "id": "thessalonica-berea",
+      "title": "Thessalonica and Berea",
+      "yearStart": 50,
+      "yearDisplay": "c. AD 50",
+      "summary": "Paul reasons three Sabbaths in Thessalonica; some Jews, many devout Greeks, and leading women believe. Jealous opposition forces a night escape to Berea, where the Jews are more noble—examining the Scriptures daily—until agitators arrive from Thessalonica.",
+      "yearEnd": 50,
+      "placeId": "thessalonica",
+      "actsAnchors": [
+        {
+          "label": "Acts 17:1-15",
+          "search": "Acts 17:1-15"
+        }
+      ],
+      "tags": [
+        "thessalonica",
+        "berea",
+        "missionary-journey"
+      ]
+    },
+    {
+      "id": "athens-areopagus",
+      "title": "Athens — Areopagus address",
+      "yearStart": 50,
+      "yearDisplay": "c. AD 50",
+      "summary": "While waiting for Silas and Timothy, Paul is provoked by idols. He reasons in the synagogue and marketplace, then proclaims the unknown God at the Areopagus—creation, providence, repentance, and resurrection. Some mock; some believe, including Dionysius and Damaris.",
+      "yearEnd": 50,
+      "placeId": "athens",
+      "actsAnchors": [
+        {
+          "label": "Acts 17:16-34",
+          "search": "Acts 17:16-34"
+        }
+      ],
+      "tags": [
+        "athens",
+        "areopagus",
+        "missionary-journey"
+      ]
+    },
+    {
+      "id": "corinth-gallio-thessalonians",
+      "title": "Corinth under Gallio; 1–2 Thessalonians",
+      "yearStart": 50,
+      "yearDisplay": "AD 50–52",
+      "summary": "Paul stays eighteen months in Corinth—tentmaking with Aquila and Priscilla, preaching in the synagogue and then next door. When Gallio is proconsul, Jews bring Paul before the tribunal; Gallio refuses the case. From this firmly dated stay Paul writes 1 Thessalonians after Timothy’s report, then 2 Thessalonians as a short follow-up.",
+      "yearEnd": 52,
+      "placeId": "corinth",
+      "actsAnchors": [
+        {
+          "label": "Acts 18:1-18",
+          "search": "Acts 18:1-18"
+        }
+      ],
+      "tags": [
+        "corinth",
+        "gallio",
+        "letter",
+        "1thessalonians",
+        "2thessalonians",
+        "chronology-anchor"
+      ]
+    },
+    {
+      "id": "second-journey-return",
+      "title": "Brief Ephesus stop; return to Antioch",
+      "yearStart": 52,
+      "yearDisplay": "c. AD 52",
+      "summary": "Paul sails with Priscilla and Aquila to Ephesus, reasons briefly in the synagogue, and declines to stay—promising to return if God wills. He goes up to Caesarea, greets the church, and returns to Syrian Antioch, ending the second journey.",
+      "yearEnd": 52,
+      "placeId": "ephesus",
+      "actsAnchors": [
+        {
+          "label": "Acts 18:18-23",
+          "search": "Acts 18:18-23"
+        }
+      ],
+      "tags": [
+        "ephesus",
+        "antioch",
+        "missionary-journey"
+      ]
+    },
+    {
+      "id": "third-journey-ephesus",
+      "title": "Third journey — long Ephesus ministry; 1 Corinthians",
+      "yearStart": 53,
+      "yearDisplay": "AD 53–55",
+      "summary": "After strengthening Galatian disciples, Paul reaches Ephesus for an extended ministry—synagogue, hall of Tyrannus, extraordinary miracles, and costly repentance from magic. From Ephesus he writes 1 Corinthians, planning to stay until Pentecost. The Artemis riot shows the gospel’s civic impact before he departs for Macedonia.",
+      "yearEnd": 55,
+      "placeId": "ephesus",
+      "actsAnchors": [
+        {
+          "label": "Acts 18:23",
+          "search": "Acts 18:23"
+        },
+        {
+          "label": "Acts 19:1-41",
+          "search": "Acts 19:1-41"
+        }
+      ],
+      "tags": [
+        "ephesus",
+        "letter",
+        "1corinthians",
+        "missionary-journey",
+        "third-journey"
+      ]
+    },
+    {
+      "id": "macedonia-2corinthians",
+      "title": "Macedonia — 2 Corinthians",
+      "yearStart": 55,
+      "yearDisplay": "AD 55–56",
+      "summary": "Paul leaves Ephesus for Macedonia, encouraging the disciples. Titus’s good report from Corinth comforts him. From Macedonia he writes 2 Corinthians—defense of apostolic ministry, generosity for Jerusalem, and reconciliation with the church.",
+      "yearEnd": 56,
+      "placeId": "macedonia",
+      "actsAnchors": [
+        {
+          "label": "Acts 20:1-2",
+          "search": "Acts 20:1-2"
+        }
+      ],
+      "tags": [
+        "macedonia",
+        "letter",
+        "2corinthians",
+        "third-journey"
+      ]
+    },
+    {
+      "id": "corinth-romans",
+      "title": "Corinth again — Romans written",
+      "yearStart": 56,
+      "yearDisplay": "AD 56–57",
+      "summary": "Paul spends three months in Greece (Acts 20:2-3). From Corinth he writes Romans—gospel for Jew and Gentile, and his plan to go to Rome and on toward Spain after delivering the collection. Gaius hosts him; Phoebe of Cenchreae is commended as letter-bearer.",
+      "yearEnd": 57,
+      "placeId": "corinth",
+      "actsAnchors": [
+        {
+          "label": "Acts 20:2-3",
+          "search": "Acts 20:2-3"
+        }
+      ],
+      "tags": [
+        "corinth",
+        "letter",
+        "romans",
+        "spain-plan",
+        "third-journey"
+      ]
+    },
+    {
+      "id": "return-jerusalem-farewell",
+      "title": "Return toward Jerusalem; Miletus farewell",
+      "yearStart": 57,
+      "yearDisplay": "c. AD 57",
+      "summary": "Avoiding a plot, Paul returns through Macedonia and Troas (Eutychus). At Miletus he charges the Ephesian elders. Prophetic warnings at Tyre and Caesarea (Agabus) do not turn him aside; he goes up to Jerusalem ready to be imprisoned for the name of the Lord Jesus.",
+      "yearEnd": 57,
+      "placeId": "miletus",
+      "actsAnchors": [
+        {
+          "label": "Acts 20:3-38",
+          "search": "Acts 20:3-38"
+        },
+        {
+          "label": "Acts 21:1-14",
+          "search": "Acts 21:1-14"
+        }
+      ],
+      "tags": [
+        "miletus",
+        "jerusalem",
+        "elders",
+        "third-journey"
+      ]
+    },
+    {
+      "id": "jerusalem-arrest",
+      "title": "Arrest in Jerusalem",
+      "yearStart": 57,
+      "yearDisplay": "c. AD 57",
+      "summary": "Paul reports to James and the elders, joins purification rites, and is seized in the temple under false charges of bringing Greeks into the court. The tribune arrests him; Paul addresses the crowd in Hebrew/Aramaic, recounting his conversion, until the word “Gentiles” sparks uproar.",
+      "yearEnd": 57,
+      "placeId": "jerusalem",
+      "actsAnchors": [
+        {
+          "label": "Acts 21:15-22:29",
+          "search": "Acts 21:15-22:29"
+        }
+      ],
+      "tags": [
+        "jerusalem",
+        "arrest",
+        "temple"
+      ]
+    },
+    {
+      "id": "sanhedrin-trial",
+      "title": "Trial before the Sanhedrin",
+      "yearStart": 57,
+      "yearDisplay": "c. AD 57",
+      "summary": "Before the council Paul declares he is on trial concerning the hope and resurrection of the dead, dividing Pharisees and Sadducees. A plot to ambush him is exposed; the tribune transfers him under heavy guard to Felix in Caesarea with a letter.",
+      "yearEnd": 57,
+      "placeId": "jerusalem",
+      "actsAnchors": [
+        {
+          "label": "Acts 22:30-23:35",
+          "search": "Acts 22:30-23:35"
+        }
+      ],
+      "tags": [
+        "sanhedrin",
+        "jerusalem",
+        "caesarea",
+        "trial"
+      ]
+    },
+    {
+      "id": "felix-custody",
+      "title": "Custody under Felix in Caesarea",
+      "yearStart": 57,
+      "yearDisplay": "AD 57–59",
+      "summary": "Tertullus accuses Paul; Paul defends the Way and the resurrection. Felix delays, hears him often with Drusilla, hopes for a bribe, and leaves Paul in custody for two years to please the Jews when Festus succeeds him.",
+      "yearEnd": 59,
+      "placeId": "caesarea",
+      "actsAnchors": [
+        {
+          "label": "Acts 24:1-27",
+          "search": "Acts 24:1-27"
+        }
+      ],
+      "tags": [
+        "caesarea",
+        "felix",
+        "trial",
+        "imprisonment"
+      ]
+    },
+    {
+      "id": "festus-agrippa",
+      "title": "Festus, appeal to Caesar, and Agrippa",
+      "yearStart": 59,
+      "yearDisplay": "c. AD 59",
+      "summary": "Festus reheats the case; Paul appeals to Caesar. King Agrippa II and Bernice hear Paul’s testimony—Moses, the prophets, and the risen Christ. Agrippa finds nothing worthy of death or imprisonment, yet the appeal stands: Paul must go to Rome.",
+      "yearEnd": 59,
+      "placeId": "caesarea",
+      "actsAnchors": [
+        {
+          "label": "Acts 25:1-27",
+          "search": "Acts 25:1-27"
+        },
+        {
+          "label": "Acts 26:1-32",
+          "search": "Acts 26:1-32"
+        },
+        {
+          "label": "Acts 26:28-29",
+          "search": "Acts 26:28-29"
+        }
+      ],
+      "tags": [
+        "festus",
+        "agrippa",
+        "appeal-caesar",
+        "caesarea",
+        "trial"
+      ]
+    },
+    {
+      "id": "malta-shipwreck",
+      "title": "Voyage, Malta shipwreck, arrival toward Rome",
+      "yearStart": 59,
+      "yearDisplay": "c. AD 59–60",
+      "summary": "Under centurion Julius, the ship meets contrary winds and a catastrophic storm. Paul encourages all aboard with God’s promise he must stand before Caesar. Wrecked on Malta, Paul survives a viper and heals many; after three months they sail via Syracuse and Rhegium to Puteoli, then walk toward Rome.",
+      "yearEnd": 60,
+      "placeId": "malta",
+      "actsAnchors": [
+        {
+          "label": "Acts 27:1-28:16",
+          "search": "Acts 27:1-28:16"
+        }
+      ],
+      "tags": [
+        "malta",
+        "shipwreck",
+        "rome-voyage"
+      ]
+    },
+    {
+      "id": "rome-house-arrest",
+      "title": "Rome house arrest; Prison Letters",
+      "yearStart": 60,
+      "yearDisplay": "AD 60–62",
+      "summary": "Paul lives two whole years in a rented house under guard, welcoming all who come, proclaiming the kingdom and teaching the Lord Jesus Christ with all boldness. From this custody the Consensus chronology dates the Prison Letters: Ephesians, Colossians, Philemon, and Philippians.",
+      "yearEnd": 62,
+      "placeId": "rome",
+      "actsAnchors": [
+        {
+          "label": "Acts 28:16-31",
+          "search": "Acts 28:16-31"
+        }
+      ],
+      "tags": [
+        "rome",
+        "house-arrest",
+        "letter",
+        "ephesians",
+        "colossians",
+        "philemon",
+        "philippians",
+        "prison-letters"
+      ]
+    },
+    {
+      "id": "release-spain-plan",
+      "title": "Release after Acts; Spain planned",
+      "yearStart": 62,
+      "yearDisplay": "c. AD 62–64",
+      "summary": "Acts ends without narrating Paul’s death. Consensus evangelical reconstruction holds that he was released after the Acts 28 biennium. Scripture clearly records his Spain *plan* (Romans 15:24, 28). Whether he later fulfilled that western journey is Wider Protestant inference from post-biblical tradition—not narrated in the New Testament.",
+      "yearEnd": 64,
+      "placeId": "rome",
+      "actsAnchors": [
+        {
+          "label": "Acts 28:30-31",
+          "search": "Acts 28:30-31"
+        }
+      ],
+      "tags": [
+        "rome",
+        "release",
+        "spain-plan",
+        "post-acts"
+      ]
+    },
+    {
+      "id": "pastorals-1tim-titus",
+      "title": "After-Acts ministry; 1 Timothy and Titus",
+      "yearStart": 62,
+      "yearDisplay": "AD 62–64",
+      "summary": "On the usual evangelical reconstruction after Acts, Paul writes 1 Timothy (Timothy stationed in Ephesus) and Titus (Titus in Crete), with winter plans at Nicopolis. The letters charge delegates to guard sound doctrine, appoint elders, and train the church by grace.",
+      "yearEnd": 64,
+      "placeId": "macedonia",
+      "tags": [
+        "letter",
+        "1timothy",
+        "titus",
+        "pastorals",
+        "after-acts",
+        "macedonia",
+        "crete"
+      ]
+    },
+    {
+      "id": "final-imprisonment-2timothy",
+      "title": "Final imprisonment; 2 Timothy",
+      "yearStart": 64,
+      "yearDisplay": "AD 64–67",
+      "summary": "Paul writes 2 Timothy from a final Roman imprisonment—cold, deserted by some, urgent that Timothy come soon. He has fought the good fight; the Lord will bring him safely into his heavenly kingdom. The letter’s tone fits a last charge, not the freer house arrest of Acts 28.",
+      "yearEnd": 67,
+      "placeId": "rome",
+      "tags": [
+        "rome",
+        "letter",
+        "2timothy",
+        "pastorals",
+        "final-imprisonment",
+        "after-acts"
+      ]
+    },
+    {
+      "id": "martyrdom-nero",
+      "title": "Death of Paul (tradition)",
+      "yearStart": 64,
+      "yearDisplay": "c. AD 64–67",
+      "summary": "After Acts, Scripture does not narrate Paul’s death. 2 Timothy’s readiness to be “poured out as a drink offering” prepares readers for an ending; it does not describe an execution. Tradition / Wider framing: early Christian memory and evangelical scholarship place his death in Rome under Nero—illuminating without inventing a New Testament verse for the event itself.",
+      "yearEnd": 67,
+      "placeId": "rome",
+      "actsAnchors": [
+        {
+          "label": "Acts 20:24",
+          "search": "Acts 20:24"
+        }
+      ],
+      "tags": [
+        "martyrdom",
+        "nero",
+        "rome",
+        "after-acts"
+      ]
+    }
+  ]
+}

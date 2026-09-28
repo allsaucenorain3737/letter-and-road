@@ -1,11 +1,11 @@
-import { yearBounds, yearFromPosition, yearPosition } from '../lib/chronology'
+import { yearBounds, yearPosition, yearTicks } from '../lib/chronology'
 import { useApp } from '../state/AppState'
 
 export function TimeScrubber() {
   const app = useApp()
   const { min, max } = yearBounds()
   const t = yearPosition(app.year)
-  const ticks = [48, 51, 54, 57, 60, 64, 68]
+  const ticks = yearTicks()
 
   return (
     <div className="scrubber">
@@ -15,12 +15,16 @@ export function TimeScrubber() {
         </div>
         <input
           type="range"
-          min={0}
-          max={1000}
-          value={Math.round(t * 1000)}
+          min={min}
+          max={max}
+          step={1}
+          value={app.year}
           aria-label="Year"
+          aria-valuemin={min}
+          aria-valuemax={max}
+          aria-valuenow={app.year}
           aria-valuetext={`AD ${app.year}`}
-          onChange={(e) => app.setYear(yearFromPosition(Number(e.target.value) / 1000))}
+          onChange={(e) => app.setYear(Number(e.target.value))}
         />
         <div className="ticks">
           {ticks.map((y) => (

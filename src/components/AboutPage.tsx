@@ -65,7 +65,7 @@ export function AboutPage() {
           those years overlap earlier leave-takings rather than deleting the letters.
         </li>
       </ul>
-      <p>Letters stay on the map. Authorship is not the fork this tool is built to fight.</p>
+      <p>Letters stay in the atlas. Authorship is not the fork this tool is built to fight.</p>
 
       <h2>Hebrews</h2>
       <p>
@@ -80,8 +80,12 @@ export function AboutPage() {
         <li>Secondary: evangelical NT introductions (e.g. Carson &amp; Moo); ESV Study Bible book intros.</li>
         <li>Secondary, archaeological: the Gallio inscription from Delphi, as a check on Acts 18.</li>
         <li>
-          Coastlines: Natural Earth 1:50m land (public domain), clipped to the eastern Mediterranean so
-          Asia, the Levant, Sinai, and Egypt remain one landmass.
+          Roman roads: Ancient World Mapping Center cultural roads (ODbL 1.0), Barrington Atlas /
+          OSM derived, clipped to the atlas window.
+        </li>
+        <li>
+          Basemap tiles: OpenFreeMap liberty style (OpenMapTiles / OpenStreetMap contributors), with
+          Natural Earth shaded relief for topography.
         </li>
       </ul>
       <p>Not affiliated with a denomination. Built as a public teaching aid for readers, youth groups, and pastors.</p>

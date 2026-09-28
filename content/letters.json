@@ -1,0 +1,1448 @@
+{
+  "letters": [
+    {
+      "id": "galatians",
+      "title": "Galatians",
+      "shortTitle": "Galatians",
+      "sort": 1,
+      "book": "Galatians",
+      "bibleSearch": "Galatians 1",
+      "destinationId": "galatia",
+      "destinationLabel": "Churches of Galatia",
+      "audienceType": "planted",
+      "audiencePortrait": "Congregations Paul planted in south Galatia — Gentile believers now being told they must take on the Mosaic law to belong.",
+      "occasion": "Rival teachers have followed him into churches he had only recently founded, demanding circumcision. He writes in heat because the gospel he already preached there is being rewritten: Christ plus Torah. This is not a general treatise. It is a rescue of his own plants.",
+      "outline": [
+        {
+          "ref": "1:1–10",
+          "heading": "No other gospel",
+          "summary": "Astonishment and anathema; the gospel is not his to revise.",
+          "search": "Galatians 1:1-10"
+        },
+        {
+          "ref": "1:11–2:21",
+          "heading": "Independent apostleship",
+          "summary": "Damascus, Jerusalem, and the clash with Peter at Antioch.",
+          "search": "Galatians 1:11-2:21"
+        },
+        {
+          "ref": "3:1–4:31",
+          "heading": "Promise, not law",
+          "summary": "Abraham, the curse of the law, sons rather than slaves.",
+          "search": "Galatians 3:1-4:31"
+        },
+        {
+          "ref": "5:1–6:10",
+          "heading": "Freedom’s fruit",
+          "summary": "Spirit against flesh; bear one another’s burdens.",
+          "search": "Galatians 5:1-6:10"
+        },
+        {
+          "ref": "6:11–18",
+          "heading": "Boast in the cross",
+          "summary": "Large letters, a new creation, no other boast.",
+          "search": "Galatians 6:11-18"
+        }
+      ],
+      "themes": [
+        "Gospel",
+        "Freedom",
+        "Justification",
+        "Spirit"
+      ],
+      "themeGroup": "cross",
+      "narrowedAudience": "These are his own churches. The anger is pastoral, not distant: he can appeal to a gospel they already received from his mouth.",
+      "people": [
+        {
+          "name": "Peter (Cephas)",
+          "role": "Named in the Antioch clash — another apostle in the same story.",
+          "search": "Galatians 2:11-14"
+        },
+        {
+          "name": "Barnabas",
+          "role": "Companion in the earlier mission; named with Peter at Antioch.",
+          "search": "Galatians 2:13"
+        }
+      ],
+      "datingNote": "Consensus pins this just after the first journey, from Antioch, before the Jerusalem council. The wider Protestant debate is south Galatia (Acts 13–14 cities) versus north Galatia, which would move the letter later, into the third-journey years.",
+      "actsAnchors": [
+        {
+          "label": "Acts 13–14",
+          "search": "Acts 13:1-14:28",
+          "note": "South-Galatian plants: Pisidian Antioch, Iconium, Lystra, Derbe."
+        },
+        {
+          "label": "Acts 15:1–11",
+          "search": "Acts 15:1-11",
+          "note": "Jerusalem council on Gentile circumcision — the same crisis Galatians names."
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "Galatians 1:6–9",
+          "search": "Galatians 1:6-9"
+        },
+        {
+          "label": "Galatians 2:1–10",
+          "search": "Galatians 2:1-10"
+        },
+        {
+          "label": "Galatians 2:11–14",
+          "search": "Galatians 2:11-14",
+          "note": "Peter at Antioch."
+        }
+      ],
+      "consensus": {
+        "yearStart": 48,
+        "yearEnd": 49,
+        "yearDisplay": "AD 48–49",
+        "originId": "antioch",
+        "originLabel": "Antioch (Syria)",
+        "period": "after-first"
+      },
+      "debated": {
+        "yearStart": 48,
+        "yearEnd": 55,
+        "yearDisplay": "AD 48–55",
+        "originId": "antioch",
+        "originLabel": "Antioch or Ephesus",
+        "originNote": "Early south-Galatia from Antioch, or later from Ephesus / Macedonia if north Galatia.",
+        "period": "after-first",
+        "altOriginId": "ephesus",
+        "altOriginLabel": "Ephesus",
+        "debateNote": "South vs north Galatia is the main Protestant fork. The letter still names churches Paul had already preached in."
+      },
+      "arcBulge": 36
+    },
+    {
+      "id": "1thessalonians",
+      "title": "1 Thessalonians",
+      "shortTitle": "1 Thessalonians",
+      "sort": 2,
+      "book": "1 Thessalonians",
+      "bibleSearch": "1 Thessalonians 1",
+      "destinationId": "thessalonica",
+      "destinationLabel": "Thessalonica",
+      "audienceType": "planted",
+      "audiencePortrait": "A young church Paul planted in a few weeks, then was forced to leave under hostility.",
+      "occasion": "Timothy has returned to Paul in Corinth with news: the Thessalonians are standing, but they grieve believers who died before the Lord’s coming. Paul writes to stabilize a church that had almost no time with him, and to say the dead in Christ are not left out.",
+      "outline": [
+        {
+          "ref": "1",
+          "heading": "Thanksgiving",
+          "summary": "Their faith became known in Macedonia and Achaia.",
+          "search": "1 Thessalonians 1"
+        },
+        {
+          "ref": "2–3",
+          "heading": "The visit remembered",
+          "summary": "Integrity of ministry; Timothy’s report and Paul’s longing.",
+          "search": "1 Thessalonians 2:1-3:13"
+        },
+        {
+          "ref": "4:1–12",
+          "heading": "Holiness and work",
+          "summary": "Please God; live quietly; a holy people in a watching city.",
+          "search": "1 Thessalonians 4:1-12"
+        },
+        {
+          "ref": "4:13–5:11",
+          "heading": "The coming",
+          "summary": "The dead in Christ; times and seasons; awake, not asleep.",
+          "search": "1 Thessalonians 4:13-5:11"
+        },
+        {
+          "ref": "5:12–28",
+          "heading": "Community life",
+          "summary": "Respect, prayer, the God of peace who will do it.",
+          "search": "1 Thessalonians 5:12-28"
+        }
+      ],
+      "themes": [
+        "Coming",
+        "Encouragement",
+        "Holiness",
+        "Love"
+      ],
+      "themeGroup": "coming",
+      "people": [
+        {
+          "name": "Timothy",
+          "role": "Sent back to Thessalonica; his report occasions the letter.",
+          "search": "1 Thessalonians 3:1-6"
+        },
+        {
+          "name": "Silas",
+          "role": "Co-sender; companion on the second journey.",
+          "search": "Acts 17:4"
+        }
+      ],
+      "datingNote": "Among the tightest dates in the corpus. Acts 18 places Paul in Corinth when Gallio is proconsul; 1 Thessalonians is written from that stay after Timothy returns.",
+      "actsAnchors": [
+        {
+          "label": "Acts 17:1–10",
+          "search": "Acts 17:1-10",
+          "note": "The plant in Thessalonica, then the night flight."
+        },
+        {
+          "label": "Acts 18:1–5",
+          "search": "Acts 18:1-5",
+          "note": "Paul in Corinth; Silas and Timothy arrive from Macedonia."
+        },
+        {
+          "label": "Acts 18:12–17",
+          "search": "Acts 18:12-17",
+          "note": "Gallio in Achaia — the main external year-marker."
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "1 Thessalonians 3:1–6",
+          "search": "1 Thessalonians 3:1-6"
+        },
+        {
+          "label": "1 Thessalonians 4:13–18",
+          "search": "1 Thessalonians 4:13-18"
+        }
+      ],
+      "consensus": {
+        "yearStart": 50,
+        "yearEnd": 51,
+        "yearDisplay": "AD 50–51",
+        "originId": "corinth",
+        "originLabel": "Corinth",
+        "period": "second-journey"
+      },
+      "debated": {
+        "yearStart": 50,
+        "yearEnd": 52,
+        "yearDisplay": "AD 50–52",
+        "originId": "corinth",
+        "originLabel": "Corinth",
+        "period": "second-journey",
+        "debateNote": "Protestants agree on Corinth and the second journey. The range only wiggles by a year around Gallio."
+      },
+      "arcBulge": 42
+    },
+    {
+      "id": "2thessalonians",
+      "title": "2 Thessalonians",
+      "shortTitle": "2 Thessalonians",
+      "sort": 3,
+      "book": "2 Thessalonians",
+      "bibleSearch": "2 Thessalonians 1",
+      "destinationId": "thessalonica",
+      "destinationLabel": "Thessalonica",
+      "audienceType": "planted",
+      "audiencePortrait": "The same planted church, months later, unsettled by rumor.",
+      "occasion": "Word has spread that the Day of the Lord has already come. Some have quit ordinary work. Paul writes to correct the rumor, name what must precede the Day, and command quiet labor — a follow-up while he is still in Corinth.",
+      "outline": [
+        {
+          "ref": "1",
+          "heading": "Thanksgiving in persecution",
+          "summary": "God will repay; the church is counted worthy.",
+          "search": "2 Thessalonians 1"
+        },
+        {
+          "ref": "2",
+          "heading": "The Day has not come",
+          "summary": "Rebellion and the man of lawlessness first.",
+          "search": "2 Thessalonians 2"
+        },
+        {
+          "ref": "3:1–15",
+          "heading": "Idle disruption",
+          "summary": "Work, imitate Paul, warn the idle as a brother.",
+          "search": "2 Thessalonians 3:1-15"
+        },
+        {
+          "ref": "3:16–18",
+          "heading": "Benediction",
+          "summary": "Peace, and a signed greeting as a mark of genuineness.",
+          "search": "2 Thessalonians 3:16-18"
+        }
+      ],
+      "themes": [
+        "Coming",
+        "Correction",
+        "Steadfastness",
+        "Suffering"
+      ],
+      "themeGroup": "coming",
+      "people": [
+        {
+          "name": "Timothy",
+          "role": "Co-sender, as in the first letter.",
+          "search": "2 Thessalonians 1:1"
+        },
+        {
+          "name": "Silas",
+          "role": "Co-sender.",
+          "search": "2 Thessalonians 1:1"
+        }
+      ],
+      "datingNote": "Consensus: a short follow-up from Corinth after 1 Thessalonians. Wider Protestant discussion is how many months later, not whether Paul is still the writer in the narrative of the text.",
+      "actsAnchors": [
+        {
+          "label": "Acts 18:1–11",
+          "search": "Acts 18:1-11",
+          "note": "The long Corinthian stay that can hold both Thessalonian letters."
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "2 Thessalonians 2:1–3",
+          "search": "2 Thessalonians 2:1-3"
+        },
+        {
+          "label": "2 Thessalonians 3:6–12",
+          "search": "2 Thessalonians 3:6-12"
+        },
+        {
+          "label": "2 Thessalonians 3:17",
+          "search": "2 Thessalonians 3:17"
+        }
+      ],
+      "consensus": {
+        "yearStart": 51,
+        "yearEnd": 52,
+        "yearDisplay": "AD 51–52",
+        "originId": "corinth",
+        "originLabel": "Corinth",
+        "period": "second-journey"
+      },
+      "debated": {
+        "yearStart": 51,
+        "yearEnd": 53,
+        "yearDisplay": "AD 51–53",
+        "originId": "corinth",
+        "originLabel": "Corinth",
+        "period": "second-journey",
+        "debateNote": "Some Protestants read it as almost simultaneous with 1 Thessalonians; others a year later. Same city, same church."
+      },
+      "arcBulge": 64
+    },
+    {
+      "id": "1corinthians",
+      "title": "1 Corinthians",
+      "shortTitle": "1 Corinthians",
+      "sort": 4,
+      "book": "1 Corinthians",
+      "bibleSearch": "1 Corinthians 1",
+      "destinationId": "corinth",
+      "destinationLabel": "Corinth",
+      "audienceType": "planted",
+      "audiencePortrait": "The church Paul planted in a status-conscious port — gifted, divided, and still entangled with the culture around it.",
+      "occasion": "Chloe’s people report factions, a case of incest, and lawsuits. A letter from Corinth has also arrived with questions about marriage, food, worship, and resurrection. Paul writes from Ephesus to pull a gifted church back under the word of the cross.",
+      "outline": [
+        {
+          "ref": "1–4",
+          "heading": "Divisions and the cross",
+          "summary": "Not wisdom, not leaders — the crucified Lord.",
+          "search": "1 Corinthians 1:1-4:21"
+        },
+        {
+          "ref": "5–6",
+          "heading": "Holiness in the body",
+          "summary": "Discipline, courts, sexual ethics in a port city.",
+          "search": "1 Corinthians 5:1-6:20"
+        },
+        {
+          "ref": "7–10",
+          "heading": "Answers to their letter",
+          "summary": "Marriage, food, and the temples of the city.",
+          "search": "1 Corinthians 7:1-10:33"
+        },
+        {
+          "ref": "11–14",
+          "heading": "Worship",
+          "summary": "The table, gifts, and a still more excellent way.",
+          "search": "1 Corinthians 11:1-14:40"
+        },
+        {
+          "ref": "15",
+          "heading": "Resurrection",
+          "summary": "If Christ is not raised, faith is empty.",
+          "search": "1 Corinthians 15"
+        },
+        {
+          "ref": "16",
+          "heading": "Collection and travel",
+          "summary": "Jerusalem’s poor; Timothy; a hoped-for visit.",
+          "search": "1 Corinthians 16"
+        }
+      ],
+      "themes": [
+        "Cross",
+        "Church life",
+        "Resurrection",
+        "Spiritual gifts",
+        "Slavery",
+        "Love"
+      ],
+      "themeGroup": "cross",
+      "people": [
+        {
+          "name": "Chloe’s people",
+          "role": "Bring the report of divisions.",
+          "search": "1 Corinthians 1:11"
+        },
+        {
+          "name": "Timothy",
+          "role": "To be sent on to Corinth.",
+          "search": "1 Corinthians 4:17"
+        },
+        {
+          "name": "Apollos",
+          "role": "A name around which factions have formed.",
+          "search": "1 Corinthians 1:12"
+        }
+      ],
+      "datingNote": "Written from Ephesus during the long third-journey stay. Acts 19 and 1 Corinthians 16:8 (“I will stay in Ephesus until Pentecost”) lock the origin.",
+      "actsAnchors": [
+        {
+          "label": "Acts 18:1–11",
+          "search": "Acts 18:1-11",
+          "note": "Paul plants Corinth and stays eighteen months."
+        },
+        {
+          "label": "Acts 19:1–10",
+          "search": "Acts 19:1-10",
+          "note": "The Ephesian stay from which he writes."
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "1 Corinthians 1:10–17",
+          "search": "1 Corinthians 1:10-17"
+        },
+        {
+          "label": "1 Corinthians 15:1–8",
+          "search": "1 Corinthians 15:1-8"
+        },
+        {
+          "label": "1 Corinthians 16:5–9",
+          "search": "1 Corinthians 16:5-9"
+        }
+      ],
+      "consensus": {
+        "yearStart": 54,
+        "yearEnd": 55,
+        "yearDisplay": "AD 54–55",
+        "originId": "ephesus",
+        "originLabel": "Ephesus",
+        "period": "third-journey"
+      },
+      "debated": {
+        "yearStart": 53,
+        "yearEnd": 55,
+        "yearDisplay": "AD 53–55",
+        "originId": "ephesus",
+        "originLabel": "Ephesus",
+        "period": "third-journey",
+        "debateNote": "Origin is not in serious Protestant doubt. The year slides with how one counts the Ephesian stay."
+      },
+      "arcBulge": -48
+    },
+    {
+      "id": "2corinthians",
+      "title": "2 Corinthians",
+      "shortTitle": "2 Corinthians",
+      "sort": 5,
+      "book": "2 Corinthians",
+      "bibleSearch": "2 Corinthians 1",
+      "destinationId": "corinth",
+      "destinationLabel": "Corinth",
+      "audienceType": "planted",
+      "occasion": "Titus has met Paul in Macedonia with mixed but hopeful news: the severe letter worked, yet rivals still undermine his apostleship. Paul defends a ministry of weakness, reopens the Jerusalem collection, and warns he will come a third time.",
+      "audiencePortrait": "The same Corinthian church, after a painful visit and a severe letter that nearly broke the relationship.",
+      "outline": [
+        {
+          "ref": "1:1–2:13",
+          "heading": "Comfort in affliction",
+          "summary": "Why he did not come; the tearful letter.",
+          "search": "2 Corinthians 1:1-2:13"
+        },
+        {
+          "ref": "2:14–7:16",
+          "heading": "New-covenant ministry",
+          "summary": "Jars of clay; reconciliation; Titus’s report.",
+          "search": "2 Corinthians 2:14-7:16"
+        },
+        {
+          "ref": "8–9",
+          "heading": "The collection",
+          "summary": "Grace, not pressure, for the saints in Jerusalem.",
+          "search": "2 Corinthians 8:1-9:15"
+        },
+        {
+          "ref": "10–13",
+          "heading": "Defense against rivals",
+          "summary": "Boasting in weakness; the thorn; a coming visit.",
+          "search": "2 Corinthians 10:1-13:14"
+        }
+      ],
+      "themes": [
+        "Apostleship",
+        "Weakness",
+        "Reconciliation",
+        "Suffering"
+      ],
+      "themeGroup": "cross",
+      "people": [
+        {
+          "name": "Titus",
+          "role": "Bearer of news and of the collection appeal.",
+          "search": "2 Corinthians 7:5-7"
+        },
+        {
+          "name": "Timothy",
+          "role": "Co-sender.",
+          "search": "2 Corinthians 1:1"
+        }
+      ],
+      "datingNote": "From Macedonia after leaving Ephesus, on the way back toward Corinth. Acts 20:1–3 is the road; 2 Corinthians 2 and 7 are the feelings.",
+      "actsAnchors": [
+        {
+          "label": "Acts 20:1–3",
+          "search": "Acts 20:1-3",
+          "note": "Macedonia, then three months in Greece."
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "2 Corinthians 2:12–13",
+          "search": "2 Corinthians 2:12-13"
+        },
+        {
+          "label": "2 Corinthians 7:5–7",
+          "search": "2 Corinthians 7:5-7"
+        },
+        {
+          "label": "2 Corinthians 12:7–10",
+          "search": "2 Corinthians 12:7-10"
+        }
+      ],
+      "consensus": {
+        "yearStart": 55,
+        "yearEnd": 56,
+        "yearDisplay": "AD 55–56",
+        "originId": "macedonia",
+        "originLabel": "Macedonia",
+        "period": "third-journey"
+      },
+      "debated": {
+        "yearStart": 55,
+        "yearEnd": 57,
+        "yearDisplay": "AD 55–57",
+        "originId": "macedonia",
+        "originLabel": "Macedonia",
+        "period": "third-journey",
+        "debateNote": "Whether chapters 10–13 are a later add-on is discussed; the from-Macedonia setting is not."
+      },
+      "arcBulge": 28
+    },
+    {
+      "id": "romans",
+      "title": "Romans",
+      "shortTitle": "Romans",
+      "sort": 6,
+      "book": "Romans",
+      "bibleSearch": "Romans 1",
+      "destinationId": "rome",
+      "destinationLabel": "Rome",
+      "audienceType": "unvisited",
+      "audiencePortrait": "A mixed Jewish–Gentile church in the imperial capital that Paul did not plant and has never visited.",
+      "occasion": "Paul is about to take the collection to Jerusalem, then hopes to visit Rome on the way to Spain. He writes a full statement of the gospel to a church he did not found — to unify Jew and Gentile under one mercy, and to ask their help for a western mission. Phoebe of Cenchreae carries the letter.",
+      "outline": [
+        {
+          "ref": "1:1–17",
+          "heading": "The gospel of God",
+          "summary": "Power for salvation, Jew first and also Greek.",
+          "search": "Romans 1:1-17"
+        },
+        {
+          "ref": "1:18–3:20",
+          "heading": "Universal need",
+          "summary": "Gentiles, Jews, the whole world accountable.",
+          "search": "Romans 1:18-3:20"
+        },
+        {
+          "ref": "3:21–5:21",
+          "heading": "Justified by faith",
+          "summary": "Abraham, peace with God, Adam and Christ.",
+          "search": "Romans 3:21-5:21"
+        },
+        {
+          "ref": "6–8",
+          "heading": "Union and the Spirit",
+          "summary": "Dead to sin; no condemnation; creation groaning.",
+          "search": "Romans 6:1-8:39"
+        },
+        {
+          "ref": "9–11",
+          "heading": "Israel and mercy",
+          "summary": "God’s faithfulness to Israel is not revoked.",
+          "search": "Romans 9:1-11:36"
+        },
+        {
+          "ref": "12–15",
+          "heading": "A living sacrifice",
+          "summary": "One body; the weak and the strong; welcome.",
+          "search": "Romans 12:1-15:13"
+        },
+        {
+          "ref": "15:14–16:27",
+          "heading": "Spain, Phoebe, names",
+          "summary": "Travel plans and a long list of people he has not yet hugged.",
+          "search": "Romans 15:14-16:27"
+        }
+      ],
+      "themes": [
+        "Justification",
+        "Gospel",
+        "Jew & Gentile",
+        "Spirit",
+        "Love"
+      ],
+      "themeGroup": "cross",
+      "narrowedAudience": "Rome is not Corinth. He cannot lean on shared memory of a founding visit. The argument has to carry strangers in the capital — a church already walking a Jew–Gentile tightrope under imperial eyes. That is why origin and destination matter: a reasoned gospel for an unvisited mixed church, written from a plant that knew him too well.",
+      "people": [
+        {
+          "name": "Phoebe",
+          "role": "Servant of the church at Cenchreae; likely bearer of the letter.",
+          "search": "Romans 16:1-2"
+        },
+        {
+          "name": "Priscilla & Aquila",
+          "role": "Greeted in Rome; earlier coworkers in Corinth and Ephesus.",
+          "search": "Romans 16:3-5"
+        },
+        {
+          "name": "Gaius",
+          "role": "Host in Corinth, named as Paul writes.",
+          "search": "Romans 16:23"
+        }
+      ],
+      "datingNote": "From Corinth at the close of the third journey. Gaius and Erastus in Romans 16 match Acts 20:2–3. Peter later names Paul’s letters as Scripture — including this kind of “hard to understand” writing.",
+      "actsAnchors": [
+        {
+          "label": "Acts 20:2–3",
+          "search": "Acts 20:2-3",
+          "note": "Three months in Greece — the Corinthian window for Romans."
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "Romans 1:8–15",
+          "search": "Romans 1:8-15"
+        },
+        {
+          "label": "Romans 15:23–28",
+          "search": "Romans 15:23-28"
+        },
+        {
+          "label": "Romans 16:1–2",
+          "search": "Romans 16:1-2"
+        }
+      ],
+      "otherWitness": [
+        {
+          "label": "2 Peter 3:15–16",
+          "search": "2 Peter 3:15-16",
+          "note": "Peter on “our beloved brother Paul” and his letters."
+        }
+      ],
+      "consensus": {
+        "yearStart": 56,
+        "yearEnd": 57,
+        "yearDisplay": "AD 56–57",
+        "originId": "corinth",
+        "originLabel": "Corinth",
+        "period": "third-journey"
+      },
+      "debated": {
+        "yearStart": 55,
+        "yearEnd": 58,
+        "yearDisplay": "AD 55–58",
+        "originId": "corinth",
+        "originLabel": "Corinth",
+        "period": "third-journey",
+        "debateNote": "From-Corinth is the Protestant consensus. The year moves with how one counts the third journey’s end."
+      },
+      "arcBulge": 72
+    },
+    {
+      "id": "philemon",
+      "title": "Philemon",
+      "shortTitle": "Philemon",
+      "sort": 7,
+      "book": "Philemon",
+      "bibleSearch": "Philemon 1",
+      "destinationId": "colossae",
+      "destinationLabel": "Philemon, Colossae",
+      "audienceType": "household",
+      "audiencePortrait": "Philemon, a house-church host in Colossae, and the household gathered in his home — including, by implication, the enslaved Onesimus.",
+      "occasion": "Onesimus has come to Paul in custody, become a believer, and is being sent back. Paul asks Philemon to receive him as a brother, hints at manumission, and offers to pay any debt. The whole letter is persuasion aimed at one man, read aloud in a living room.",
+      "outline": [
+        {
+          "ref": "1–7",
+          "heading": "Greeting and thanks",
+          "summary": "Partnership, love, and refreshment of the saints.",
+          "search": "Philemon 1:1-7"
+        },
+        {
+          "ref": "8–16",
+          "heading": "The appeal",
+          "summary": "Not a command: a son, a brother, more than a slave.",
+          "search": "Philemon 1:8-16"
+        },
+        {
+          "ref": "17–22",
+          "heading": "Charge it to me",
+          "summary": "Welcome him as you would me; prepare a guest room.",
+          "search": "Philemon 1:17-22"
+        },
+        {
+          "ref": "23–25",
+          "heading": "The circle",
+          "summary": "The same coworkers named in Colossians.",
+          "search": "Philemon 1:23-25"
+        }
+      ],
+      "themes": [
+        "Appeal",
+        "Brotherhood",
+        "Persuasion",
+        "Slavery",
+        "Household"
+      ],
+      "themeGroup": "church",
+      "narrowedAudience": "Ephesians can speak of the cosmic church in general terms. Philemon cannot. The audience is one host, one runaway, one house. Brotherhood has to mean a changed seat at a particular table, or the letter has failed. That is why it is not a miniature Ephesians: same prison, same courier circle, utterly different scale.",
+      "people": [
+        {
+          "name": "Philemon",
+          "role": "Host of the Colossian house church; the one who must decide.",
+          "search": "Philemon 1:1"
+        },
+        {
+          "name": "Onesimus",
+          "role": "The runaway, now a believer, sent back with the letter.",
+          "search": "Philemon 1:10-16"
+        },
+        {
+          "name": "Timothy",
+          "role": "Co-sender.",
+          "search": "Philemon 1:1"
+        }
+      ],
+      "datingNote": "Paired with Colossians by Onesimus and Tychicus. Consensus: Rome, house arrest (Acts 28). Wider Protestant debate: Ephesus in the mid-50s (shorter walk for a runaway) or, less often, Caesarea.",
+      "actsAnchors": [
+        {
+          "label": "Acts 28:16, 30–31",
+          "search": "Acts 28:16,28:30-31",
+          "note": "House arrest in Rome — the consensus prison."
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "Philemon 8–16",
+          "search": "Philemon 1:8-16"
+        },
+        {
+          "label": "Colossians 4:7–9",
+          "search": "Colossians 4:7-9",
+          "note": "Onesimus and Tychicus on the same road."
+        }
+      ],
+      "consensus": {
+        "yearStart": 60,
+        "yearEnd": 62,
+        "yearDisplay": "AD 60–62",
+        "originId": "rome",
+        "originLabel": "Rome (house arrest)",
+        "period": "first-roman"
+      },
+      "debated": {
+        "yearStart": 54,
+        "yearEnd": 62,
+        "yearDisplay": "AD 54–62",
+        "originId": "rome",
+        "originLabel": "Rome or Ephesus",
+        "originNote": "Rome (Acts 28) is the consensus; Ephesus in the 50s is the main Protestant alternative.",
+        "period": "first-roman",
+        "altOriginId": "ephesus",
+        "altOriginLabel": "Ephesus",
+        "debateNote": "Prison location — Rome, Ephesus, or (less often) Caesarea — is the fork, not whether Paul wrote it."
+      },
+      "arcBulge": 40
+    },
+    {
+      "id": "colossians",
+      "title": "Colossians",
+      "shortTitle": "Colossians",
+      "sort": 8,
+      "book": "Colossians",
+      "bibleSearch": "Colossians 1",
+      "destinationId": "colossae",
+      "destinationLabel": "Colossae",
+      "audienceType": "unvisited",
+      "audiencePortrait": "A church Paul did not found — planted by Epaphras in the Lycus valley — now flirting with a syncretistic “philosophy.”",
+      "occasion": "Epaphras has reached Paul with news of a teaching that mixes Jewish observances, visionary religion, and elemental powers. Paul writes to exalt Christ over every power and to insist that fullness is already in him, not in extra rites. He has not seen their faces.",
+      "outline": [
+        {
+          "ref": "1:1–23",
+          "heading": "Christ the image",
+          "summary": "The hymn; all things held together; you who were alienated.",
+          "search": "Colossians 1:1-23"
+        },
+        {
+          "ref": "1:24–2:5",
+          "heading": "Paul’s labor",
+          "summary": "A struggle for those who have not seen his face.",
+          "search": "Colossians 1:24-2:5"
+        },
+        {
+          "ref": "2:6–23",
+          "heading": "Against the philosophy",
+          "summary": "Fullness in Christ; shadows, not substance.",
+          "search": "Colossians 2:6-23"
+        },
+        {
+          "ref": "3:1–4:6",
+          "heading": "Risen life",
+          "summary": "Put on the new self; households; prayer and speech.",
+          "search": "Colossians 3:1-4:6"
+        },
+        {
+          "ref": "4:7–18",
+          "heading": "Tychicus and Onesimus",
+          "summary": "The same courier team as Philemon.",
+          "search": "Colossians 4:7-18"
+        }
+      ],
+      "themes": [
+        "Christ supreme",
+        "Fullness",
+        "Household",
+        "Slavery"
+      ],
+      "themeGroup": "christ",
+      "narrowedAudience": "He is writing to a church he did not plant. Authority here rests on the gospel they received from Epaphras, and on Christ’s supremacy, not on a shared founding story.",
+      "people": [
+        {
+          "name": "Epaphras",
+          "role": "Founder of the Colossian church; now with Paul.",
+          "search": "Colossians 1:7-8"
+        },
+        {
+          "name": "Tychicus",
+          "role": "Bearer of the letter.",
+          "search": "Colossians 4:7-8"
+        },
+        {
+          "name": "Onesimus",
+          "role": "Travels with Tychicus; also the subject of Philemon.",
+          "search": "Colossians 4:9"
+        }
+      ],
+      "datingNote": "Companion to Philemon. Consensus: Rome, AD 60–62. Wider Protestant debate is the same prison-location fork (Rome / Ephesus / Caesarea), not a different century.",
+      "actsAnchors": [
+        {
+          "label": "Acts 19:10",
+          "search": "Acts 19:10",
+          "note": "All Asia hears the word from Ephesus — the road Epaphras likely walked."
+        },
+        {
+          "label": "Acts 28:30–31",
+          "search": "Acts 28:30-31"
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "Colossians 1:15–20",
+          "search": "Colossians 1:15-20"
+        },
+        {
+          "label": "Colossians 2:1–5",
+          "search": "Colossians 2:1-5"
+        },
+        {
+          "label": "Colossians 4:7–9",
+          "search": "Colossians 4:7-9"
+        }
+      ],
+      "consensus": {
+        "yearStart": 60,
+        "yearEnd": 62,
+        "yearDisplay": "AD 60–62",
+        "originId": "rome",
+        "originLabel": "Rome",
+        "period": "first-roman"
+      },
+      "debated": {
+        "yearStart": 54,
+        "yearEnd": 62,
+        "yearDisplay": "AD 54–62",
+        "originId": "rome",
+        "originLabel": "Rome or Ephesus",
+        "period": "first-roman",
+        "altOriginId": "ephesus",
+        "altOriginLabel": "Ephesus",
+        "debateNote": "Same prison debate as Philemon. The letter still presents Paul in chains writing to a church he has not visited."
+      },
+      "arcBulge": 18
+    },
+    {
+      "id": "ephesians",
+      "title": "Ephesians",
+      "shortTitle": "Ephesians",
+      "sort": 9,
+      "book": "Ephesians",
+      "bibleSearch": "Ephesians 1",
+      "destinationId": "ephesus",
+      "destinationLabel": "Ephesus / circular Asia",
+      "audienceType": "unvisited",
+      "audiencePortrait": "Churches in Asia — Ephesus and likely a circular run of congregations — not a single crisis-bound plant.",
+      "occasion": "There is little local fire to put out. The letter offers a measured account of identity in Christ, the unity of Jew and Gentile in one new humanity, and a life that walks worthy of that calling. It reads more like a liturgical briefing than a reply to questions.",
+      "outline": [
+        {
+          "ref": "1",
+          "heading": "Blessing in Christ",
+          "summary": "Every spiritual blessing; a prayer for sight.",
+          "search": "Ephesians 1"
+        },
+        {
+          "ref": "2–3",
+          "heading": "One new humanity",
+          "summary": "Grace; the mystery; Paul on his knees for them.",
+          "search": "Ephesians 2:1-3:21"
+        },
+        {
+          "ref": "4:1–16",
+          "heading": "Unity and gifts",
+          "summary": "One body, many gifts, toward maturity.",
+          "search": "Ephesians 4:1-16"
+        },
+        {
+          "ref": "4:17–6:9",
+          "heading": "Walk",
+          "summary": "New self, light, and households under the same Lord.",
+          "search": "Ephesians 4:17-6:9"
+        },
+        {
+          "ref": "6:10–24",
+          "heading": "Armor",
+          "summary": "Stand; Tychicus will tell you how I am.",
+          "search": "Ephesians 6:10-24"
+        }
+      ],
+      "themes": [
+        "In Christ",
+        "Church",
+        "Walk",
+        "Armor",
+        "Spiritual gifts",
+        "Slavery",
+        "Household",
+        "Unity",
+        "Jew & Gentile"
+      ],
+      "themeGroup": "christ",
+      "narrowedAudience": "The audience is regional and relatively calm. That is why it sounds different from Corinth’s emergency mail — and why, beside Philemon, the same imprisonment can produce both cosmic ecclesiology and a household appeal.",
+      "people": [
+        {
+          "name": "Tychicus",
+          "role": "Bearer, as in Colossians.",
+          "search": "Ephesians 6:21-22"
+        }
+      ],
+      "datingNote": "Consensus: Rome, with Colossians, possibly circular (some early copies lack “in Ephesus”). Wider Protestant debate: the same prison location, and whether it is a local letter or a round-robin to Asia.",
+      "actsAnchors": [
+        {
+          "label": "Acts 19:1–20",
+          "search": "Acts 19:1-20",
+          "note": "Paul’s long work in Ephesus."
+        },
+        {
+          "label": "Acts 20:17–31",
+          "search": "Acts 20:17-31",
+          "note": "Farewell to the Ephesian elders at Miletus."
+        },
+        {
+          "label": "Acts 28:30–31",
+          "search": "Acts 28:30-31"
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "Ephesians 2:11–22",
+          "search": "Ephesians 2:11-22"
+        },
+        {
+          "label": "Ephesians 3:1–13",
+          "search": "Ephesians 3:1-13"
+        },
+        {
+          "label": "Ephesians 6:21–22",
+          "search": "Ephesians 6:21-22"
+        }
+      ],
+      "consensus": {
+        "yearStart": 60,
+        "yearEnd": 62,
+        "yearDisplay": "AD 60–62",
+        "originId": "rome",
+        "originLabel": "Rome",
+        "period": "first-roman"
+      },
+      "debated": {
+        "yearStart": 54,
+        "yearEnd": 62,
+        "yearDisplay": "AD 54–62",
+        "originId": "rome",
+        "originLabel": "Rome or Ephesus",
+        "period": "first-roman",
+        "altOriginId": "ephesus",
+        "altOriginLabel": "Ephesus",
+        "debateNote": "Circular vs local, and which prison, are the Protestant questions. The letter still speaks from chains."
+      },
+      "arcBulge": -28
+    },
+    {
+      "id": "philippians",
+      "title": "Philippians",
+      "shortTitle": "Philippians",
+      "sort": 10,
+      "book": "Philippians",
+      "bibleSearch": "Philippians 1",
+      "destinationId": "philippi",
+      "destinationLabel": "Philippi",
+      "audienceType": "planted",
+      "audiencePortrait": "The church Paul planted in Philippi — his first European congregation, and the one that kept sending help.",
+      "occasion": "They have sent a gift through Epaphroditus, who fell ill. Paul writes from custody to thank them, to interpret his chains as gospel advance, to urge unity in the mind of Christ, and to warn against rivals. Joy here is not mood. It is defiance with reasons.",
+      "outline": [
+        {
+          "ref": "1",
+          "heading": "Partnership in the gospel",
+          "summary": "Chains that preach; to live is Christ.",
+          "search": "Philippians 1"
+        },
+        {
+          "ref": "2",
+          "heading": "The mind of Christ",
+          "summary": "The hymn; Timothy and Epaphroditus on the road.",
+          "search": "Philippians 2"
+        },
+        {
+          "ref": "3",
+          "heading": "Knowing Christ",
+          "summary": "Rubbish, resurrection, citizens of heaven.",
+          "search": "Philippians 3"
+        },
+        {
+          "ref": "4",
+          "heading": "Peace and the gift",
+          "summary": "Euodia and Syntyche; contentment; the offering received.",
+          "search": "Philippians 4"
+        }
+      ],
+      "themes": [
+        "Joy",
+        "Partnership",
+        "Humility",
+        "Unity",
+        "Suffering"
+      ],
+      "themeGroup": "christ",
+      "people": [
+        {
+          "name": "Epaphroditus",
+          "role": "Their messenger; ill, now sent home with honor.",
+          "search": "Philippians 2:25-30"
+        },
+        {
+          "name": "Timothy",
+          "role": "To be sent to Philippi soon.",
+          "search": "Philippians 2:19-24"
+        },
+        {
+          "name": "Euodia & Syntyche",
+          "role": "Coworkers asked to agree in the Lord.",
+          "search": "Philippians 4:2-3"
+        }
+      ],
+      "datingNote": "Consensus: Rome. A strong Protestant minority prefers Ephesus in the mid-50s, because Epaphroditus’s round trip is easier from Asia than from Italy.",
+      "actsAnchors": [
+        {
+          "label": "Acts 16:11–40",
+          "search": "Acts 16:11-40",
+          "note": "The plant: the river, Lydia, the jailer."
+        },
+        {
+          "label": "Acts 28:16, 30–31",
+          "search": "Acts 28:16,28:30-31"
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "Philippians 1:12–14",
+          "search": "Philippians 1:12-14"
+        },
+        {
+          "label": "Philippians 2:5–11",
+          "search": "Philippians 2:5-11"
+        },
+        {
+          "label": "Philippians 4:10–18",
+          "search": "Philippians 4:10-18"
+        }
+      ],
+      "consensus": {
+        "yearStart": 60,
+        "yearEnd": 62,
+        "yearDisplay": "AD 60–62",
+        "originId": "rome",
+        "originLabel": "Rome",
+        "period": "first-roman"
+      },
+      "debated": {
+        "yearStart": 54,
+        "yearEnd": 62,
+        "yearDisplay": "AD 54–62",
+        "originId": "rome",
+        "originLabel": "Rome or Ephesus",
+        "originNote": "Rome is the consensus; Ephesus shortens Epaphroditus’s travel.",
+        "period": "first-roman",
+        "altOriginId": "ephesus",
+        "altOriginLabel": "Ephesus",
+        "debateNote": "The “praetorium” in 1:13 can fit Rome or a provincial capital. That is the fork."
+      },
+      "arcBulge": -52
+    },
+    {
+      "id": "1timothy",
+      "title": "1 Timothy",
+      "shortTitle": "1 Timothy",
+      "sort": 11,
+      "book": "1 Timothy",
+      "bibleSearch": "1 Timothy 1",
+      "destinationId": "ephesus",
+      "destinationLabel": "Timothy in Ephesus",
+      "audienceType": "delegate",
+      "audiencePortrait": "Timothy, Paul’s delegate left in Ephesus — not the Ephesian church as a whole.",
+      "occasion": "Paul has left Timothy to stop certain teachers and to appoint qualified overseers and deacons. The letter is a charge to a coworker: how to order a household of God already under pressure from speculative teaching and a leadership vacuum.",
+      "outline": [
+        {
+          "ref": "1",
+          "heading": "The charge",
+          "summary": "No other doctrine; mercy to the worst of sinners.",
+          "search": "1 Timothy 1"
+        },
+        {
+          "ref": "2–3",
+          "heading": "Prayer and household order",
+          "summary": "Public prayer; overseers and deacons.",
+          "search": "1 Timothy 2:1-3:16"
+        },
+        {
+          "ref": "4",
+          "heading": "The good minister",
+          "summary": "Train for godliness; watch your life and teaching.",
+          "search": "1 Timothy 4"
+        },
+        {
+          "ref": "5:1–6:2",
+          "heading": "Widows, elders, slaves",
+          "summary": "Honor with discernment; do not be hasty in laying on hands.",
+          "search": "1 Timothy 5:1-6:2"
+        },
+        {
+          "ref": "6",
+          "heading": "Godliness and money",
+          "summary": "Fight the fight; the good confession; true wealth.",
+          "search": "1 Timothy 6"
+        }
+      ],
+      "themes": [
+        "Church order",
+        "Sound doctrine",
+        "Slavery",
+        "Household"
+      ],
+      "themeGroup": "church",
+      "narrowedAudience": "This is not Romans. It is not even a church letter. The “you” is singular: a younger coworker told how to appoint, refuse, and guard. Church order here is a field manual, not a constitution mailed to a congregation. Read it as a charge, or the tone will feel oddly managerial.",
+      "people": [
+        {
+          "name": "Timothy",
+          "role": "The addressee; left in Ephesus to stop false teachers and appoint leaders.",
+          "search": "1 Timothy 1:3"
+        },
+        {
+          "name": "Hymenaeus & Alexander",
+          "role": "Named as having shipwrecked faith.",
+          "search": "1 Timothy 1:19-20"
+        }
+      ],
+      "datingNote": "Consensus: after Acts, from Macedonia, Timothy stationed in Ephesus. Wider Protestant debate: whether Paul is released after Acts 28 and travels again, or whether 1 Timothy fits an earlier leave-taking during the third journey.",
+      "actsAnchors": [
+        {
+          "label": "Acts 19:21–22",
+          "search": "Acts 19:21-22",
+          "note": "Timothy already serving the Ephesian work."
+        },
+        {
+          "label": "Acts 20:17–31",
+          "search": "Acts 20:17-31",
+          "note": "The charge to Ephesian elders — same city, same concerns."
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "1 Timothy 1:3–7",
+          "search": "1 Timothy 1:3-7"
+        },
+        {
+          "label": "1 Timothy 3:1–7",
+          "search": "1 Timothy 3:1-7"
+        }
+      ],
+      "consensus": {
+        "yearStart": 62,
+        "yearEnd": 64,
+        "yearDisplay": "AD 62–64",
+        "originId": "macedonia",
+        "originLabel": "Macedonia",
+        "period": "after-acts"
+      },
+      "debated": {
+        "yearStart": 57,
+        "yearEnd": 64,
+        "yearDisplay": "AD 57–64",
+        "originId": "macedonia",
+        "originLabel": "Macedonia",
+        "period": "after-acts",
+        "debateNote": "After-Acts travel vs an earlier leave-taking. The letter still addresses Timothy in Ephesus, not the church as a whole."
+      },
+      "arcBulge": -70
+    },
+    {
+      "id": "titus",
+      "title": "Titus",
+      "shortTitle": "Titus",
+      "sort": 12,
+      "book": "Titus",
+      "bibleSearch": "Titus 1",
+      "destinationId": "crete",
+      "destinationLabel": "Titus on Crete",
+      "audienceType": "delegate",
+      "audiencePortrait": "Titus, left on Crete to appoint elders in every town — a delegate on an unfinished island.",
+      "occasion": "Crete has scattered groups of believers and a reputation Paul does not flatter. Titus must appoint elders, silence rebellious teachers, and teach a grace that trains a people for good works. The letter is short because the task is concrete.",
+      "outline": [
+        {
+          "ref": "1",
+          "heading": "Elders and opposition",
+          "summary": "Qualifications for every town; Cretan teachers silenced.",
+          "search": "Titus 1"
+        },
+        {
+          "ref": "2",
+          "heading": "Grace that trains",
+          "summary": "Households; the appearing of grace, not mere rule.",
+          "search": "Titus 2"
+        },
+        {
+          "ref": "3",
+          "heading": "Ready for good works",
+          "summary": "Regeneration, not quarrels; send Zenas and Apollos; winter at Nicopolis.",
+          "search": "Titus 3"
+        }
+      ],
+      "themes": [
+        "Church order",
+        "Grace",
+        "Good works",
+        "Slavery",
+        "Household"
+      ],
+      "themeGroup": "church",
+      "narrowedAudience": "Like 1 Timothy, the audience is one man with a job. Crete is not receiving a theological treatise; Titus is receiving a to-do list baptized in grace. The doctrine of 2:11–14 exists to produce a people, and a people needs elders in every town.",
+      "people": [
+        {
+          "name": "Titus",
+          "role": "The addressee; left on Crete to appoint elders.",
+          "search": "Titus 1:4-5"
+        },
+        {
+          "name": "Artemas / Tychicus",
+          "role": "One of them will relieve Titus.",
+          "search": "Titus 3:12"
+        }
+      ],
+      "datingNote": "Consensus: same after-Acts window as 1 Timothy, on a trajectory toward Nicopolis (Titus 3:12). Crete is named in the letter; Acts records a Cretan stop on the voyage to Rome, which some Protestants connect.",
+      "actsAnchors": [
+        {
+          "label": "Acts 27:7–13",
+          "search": "Acts 27:7-13",
+          "note": "The voyage hugs Crete — Fair Havens — before the storm."
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "Titus 1:5",
+          "search": "Titus 1:5"
+        },
+        {
+          "label": "Titus 2:11–14",
+          "search": "Titus 2:11-14"
+        },
+        {
+          "label": "Titus 3:12",
+          "search": "Titus 3:12"
+        }
+      ],
+      "consensus": {
+        "yearStart": 62,
+        "yearEnd": 64,
+        "yearDisplay": "AD 62–64",
+        "originId": "macedonia",
+        "originLabel": "Macedonia / Nicopolis",
+        "originNote": "Written on a trajectory toward wintering at Nicopolis.",
+        "period": "after-acts"
+      },
+      "debated": {
+        "yearStart": 57,
+        "yearEnd": 64,
+        "yearDisplay": "AD 57–64",
+        "originId": "nicopolis",
+        "originLabel": "Nicopolis trajectory",
+        "period": "after-acts",
+        "altOriginId": "macedonia",
+        "altOriginLabel": "Macedonia",
+        "debateNote": "When the Cretan work fits — after a release from Rome, or an earlier unrecorded visit — is the Protestant question."
+      },
+      "arcBulge": 55
+    },
+    {
+      "id": "2timothy",
+      "title": "2 Timothy",
+      "shortTitle": "2 Timothy",
+      "sort": 13,
+      "book": "2 Timothy",
+      "bibleSearch": "2 Timothy 1",
+      "destinationId": "ephesus",
+      "destinationLabel": "Timothy",
+      "audienceType": "delegate",
+      "audiencePortrait": "Timothy, again — now receiving what reads as a last dispatch from a man who expects death.",
+      "occasion": "Paul is in a harsher Roman imprisonment. Some have deserted; Onesiphorus has not. He wants Timothy to come before winter, to bring Mark, a cloak, and the parchments, and to guard the deposit without shame. This is not church-planting mail. It is a dying charge.",
+      "outline": [
+        {
+          "ref": "1",
+          "heading": "Fan the gift",
+          "summary": "Not shame; the pattern of sound words; Onesiphorus unashamed of chains.",
+          "search": "2 Timothy 1"
+        },
+        {
+          "ref": "2",
+          "heading": "Soldier, athlete, farmer",
+          "summary": "Entrust to faithful people; the Lord knows those who are his.",
+          "search": "2 Timothy 2"
+        },
+        {
+          "ref": "3",
+          "heading": "Last days and Scripture",
+          "summary": "Godlessness; continue; all Scripture God-breathed.",
+          "search": "2 Timothy 3"
+        },
+        {
+          "ref": "4",
+          "heading": "Come before winter",
+          "summary": "Preach; the time of departure; names of the faithful and the deserters.",
+          "search": "2 Timothy 4"
+        }
+      ],
+      "themes": [
+        "Charge",
+        "Suffering",
+        "Scripture",
+        "Holiness"
+      ],
+      "themeGroup": "church",
+      "narrowedAudience": "1 Thessalonians was written to a young church looking forward together. 2 Timothy is written to one protégé from a cell. The future tense of hope is still there, but the present tense is farewell: names, a cloak, a last visit. That is why it feels different in the hand.",
+      "people": [
+        {
+          "name": "Timothy",
+          "role": "The addressee; told to come before winter.",
+          "search": "2 Timothy 4:9-13"
+        },
+        {
+          "name": "Lois & Eunice",
+          "role": "His grandmother and mother; sincere faith.",
+          "search": "2 Timothy 1:5"
+        },
+        {
+          "name": "Onesiphorus",
+          "role": "Not ashamed of the chain; sought Paul in Rome.",
+          "search": "2 Timothy 1:16-18"
+        },
+        {
+          "name": "Luke",
+          "role": "Alone with Paul.",
+          "search": "2 Timothy 4:11"
+        }
+      ],
+      "datingNote": "Consensus: a final Roman imprisonment after Acts, AD 64–67. Wider Protestant debate is how to relate this harsher custody to the house arrest of Acts 28 — a release and a second arrest is the usual reconstruction. Peter, facing his own departure, also writes of Paul’s letters.",
+      "actsAnchors": [
+        {
+          "label": "Acts 28:16, 30–31",
+          "search": "Acts 28:16,28:30-31",
+          "note": "The earlier, more open custody — different in tone from 2 Timothy."
+        }
+      ],
+      "letterAnchors": [
+        {
+          "label": "2 Timothy 1:8–12",
+          "search": "2 Timothy 1:8-12"
+        },
+        {
+          "label": "2 Timothy 3:14–17",
+          "search": "2 Timothy 3:14-17"
+        },
+        {
+          "label": "2 Timothy 4:6–13",
+          "search": "2 Timothy 4:6-13"
+        }
+      ],
+      "otherWitness": [
+        {
+          "label": "2 Peter 1:13–15",
+          "search": "2 Peter 1:13-15",
+          "note": "Peter also writes as a man near departure."
+        },
+        {
+          "label": "2 Peter 3:15–16",
+          "search": "2 Peter 3:15-16",
+          "note": "Peter on Paul’s letters as Scripture."
+        }
+      ],
+      "consensus": {
+        "yearStart": 64,
+        "yearEnd": 67,
+        "yearDisplay": "AD 64–67",
+        "originId": "rome",
+        "originLabel": "Rome (final imprisonment)",
+        "period": "after-acts"
+      },
+      "debated": {
+        "yearStart": 62,
+        "yearEnd": 67,
+        "yearDisplay": "AD 62–67",
+        "originId": "rome",
+        "originLabel": "Rome",
+        "period": "after-acts",
+        "debateNote": "How this custody relates to Acts 28 is the Protestant question. The letter still reads as a last charge from Rome to Timothy."
+      },
+      "arcBulge": 88
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { BIOGRAPHICAL_EVENTS } from '../data/biographical'
 import { LETTERS } from '../data/letters'
 import type { Dating, DatingScheme, Filters, Letter, PeriodId } from '../types'
 
@@ -6,17 +7,42 @@ export function datingOf(letter: Letter, scheme: DatingScheme): Dating {
 }
 
 export function yearBounds(_scheme?: DatingScheme): { min: number; max: number } {
-  return { min: 48, max: 68 }
+  const bioMin = BIOGRAPHICAL_EVENTS.reduce((min, event) => Math.min(min, event.yearStart), Infinity)
+  const bioMax = BIOGRAPHICAL_EVENTS.reduce(
+    (max, event) => Math.max(max, event.yearEnd ?? event.yearStart),
+    -Infinity,
+  )
+  const letterMin = LETTERS.reduce(
+    (min, letter) => Math.min(min, letter.consensus.yearStart, letter.debated.yearStart),
+    Infinity,
+  )
+  const letterMax = LETTERS.reduce(
+    (max, letter) => Math.max(max, letter.consensus.yearEnd, letter.debated.yearEnd),
+    -Infinity,
+  )
+
+  // Keep the scrubber useful even if a future content edit omits one source.
+  return {
+    min: Math.min(5, bioMin, letterMin),
+    max: Math.max(68, bioMax, letterMax),
+  }
 }
 
 export function yearPosition(year: number, _scheme?: DatingScheme): number {
   const { min, max } = yearBounds()
-  return (year - min) / (max - min)
+  return Math.min(1, Math.max(0, (year - min) / (max - min)))
 }
 
 export function yearFromPosition(t: number, _scheme?: DatingScheme): number {
+  const { min, max } = yearBounds()
   const clamped = Math.min(1, Math.max(0, t))
-  return Math.round(48 + clamped * (68 - 48))
+  return Math.round(min + clamped * (max - min))
+}
+
+export function yearTicks(_scheme?: DatingScheme): number[] {
+  const { min, max } = yearBounds()
+  const anchors = [min, 15, 30, 40, 48, 57, max]
+  return [...new Set(anchors.filter((year) => year >= min && year <= max))]
 }
 
 export type ArcState = 'future' | 'current' | 'past'

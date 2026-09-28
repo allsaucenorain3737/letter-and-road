@@ -40,7 +40,10 @@ export function StoryTimeline() {
               className={`story-bead is-${state}${app.selectedLetterId === letter.id ? ' is-selected' : ''}`}
               style={{ left: `${left}%`, borderColor: color, background: state === 'future' ? 'transparent' : color }}
               title={`${letter.shortTitle} · ${d.yearDisplay}`}
-              onClick={() => app.selectLetter(letter.id)}
+              onClick={() => {
+                app.selectLetter(letter.id)
+                app.setYear(d.yearStart)
+              }}
             />
           )
         })}

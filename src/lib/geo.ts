@@ -95,3 +95,71 @@ export function arrowHead(
   const by = tip.y - uy * size
   return `M ${tip.x.toFixed(1)} ${tip.y.toFixed(1)} L ${(bx + px * size * 0.55).toFixed(1)} ${(by + py * size * 0.55).toFixed(1)} L ${(bx - px * size * 0.55).toFixed(1)} ${(by - py * size * 0.55).toFixed(1)} Z`
 }
+
+export function unproject(x: number, y: number): { lon: number; lat: number } {
+  const lon = MAP.west + (x * X_SPAN) / (MAP.width * COS)
+  const lat = MAP.north - (y * Y_SPAN) / MAP.height
+  return { lon, lat }
+}
+
+/** Convert SVG-space pixel offset near a lon/lat into a geographic delta. */
+export function offsetToLonLat(
+  lon: number,
+  lat: number,
+  dxPx: number,
+  dyPx: number,
+): [number, number] {
+  const p = project(lon, lat)
+  const g = unproject(p.x + dxPx, p.y + dyPx)
+  return [g.lon, g.lat]
+}
+
+/**
+ * Sample a quadratic letter arc in the same projected space as the SVG atlas,
+ * then unproject to lon/lat LineString coordinates for MapLibre.
+ */
+export function sampleLetterArc(
+  lon1: number,
+  lat1: number,
+  lon2: number,
+  lat2: number,
+  bulge: number,
+  steps = 32,
+): [number, number][] {
+  const a = project(lon1, lat1)
+  const b = project(lon2, lat2)
+  const c = arcControl(a.x, a.y, b.x, b.y, bulge)
+  const coords: [number, number][] = []
+  for (let i = 0; i <= steps; i++) {
+    const t = i / steps
+    const pt = quadraticPoint(a.x, a.y, c.cx, c.cy, b.x, b.y, t)
+    const g = unproject(pt.x, pt.y)
+    coords.push([g.lon, g.lat])
+  }
+  return coords
+}
+
+/** Tip bearing (degrees clockwise from north) near the end of a quadratic arc. */
+export function arcTipBearing(
+  lon1: number,
+  lat1: number,
+  lon2: number,
+  lat2: number,
+  bulge: number,
+): number {
+  const a = project(lon1, lat1)
+  const b = project(lon2, lat2)
+  const c = arcControl(a.x, a.y, b.x, b.y, bulge)
+  const p = quadraticPoint(a.x, a.y, c.cx, c.cy, b.x, b.y, 0.86)
+  const tip = quadraticPoint(a.x, a.y, c.cx, c.cy, b.x, b.y, 0.97)
+  const dx = tip.x - p.x
+  const dy = tip.y - p.y
+  // SVG y grows downward; MapLibre bearing is clockwise from north.
+  const deg = (Math.atan2(dx, -dy) * 180) / Math.PI
+  return ((deg % 360) + 360) % 360
+}
+
+export const MAP_BOUNDS: [[number, number], [number, number]] = [
+  [MAP.west, MAP.south],
+  [MAP.east, MAP.north],
+]

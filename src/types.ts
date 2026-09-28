@@ -2,7 +2,7 @@ export type AudienceType = 'planted' | 'unvisited' | 'delegate' | 'household'
 
 export type DatingScheme = 'consensus' | 'debated'
 
-export type StoryPhase = 'playing' | 'explore'
+export type StoryPhase = 'invite' | 'explore'
 
 export type PeriodId =
   | 'after-first'
@@ -14,7 +14,7 @@ export type PeriodId =
 
 export type ThemeGroup = 'coming' | 'cross' | 'christ' | 'church'
 
-export type ViewId = 'atlas' | 'compare' | 'about'
+export type ViewId = 'atlas' | 'compare' | 'about' | 'voices'
 
 export type PlantedFilter = 'all' | 'planted' | 'unvisited' | 'individuals'
 
@@ -112,10 +112,7 @@ export interface PeriodMeta {
 }
 
 export interface Layers {
-  journeys: boolean
-  letters: boolean
   imprisonments: boolean
-  citiesOnly: boolean
 }
 
 export interface Filters {
@@ -129,4 +126,57 @@ export interface ComparePair {
   a: string
   b: string
   insight: string
+}
+
+export interface BiographicalEvent {
+  id: string
+  title: string
+  yearStart: number
+  yearEnd?: number
+  yearDisplay: string
+  placeId?: string
+  summary: string
+  actsAnchors?: ScriptureRef[]
+  tags?: string[]
+}
+
+export type CulturalCategory =
+  | 'social'
+  | 'religious'
+  | 'political'
+  | 'theological'
+  | 'daily-life'
+
+export type CulturalAssumption = 'western' | 'eastern' | 'both'
+
+export interface CulturalContext {
+  id: string
+  title: string
+  category?: CulturalCategory
+  appliesTo: { letterIds?: string[]; cityIds?: string[]; themes?: string[] }
+  summary: string
+  body: string
+  scriptureAnchors?: ScriptureRef[]
+  whyItMattersToday?: string
+  culturalAssumption?: CulturalAssumption
+  relatedIds?: string[]
+  sources?: { label: string; url?: string; note?: string }[]
+}
+
+export interface JourneyLinks {
+  prevCityIds: string[]
+  nextCityIds: string[]
+}
+
+export interface CityContext {
+  id: string
+  intro: string
+  politicalStatus: string
+  culturalDistinctive: string
+  paulThere: string
+  letterIds: string[]
+  themeIds: string[]
+  journeyLinks: JourneyLinks
+  scriptureAnchors: ScriptureRef[]
+  sources?: { label: string; url?: string; note?: string }[]
 }

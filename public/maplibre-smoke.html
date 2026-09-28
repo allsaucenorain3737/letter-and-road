@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <link href="/node_modules/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
+  <style>html,body,#map{margin:0;height:100%;background:#1a1a1a}</style>
+</head>
+<body>
+<div id="map"></div>
+<script type="module">
+  import { Map, setWorkerUrl, getWorkerUrl, getVersion } from '/node_modules/maplibre-gl/dist/maplibre-gl.mjs';
+  const worker = `https://cdn.jsdelivr.net/npm/maplibre-gl@${getVersion()}/dist/maplibre-gl-worker.mjs`;
+  setWorkerUrl(worker);
+  console.log('version', getVersion(), 'WORKER_URL', getWorkerUrl());
+  const map = new Map({
+    container: 'map',
+    style: 'https://tiles.openfreemap.org/styles/liberty',
+    center: [25, 37],
+    zoom: 4,
+  });
+  map.on('error', (e) => console.error('map error', e.error || e));
+  map.on('load', () => console.log('map load OK'));
+</script>
+</body>
+</html>
