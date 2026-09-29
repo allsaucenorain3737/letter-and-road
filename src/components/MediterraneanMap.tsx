@@ -146,7 +146,13 @@ function MediterraneanMapLibre() {
         console.error('[maplibre] overlay setup failed', err)
       }
       readyRef.current = true
+      // Push overlay data now. Do not gate on isStyleLoaded(): adding the remote
+      // roman-roads GeoJSON marks the style unloaded until that fetch finishes, which
+      // would skip this push and leave lr-cities empty forever (roads still appear).
       pendingPushRef.current?.()
+      map.once('idle', () => {
+        pendingPushRef.current?.()
+      })
     }
     map.on('load', onLoad)
     map.on('error', (e) => {
@@ -246,9 +252,12 @@ function MediterraneanMapLibre() {
   }, [app.cityId, compact])
 
   useEffect(() => {
-    const map = mapRef.current
     const push = () => {
-      if (!map || !readyRef.current || !map.isStyleLoaded()) return
+      const map = mapRef.current
+      if (!map || !readyRef.current) return
+      // Sources exist after onLoad ensureSources; isStyleLoaded may still be false
+      // while roman-roads.geojson is fetching — setData is safe either way.
+      if (!map.getSource(SRC.cities) || !map.getSource(SRC.prisons)) return
       setSourceData(map, SRC.prisons, prisonData)
       setSourceData(map, SRC.cities, cityData)
     }
