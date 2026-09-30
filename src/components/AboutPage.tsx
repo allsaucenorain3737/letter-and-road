@@ -101,6 +101,17 @@ export function AboutPage() {
         </a>{' '}
         helps keep it going — the floating “Support me” button on this page opens the same link.
       </p>
+      <p>
+        Have feedback or a question about the atlas?{' '}
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdJ3hRMQeu3xhJzoIeLMYAkG6qhJEr0tNFKSslOqSRdhgcrSg/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Send feedback or a question
+        </a>
+        .
+      </p>
 
       <h2>Privacy</h2>
       <p>
