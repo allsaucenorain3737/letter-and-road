@@ -65,6 +65,15 @@ export function InviteOverlay() {
         <div className="invite-cards" role="list">
           <button
             type="button"
+            className="invite-card invite-card--primary"
+            role="listitem"
+            onClick={app.beginStory}
+          >
+            <strong>Play Paul’s journey</strong>
+            <span>About two minutes · Damascus road to Rome</span>
+          </button>
+          <button
+            type="button"
             className="invite-card"
             role="listitem"
             onClick={() => app.enterComparePair(STARTER_A, STARTER_B)}

@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from 'react'
 import { BIOGRAPHICAL_EVENTS } from '../data/biographical'
+import { STORY, type StoryEvent } from '../data/story'
 import { LETTER_BY_ID } from '../data/letters'
 import { useReducedMotion } from '../hooks'
 import { trackPageView } from '../lib/analytics'
@@ -29,6 +30,7 @@ interface Persisted {
 interface AppState {
   view: ViewId
   phase: StoryPhase
+  storyIndex: number
   selectedLetterId: string | null
   year: number
   layers: Layers
@@ -49,6 +51,9 @@ type Action =
   | { type: 'setYear'; year: number }
   | { type: 'nudgeYear'; delta: number }
   | { type: 'dismissInvite' }
+  | { type: 'storyAdvance' }
+  | { type: 'skipStory' }
+  | { type: 'beginStory' }
   | { type: 'setLayer'; key: keyof Layers; value: boolean }
   | { type: 'setPlantedFilter'; value: PlantedFilter }
   | { type: 'togglePeriod'; id: PeriodId }
@@ -86,6 +91,7 @@ const defaultFilters: Filters = {
 const initialState: AppState = {
   view: 'atlas',
   phase: 'invite',
+  storyIndex: 0,
   selectedLetterId: null,
   year: 48,
   layers: defaultLayers,
@@ -150,6 +156,63 @@ function reducer(state: AppState, action: Action): AppState {
     case 'nudgeYear': {
       const { min, max } = yearBounds()
       return { ...state, year: Math.min(max, Math.max(min, state.year + action.delta)) }
+    }
+
+    case 'beginStory': {
+      const first = STORY[0]
+      let cityId: string | null = null
+      if (first?.type === 'travel') cityId = first.waypoints[0] ?? null
+      else if (first?.type === 'stay') cityId = first.cityId
+      return {
+        ...state,
+        phase: 'playing',
+        storyIndex: 0,
+        year: first?.year ?? 34,
+        menuOpen: false,
+        selectedLetterId: null,
+        cityId,
+        view: 'atlas',
+        showScrubber: true,
+      }
+    }
+    case 'skipStory':
+      return {
+        ...state,
+        phase: 'explore',
+        storyIndex: STORY.length,
+        year: 67,
+        menuOpen: true,
+        view: 'atlas',
+        selectedLetterId: null,
+        cityId: null,
+      }
+    case 'storyAdvance': {
+      const next = state.storyIndex + 1
+      if (next >= STORY.length) {
+        return {
+          ...state,
+          phase: 'explore',
+          storyIndex: STORY.length,
+          year: 67,
+          menuOpen: true,
+          cityId: null,
+        }
+      }
+      const ev = STORY[next]
+      let cityId: string | null = state.cityId
+      if (ev.type === 'travel') cityId = ev.waypoints[ev.waypoints.length - 1] ?? null
+      else if (ev.type === 'stay') cityId = ev.cityId
+      else if (ev.type === 'letter') {
+        const letter = LETTER_BY_ID[ev.letterId]
+        cityId = letter?.consensus.originId ?? null
+      }
+      return {
+        ...state,
+        storyIndex: next,
+        year: ev.year,
+        cityId,
+        selectedLetterId: null,
+      }
     }
     case 'dismissInvite':
       return toExplore(state, { menuOpen: false, view: 'atlas' })
@@ -307,6 +370,9 @@ interface AppContextValue extends AppState {
   setYear: (year: number) => void
   nudgeYear: (delta: number) => void
   dismissInvite: () => void
+  beginStory: () => void
+  skipStory: () => void
+  currentStoryEvent: StoryEvent | null
   enterComparePair: (a: string, b: string) => void
   enterExploreCities: () => void
   enterExploreTimeline: () => void
@@ -438,6 +504,21 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, [state.phase])
 
   useEffect(() => {
+    if (state.phase !== 'playing') return
+    if (reduced) {
+      dispatch({ type: 'skipStory' })
+      return
+    }
+    const ev = STORY[state.storyIndex]
+    if (!ev) {
+      dispatch({ type: 'skipStory' })
+      return
+    }
+    const id = window.setTimeout(() => dispatch({ type: 'storyAdvance' }), ev.duration)
+    return () => window.clearTimeout(id)
+  }, [state.phase, state.storyIndex, reduced])
+
+  useEffect(() => {
     function onKey(e: KeyboardEvent) {
       const target = e.target as HTMLElement | null
       const typing =
@@ -450,6 +531,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
       if (e.key === 'Escape') {
         if (state.phase === 'invite') {
           dispatch({ type: 'dismissInvite' })
+          return
+        }
+        if (state.phase === 'playing') {
+          dispatch({ type: 'skipStory' })
           return
         }
         if (state.selectedLetterId) dispatch({ type: 'selectLetter', id: null })
@@ -476,6 +561,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const setYear = useCallback((year: number) => dispatch({ type: 'setYear', year }), [])
   const nudgeYear = useCallback((delta: number) => dispatch({ type: 'nudgeYear', delta }), [])
   const dismissInvite = useCallback(() => dispatch({ type: 'dismissInvite' }), [])
+  const beginStory = useCallback(() => dispatch({ type: 'beginStory' }), [])
+  const skipStory = useCallback(() => dispatch({ type: 'skipStory' }), [])
   const enterComparePair = useCallback(
     (a: string, b: string) => dispatch({ type: 'enterComparePair', a, b }),
     [],
@@ -533,6 +620,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
     state.filters.periods.length > 0 ||
     state.filters.themes.length > 0
 
+  const currentStoryEvent =
+    state.phase === 'playing' && state.storyIndex >= 0 ? (STORY[state.storyIndex] ?? null) : null
+
   const value = useMemo<AppContextValue>(
     () => ({
       ...state,
@@ -541,6 +631,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setYear,
       nudgeYear,
       dismissInvite,
+      beginStory,
+      skipStory,
+      currentStoryEvent,
       enterComparePair,
       enterExploreCities,
       enterExploreTimeline,
@@ -571,6 +664,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setYear,
       nudgeYear,
       dismissInvite,
+      beginStory,
+      skipStory,
+      currentStoryEvent,
       enterComparePair,
       enterExploreCities,
       enterExploreTimeline,

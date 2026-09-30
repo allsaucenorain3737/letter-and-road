@@ -2,7 +2,7 @@ export type AudienceType = 'planted' | 'unvisited' | 'delegate' | 'household'
 
 export type DatingScheme = 'consensus' | 'debated'
 
-export type StoryPhase = 'invite' | 'explore'
+export type StoryPhase = 'invite' | 'playing' | 'explore'
 
 export type PeriodId =
   | 'after-first'

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { CityListPanel } from './CityListPanel'
 import { PERIODS, THEME_FILTERS } from '../data/periods'
 import { useApp } from '../state/AppState'
 import type { PlantedFilter, ViewId } from '../types'
@@ -40,17 +41,26 @@ export function MapChrome() {
           <button type="button" className="map-options-btn is-active" onClick={app.dismissInvite}>
             Skip
           </button>
-        ) : (
-          <button
-            type="button"
-            className={`map-options-btn${app.menuOpen ? ' is-active' : ''}`}
-            aria-expanded={app.menuOpen}
-            aria-controls={MAP_OPTIONS_ID}
-            aria-haspopup="true"
-            onClick={() => app.setMenuOpen(!app.menuOpen)}
-          >
-            {app.menuOpen ? 'Close options' : 'Map options'}
+        ) : app.phase === 'playing' ? (
+          <button type="button" className="map-options-btn is-active" onClick={app.skipStory}>
+            Skip story
           </button>
+        ) : (
+          <>
+            <button type="button" className="play-journey-btn" onClick={app.beginStory}>
+              Play Paul’s journey
+            </button>
+            <button
+              type="button"
+              className={`map-options-btn${app.menuOpen ? ' is-active' : ''}`}
+              aria-expanded={app.menuOpen}
+              aria-controls={MAP_OPTIONS_ID}
+              aria-haspopup="true"
+              onClick={() => app.setMenuOpen(!app.menuOpen)}
+            >
+              {app.menuOpen ? 'Close options' : 'Map options'}
+            </button>
+          </>
         )}
       </div>
     </div>
@@ -118,6 +128,14 @@ export function ExploreMenu() {
         aria-label="Map options"
       >
         <div className="explore-grid">
+          <section>
+            <h3>Story</h3>
+            <button type="button" className="primary-btn" onClick={app.beginStory}>
+              Play Paul’s journey
+            </button>
+            <p className="menu-hint">About two minutes · Damascus road to Rome, with letters along the way.</p>
+          </section>
+
           <section>
             <h3>Add to the map</h3>
             <label className="menu-check">
@@ -237,6 +255,12 @@ export function ExploreMenu() {
                 Clear filters
               </button>
             )}
+          </section>
+
+          <section className="theme-span">
+            <h3>Cities</h3>
+            <p className="menu-hint">Keyboard-friendly list — opens the city drawer.</p>
+            <CityListPanel embedded />
           </section>
         </div>
       </div>
