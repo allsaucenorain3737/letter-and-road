@@ -160,9 +160,6 @@ function reducer(state: AppState, action: Action): AppState {
 
     case 'beginStory': {
       const first = STORY[0]
-      let cityId: string | null = null
-      if (first?.type === 'travel') cityId = first.waypoints[0] ?? null
-      else if (first?.type === 'stay') cityId = first.cityId
       return {
         ...state,
         phase: 'playing',
@@ -170,7 +167,8 @@ function reducer(state: AppState, action: Action): AppState {
         year: first?.year ?? 34,
         menuOpen: false,
         selectedLetterId: null,
-        cityId,
+        // Keep city drawer closed while the journey animates; map highlights via story event.
+        cityId: null,
         view: 'atlas',
         showScrubber: true,
       }
@@ -199,18 +197,12 @@ function reducer(state: AppState, action: Action): AppState {
         }
       }
       const ev = STORY[next]
-      let cityId: string | null = state.cityId
-      if (ev.type === 'travel') cityId = ev.waypoints[ev.waypoints.length - 1] ?? null
-      else if (ev.type === 'stay') cityId = ev.cityId
-      else if (ev.type === 'letter') {
-        const letter = LETTER_BY_ID[ev.letterId]
-        cityId = letter?.consensus.originId ?? null
-      }
       return {
         ...state,
         storyIndex: next,
         year: ev.year,
-        cityId,
+        // Do not select a city during playback — that opens CityDrawer over the map.
+        cityId: null,
         selectedLetterId: null,
       }
     }

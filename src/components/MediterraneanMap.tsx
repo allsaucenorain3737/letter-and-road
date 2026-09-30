@@ -179,6 +179,7 @@ function MediterraneanMapLibre() {
     })
 
     const onCityClick = (e: MapLayerMouseEvent) => {
+      if (appRef.current.phase === 'playing') return
       const f = e.features?.[0]
       const id = f?.properties?.id as string | undefined
       if (id) appRef.current.setCity(id)
@@ -244,6 +245,8 @@ function MediterraneanMapLibre() {
     }
   }, [showPrisons])
 
+  const highlightCityId = playing ? storyHighlightCityId(current) : app.cityId
+
   const cityData = useMemo((): FC => {
     const cities = CITIES.filter((c) => {
       if (START_LABEL_IDS.has(c.id)) return true
@@ -255,13 +258,13 @@ function MediterraneanMapLibre() {
       features: cities
         .filter((city) => {
           const named = START_LABEL_IDS.has(city.id) || city.letterRelevant
-          const selected = app.cityId === city.id
+          const selected = highlightCityId === city.id
           if (compact && !named && !selected) return false
           return true
         })
         .map((city) => {
           const named = START_LABEL_IDS.has(city.id) || city.letterRelevant
-          const selected = app.cityId === city.id
+          const selected = highlightCityId === city.id
           return {
             type: 'Feature' as const,
             properties: {
@@ -279,7 +282,7 @@ function MediterraneanMapLibre() {
           }
         }),
     }
-  }, [app.cityId, compact])
+  }, [highlightCityId, compact])
 
   useEffect(() => {
     const push = () => {
@@ -335,15 +338,19 @@ function MediterraneanMapLibre() {
         // Static full reveal for the current step.
         if (ev.type === 'travel') {
           const coords = travelCoords(ev)
+          fitStoryCamera(m, coords, { reduced, compact })
           setSourceData(m, SRC.trailLive, lineFC(coords, { mode: ev.mode, live: 1 }))
           setSourceData(m, SRC.letterLive, EMPTY)
           setSourceData(m, SRC.packet, EMPTY)
         } else if (ev.type === 'letter') {
           const arc = letterArcCoords(ev.letterId, compact)
+          if (arc) fitStoryCamera(m, arc, { reduced, compact })
           setSourceData(m, SRC.letterLive, arc ? lineFC(arc, { letterId: ev.letterId, live: 1 }) : EMPTY)
           setSourceData(m, SRC.trailLive, EMPTY)
           setSourceData(m, SRC.packet, EMPTY)
         } else {
+          const stayCity = CITY_BY_ID[ev.cityId]
+          if (stayCity) fitStoryCamera(m, [[stayCity.lon, stayCity.lat]], { reduced, compact })
           setSourceData(m, SRC.trailLive, EMPTY)
           setSourceData(m, SRC.letterLive, EMPTY)
           setSourceData(m, SRC.packet, EMPTY)
@@ -356,6 +363,7 @@ function MediterraneanMapLibre() {
 
       if (ev.type === 'travel') {
         const coords = travelCoords(ev)
+        fitStoryCamera(m, coords, { reduced, compact })
         setSourceData(m, SRC.letterLive, EMPTY)
         const tick = (now: number) => {
           if (cancelled || !mapRef.current) return
@@ -389,6 +397,7 @@ function MediterraneanMapLibre() {
         const arc = letterArcCoords(ev.letterId, compact)
         setSourceData(m, SRC.trailLive, EMPTY)
         if (!arc) return
+        fitStoryCamera(m, arc, { reduced, compact })
         const tick = (now: number) => {
           if (cancelled || !mapRef.current) return
           const t = Math.min(1, (now - started) / dur)
@@ -421,7 +430,9 @@ function MediterraneanMapLibre() {
         return
       }
 
-      // stay — hold city highlight only
+      // stay — hold city highlight only; gently frame the city
+      const stayCity = CITY_BY_ID[ev.cityId]
+      if (stayCity) fitStoryCamera(m, [[stayCity.lon, stayCity.lat]], { reduced, compact })
       setSourceData(m, SRC.trailLive, EMPTY)
       setSourceData(m, SRC.letterLive, EMPTY)
       setSourceData(m, SRC.packet, EMPTY)
@@ -515,6 +526,72 @@ function MediterraneanMapLibre() {
         </button>
       </div>
     </div>
+  )
+}
+
+/** City id to highlight on the map during story playback (no CityDrawer). */
+function storyHighlightCityId(ev: StoryEvent | null): string | null {
+  if (!ev) return null
+  if (ev.type === 'travel') return ev.waypoints[ev.waypoints.length - 1] ?? ev.waypoints[0] ?? null
+  if (ev.type === 'stay') return ev.cityId
+  const letter = LETTER_BY_ID[ev.letterId]
+  return letter?.consensus.originId ?? null
+}
+
+/**
+ * Ease the camera to keep the current travel path / letter arc in view.
+ * Caps zoom so Mediterranean context is retained for short segments; pads for caption chrome.
+ */
+function fitStoryCamera(
+  map: MapLibreMap,
+  coords: LonLat[],
+  opts: { reduced: boolean; compact: boolean },
+) {
+  if (!coords.length) return
+
+  let west = Infinity
+  let south = Infinity
+  let east = -Infinity
+  let north = -Infinity
+  for (const [lon, lat] of coords) {
+    if (lon < west) west = lon
+    if (lat < south) south = lat
+    if (lon > east) east = lon
+    if (lat > north) north = lat
+  }
+
+  // Minimum span so pinpoint stays / tiny hops do not zoom into a pinprick.
+  const minSpanLon = 2.8
+  const minSpanLat = 2.0
+  const spanLon = east - west
+  const spanLat = north - south
+  if (spanLon < minSpanLon) {
+    const mid = (west + east) / 2
+    west = mid - minSpanLon / 2
+    east = mid + minSpanLon / 2
+  }
+  if (spanLat < minSpanLat) {
+    const mid = (south + north) / 2
+    south = mid - minSpanLat / 2
+    north = mid + minSpanLat / 2
+  }
+
+  map.fitBounds(
+    [
+      [west, south],
+      [east, north],
+    ],
+    {
+      padding: {
+        top: opts.compact ? 64 : 72,
+        bottom: opts.compact ? 172 : 152,
+        left: opts.compact ? 40 : 56,
+        right: opts.compact ? 60 : 76,
+      },
+      maxZoom: 6.35,
+      duration: opts.reduced ? 0 : 900,
+      essential: true,
+    },
   )
 }
 

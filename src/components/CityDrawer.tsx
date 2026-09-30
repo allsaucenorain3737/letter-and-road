@@ -51,7 +51,8 @@ export function CityDrawer() {
     }
   }, [city])
 
-  if (!city) return null
+  // Story playback uses map highlight + caption only — never cover the journey with the drawer.
+  if (!city || app.phase === 'playing') return null
 
   const scheme = app.filters.datingScheme
   const linkedLetters = (pack?.letterIds ?? [])
