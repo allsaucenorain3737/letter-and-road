@@ -74,3 +74,19 @@ Deployment configuration does not bypass project review. Content changes should 
 - **Build:** `npm run build` → `/dist`
 - **Env:** `BASE_PATH=/`
 - **Note:** Dashboard had no Node version field; first successful deploy used Cloudflare’s default Node 22.16.0. Prefer pinning `NODE_VERSION=20` in environment variables if you need Node 20 specifically.
+
+
+## Headers (Cloudflare Pages)
+
+`public/_headers` is copied into `dist/` and applied by Cloudflare Pages:
+
+- **HSTS** `max-age=31536000; includeSubDomains; preload`
+- **CSP** allowing self assets, OpenFreeMap tiles/fonts, Google Fonts, GA gtag (when consented), and same-origin MapLibre worker (`blob:` workers)
+
+GitHub Pages does not read `_headers`; production hardening targets Cloudflare / letterandroad.com.
+
+## Google Analytics
+
+- Set `VITE_GA_MEASUREMENT_ID=G-…` on the Cloudflare Pages production build.
+- Leave unset or empty on preview builds to disable measurement.
+- Consent Mode v2 defaults `analytics_storage` to denied until the user Accepts.

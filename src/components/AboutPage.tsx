@@ -90,9 +90,21 @@ export function AboutPage() {
       </ul>
       <h2>Privacy</h2>
       <p>
-        The site uses Google Analytics 4 (Measurement ID G-BDDS3372C2) to understand aggregate
-        visits and which routes people open. IP anonymization is on. No account login is required
-        to use the atlas.
+        Optional Google Analytics 4 helps us see aggregate traffic (which pages and hash routes
+        people open). Analytics cookies/storage stay off until you Accept on the consent banner.
+        Declining keeps the atlas fully usable without analytics.
+      </p>
+      <p>
+        When you accept, Google acts as a processor for measurement events (page views). Google may
+        process data in the United States under its terms. We do not sell personal data, and no
+        account login is required. You can clear site data in your browser to reset the consent
+        choice, or decline on a fresh visit after clearing{' '}
+        <code>letter-and-road:ga-consent</code>.
+      </p>
+      <p>
+        Measurement IDs are public configuration, not secrets. Retention follows Google Analytics
+        defaults for the property; opt out anytime via Decline (after clearing the stored choice) or
+        browser controls that block third-party scripts.
       </p>
       <p>Not affiliated with a denomination. Built as a public teaching aid for readers, youth groups, and pastors.</p>
     </article>
