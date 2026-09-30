@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { CityListPanel } from './CityListPanel'
 import { PERIODS, THEME_FILTERS } from '../data/periods'
 import { useApp } from '../state/AppState'
 import type { PlantedFilter, ViewId } from '../types'
@@ -110,7 +109,6 @@ export function ExploreMenu() {
   }, [open])
 
   if (!open) return null
-  const scheme = app.filters.datingScheme
 
   return (
     <>
@@ -184,24 +182,10 @@ export function ExploreMenu() {
           </section>
 
           <section>
-            <h3>Dates</h3>
-            <div className="seg-row">
-              <button
-                type="button"
-                className={`seg${scheme === 'consensus' ? ' is-on' : ''}`}
-                onClick={() => app.setScheme('consensus')}
-              >
-                Consensus
-              </button>
-              <button
-                type="button"
-                className={`seg scheme-debated${scheme === 'debated' ? ' is-on' : ''}`}
-                onClick={() => app.setScheme('debated')}
-              >
-                Wider debate
-              </button>
-            </div>
-            <p className="menu-hint">Tied first to Acts and the letters. Scripture links open the ESV.</p>
+            <h3>Cities</h3>
+            <p className="menu-hint">
+              The city sidebar opens when you click a city on the map.
+            </p>
           </section>
 
           <section>
@@ -255,12 +239,6 @@ export function ExploreMenu() {
                 Clear filters
               </button>
             )}
-          </section>
-
-          <section className="theme-span">
-            <h3>Cities</h3>
-            <p className="menu-hint">Keyboard-friendly list — opens the city drawer.</p>
-            <CityListPanel embedded />
           </section>
         </div>
       </div>

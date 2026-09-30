@@ -59,7 +59,6 @@ type Action =
   | { type: 'togglePeriod'; id: PeriodId }
   | { type: 'toggleTheme'; theme: string }
   | { type: 'clearFilters' }
-  | { type: 'setScheme'; scheme: DatingScheme }
   | { type: 'setCompare'; slot: 0 | 1; id: string | null }
   | { type: 'setComparePair'; a: string; b: string }
   | { type: 'enterComparePair'; a: string; b: string }
@@ -105,8 +104,8 @@ const initialState: AppState = {
   cityId: null,
 }
 
-function normalizeScheme(raw: string | undefined): DatingScheme {
-  if (raw === 'debated' || raw === 'critical') return 'debated'
+function normalizeScheme(_raw?: string): DatingScheme {
+  // Atlas is consensus-only; ignore any persisted alternate scheme.
   return 'consensus'
 }
 
@@ -299,16 +298,8 @@ function reducer(state: AppState, action: Action): AppState {
     case 'clearFilters':
       return {
         ...state,
-        filters: { ...defaultFilters, datingScheme: state.filters.datingScheme },
+        filters: { ...defaultFilters },
       }
-    case 'setScheme': {
-      const { min, max } = yearBounds()
-      return {
-        ...state,
-        filters: { ...state.filters, datingScheme: action.scheme },
-        year: Math.min(max, Math.max(min, state.year)),
-      }
-    }
     case 'setCompare': {
       const compare: [string | null, string | null] = [...state.compare]
       compare[action.slot] = action.id
@@ -377,7 +368,6 @@ interface AppContextValue extends AppState {
   togglePeriod: (id: PeriodId) => void
   toggleTheme: (theme: string) => void
   clearFilters: () => void
-  setScheme: (scheme: DatingScheme) => void
   setCompare: (slot: 0 | 1, id: string | null) => void
   setComparePair: (a: string, b: string) => void
   setMenuOpen: (open: boolean) => void
@@ -579,7 +569,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const togglePeriod = useCallback((id: PeriodId) => dispatch({ type: 'togglePeriod', id }), [])
   const toggleTheme = useCallback((theme: string) => dispatch({ type: 'toggleTheme', theme }), [])
   const clearFilters = useCallback(() => dispatch({ type: 'clearFilters' }), [])
-  const setScheme = useCallback((scheme: DatingScheme) => dispatch({ type: 'setScheme', scheme }), [])
   const setCompare = useCallback(
     (slot: 0 | 1, id: string | null) => dispatch({ type: 'setCompare', slot, id }),
     [],
@@ -638,7 +627,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
       togglePeriod,
       toggleTheme,
       clearFilters,
-      setScheme,
       setCompare,
       setComparePair,
       setMenuOpen,
@@ -671,7 +659,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
       togglePeriod,
       toggleTheme,
       clearFilters,
-      setScheme,
       setCompare,
       setComparePair,
       setMenuOpen,

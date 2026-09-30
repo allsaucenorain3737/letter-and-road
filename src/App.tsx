@@ -1,7 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { AboutPage } from './components/AboutPage'
 import { CompareView } from './components/CompareView'
-import { CityListPanel } from './components/CityListPanel'
 import { ConsentBanner } from './components/ConsentBanner'
 import { ExploreMenu, MapChrome, PageHeader } from './components/ExploreMenu'
 import { CityDrawer } from './components/CityDrawer'
@@ -27,13 +26,9 @@ function Shell() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <a className="skip-link skip-link--cities" href="#city-list">
-        Skip to city list
-      </a>
       <PageHeader />
       <MapChrome />
       <ExploreMenu />
-      {app.view === 'atlas' && app.phase === 'explore' && <CityListPanel />}
       <main id="main" className="stage">
         {app.view === 'atlas' && (
           <>

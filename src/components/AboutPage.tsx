@@ -31,22 +31,22 @@ export function AboutPage() {
         Luke’s narrative that Paul was in Corinth when Gallio was proconsul.
       </p>
 
-      <h2>Consensus dates</h2>
+      <h2>Dating</h2>
       <p>
-        The default is a narrowed evangelical Protestant consensus, reconstructed from Acts and the
-        letters: Galatians early (south Galatia, from Antioch, near the{' '}
+        Scholarly dating of Paul’s letters has a wider debate range than any one chronology shows.
+        This atlas uses a consensus chronology — a narrowed evangelical Protestant reconstruction
+        from Acts and the letters — so places and years stay consistent on the map. It is not a claim
+        that every date is settled.
+      </p>
+      <p>
+        In that consensus frame: Galatians early (south Galatia, from Antioch, near the{' '}
         <ScriptureLink search="Acts 15:1-11">Jerusalem council</ScriptureLink>), the Thessalonian
         letters from Corinth on the second journey, the Corinthian correspondence and Romans on the
         third, the prison cluster from Rome under house arrest (
         <ScriptureLink search="Acts 28:16,28:30-31">Acts 28:16, 30–31</ScriptureLink>), and 1
         Timothy, Titus, and 2 Timothy after Acts, with 2 Timothy as a last dispatch.
       </p>
-
-      <h2>Wider Protestant debate</h2>
-      <p>
-        The other toggle does not import a different religion. It widens the years Protestants still
-        argue about, and it can ghost an alternate origin city:
-      </p>
+      <p>Where Protestants still argue, the main forks are familiar:</p>
       <ul>
         <li>
           <strong>South vs north Galatia.</strong> If Galatians is to the churches of{' '}
@@ -61,8 +61,8 @@ export function AboutPage() {
         </li>
         <li>
           <strong>After Acts.</strong> 1 Timothy and Titus assume travel that Acts does not narrate.
-          Most evangelical reconstructions assume a release after Acts 28. The wider toggle lets
-          those years overlap earlier leave-takings rather than deleting the letters.
+          Most evangelical reconstructions assume a release after Acts 28; others place those years
+          against earlier leave-takings.
         </li>
       </ul>
       <p>Letters stay in the atlas. Authorship is not the fork this tool is built to fight.</p>

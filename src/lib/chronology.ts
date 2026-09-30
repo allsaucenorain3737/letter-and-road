@@ -13,11 +13,11 @@ export function yearBounds(_scheme?: DatingScheme): { min: number; max: number }
     -Infinity,
   )
   const letterMin = LETTERS.reduce(
-    (min, letter) => Math.min(min, letter.consensus.yearStart, letter.debated.yearStart),
+    (min, letter) => Math.min(min, letter.consensus.yearStart),
     Infinity,
   )
   const letterMax = LETTERS.reduce(
-    (max, letter) => Math.max(max, letter.consensus.yearEnd, letter.debated.yearEnd),
+    (max, letter) => Math.max(max, letter.consensus.yearEnd),
     -Infinity,
   )
 
