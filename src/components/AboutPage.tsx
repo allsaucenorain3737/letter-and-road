@@ -1,6 +1,10 @@
+import { useEffect } from 'react'
+import { mountKofiWidget } from '../lib/kofi'
 import { ScriptureLink } from './ScriptureLink'
 
 export function AboutPage() {
+  useEffect(() => mountKofiWidget(), [])
+
   return (
     <article className="page about">
       <h1>About &amp; method</h1>
@@ -88,6 +92,16 @@ export function AboutPage() {
           Natural Earth shaded relief for topography.
         </li>
       </ul>
+
+      <h2>Support</h2>
+      <p>
+        Letter &amp; Road is a free teaching aid. Optional support via{' '}
+        <a href="https://ko-fi.com/tgkoetje" target="_blank" rel="noopener noreferrer">
+          Ko-fi
+        </a>{' '}
+        helps keep it going — the floating “Support me” button on this page opens the same link.
+      </p>
+
       <h2>Privacy</h2>
       <p>
         Optional Google Analytics 4 helps us see aggregate traffic (which pages and hash routes
