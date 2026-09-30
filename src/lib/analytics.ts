@@ -14,7 +14,7 @@ declare global {
 const CONSENT_KEY = 'letter-and-road:ga-consent'
 
 const ENV_RAW = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined
-const FALLBACK_ID = 'G-BDDS3372C2'
+const FALLBACK_ID = 'G-LTV8ZLM4X4'
 
 /**
  * - Env set to a G- id → use it
