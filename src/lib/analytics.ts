@@ -6,7 +6,7 @@
 
 declare global {
   interface Window {
-    dataLayer: unknown[]
+    dataLayer: IArguments[] | unknown[]
     gtag?: (...args: unknown[]) => void
   }
 }
@@ -49,8 +49,11 @@ export function getConsentChoice(): ConsentChoice {
 function ensureGtagStub() {
   window.dataLayer = window.dataLayer || []
   if (!window.gtag) {
-    window.gtag = function gtag(...args: unknown[]) {
-      window.dataLayer.push(args)
+    // Official gtag stub: push the Arguments object (not a rest array).
+    // dataLayer.push(args) with rest→array breaks queued command processing.
+    window.gtag = function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer.push(arguments)
     }
   }
 }
@@ -81,6 +84,9 @@ export function setConsentChoice(choice: 'accepted' | 'declined'): void {
       analytics_storage: 'granted',
     })
     initAnalytics()
+    // Accept alone does not change SPA view state — fire page_view now so
+    // the first collect is not deferred until a later route change.
+    trackPageView()
   } else {
     window.gtag?.('consent', 'update', {
       analytics_storage: 'denied',
@@ -94,14 +100,22 @@ export function initAnalytics(): void {
   initialized = true
 
   ensureGtagStub()
+  // Standard order: queue js + config, then inject script so the stub
+  // Arguments-queue is drained when gtag.js boots.
   window.gtag?.('js', new Date())
   window.gtag?.('config', MEASUREMENT_ID, {
+    // SPA hash routes: send explicit page_view with pathname+hash.
     send_page_view: false,
   })
 
   const script = document.createElement('script')
   script.async = true
   script.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`
+  script.onload = () => {
+    // Returning visitors (init from main.tsx) and race-safe Accept path:
+    // ensure at least one page_view after the library is ready.
+    trackPageView()
+  }
   document.head.appendChild(script)
 }
 
