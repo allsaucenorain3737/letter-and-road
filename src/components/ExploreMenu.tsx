@@ -127,7 +127,7 @@ export function MapChrome() {
         ) : (
           <>
             <button type="button" className="play-journey-btn" onClick={app.beginStory}>
-              Play Paul’s journey
+              Play Paul's journey
             </button>
             <button
               type="button"
@@ -209,7 +209,7 @@ export function ExploreMenu() {
           <section>
             <h3>Story</h3>
             <button type="button" className="primary-btn" onClick={app.beginStory}>
-              Play Paul’s journey
+              Play Paul's journey
             </button>
             <p className="menu-hint">About two minutes · Damascus road to Rome, with letters along the way.</p>
           </section>
@@ -230,7 +230,7 @@ export function ExploreMenu() {
                 checked={app.showLifeTimeline}
                 onChange={(e) => app.setShowLifeTimeline(e.target.checked)}
               />
-              Paul’s life timeline
+              Paul's life timeline
             </label>
             <label className="menu-check">
               <input
@@ -240,25 +240,6 @@ export function ExploreMenu() {
               />
               Year slider
             </label>
-            <label className="menu-check">
-              <input
-                type="checkbox"
-                checked={app.layers.imprisonments}
-                onChange={(e) => app.setLayer('imprisonments', e.target.checked)}
-              />
-              Imprisonments
-            </label>
-            <label className="menu-check">
-              <input
-                type="checkbox"
-                checked={app.showTeachingNotes}
-                onChange={(e) => app.setShowTeachingNotes(e.target.checked)}
-              />
-              Teaching notes
-            </label>
-            <p className="menu-hint">
-              Teaching notes show optional “Why it matters today” blocks. Off by default.
-            </p>
           </section>
 
           <section>
