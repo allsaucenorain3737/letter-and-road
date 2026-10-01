@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { PERIODS, THEME_FILTERS } from '../data/periods'
 import { useApp } from '../state/AppState'
 import type { PlantedFilter, ViewId } from '../types'
@@ -18,6 +18,92 @@ const PRIMARY_NAV: { view: ViewId; href: string; label: string }[] = [
 
 const MAP_OPTIONS_ID = 'map-options-panel'
 
+/** Compare / About / Voices — inline on desktop, overflow menu under ~860px. */
+function SiteNav({
+  variant,
+  activeView,
+}: {
+  variant: 'map' | 'page'
+  activeView?: ViewId
+}) {
+  const [open, setOpen] = useState(false)
+  const wrapRef = useRef<HTMLDivElement>(null)
+  const menuId = useId()
+
+  useEffect(() => {
+    if (!open) return
+    function onDoc(e: MouseEvent) {
+      if (!wrapRef.current?.contains(e.target as Node)) setOpen(false)
+    }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', onDoc)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDoc)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  useEffect(() => {
+    setOpen(false)
+  }, [activeView])
+
+  const links = PRIMARY_NAV.map((item) => (
+    <a
+      key={item.view}
+      href={item.href}
+      className={`nav-btn${activeView === item.view ? ' is-active' : ''}`}
+      onClick={() => setOpen(false)}
+    >
+      {item.label}
+    </a>
+  ))
+
+  return (
+    <nav
+      className={`site-nav site-nav--${variant}`}
+      aria-label="Site"
+      ref={wrapRef}
+    >
+      <div className="site-nav-inline">{links}</div>
+      <div className="site-nav-overflow">
+        <button
+          type="button"
+          className={`nav-menu-btn${open ? ' is-open' : ''}`}
+          aria-expanded={open}
+          aria-controls={menuId}
+          aria-haspopup="true"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className="nav-menu-icon" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+          Menu
+        </button>
+        {open && (
+          <div id={menuId} className="site-nav-dropdown" role="menu">
+            {PRIMARY_NAV.map((item) => (
+              <a
+                key={item.view}
+                href={item.href}
+                role="menuitem"
+                className={`nav-btn${activeView === item.view ? ' is-active' : ''}`}
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </nav>
+  )
+}
+
 export function MapChrome() {
   const app = useApp()
   if (app.view !== 'atlas') return null
@@ -29,13 +115,7 @@ export function MapChrome() {
           <span className="brand-title">Letter &amp; Road</span>
           <span className="brand-sub">Pauline Atlas</span>
         </a>
-        <nav className="map-primary-nav" aria-label="Site">
-          {PRIMARY_NAV.map((item) => (
-            <a key={item.view} href={item.href} className="nav-btn">
-              {item.label}
-            </a>
-          ))}
-        </nav>
+        <SiteNav variant="map" />
         {app.phase === 'invite' ? (
           <button type="button" className="map-options-btn is-active" onClick={app.dismissInvite}>
             Skip
@@ -255,17 +335,7 @@ export function PageHeader() {
         <span className="brand-title">Letter &amp; Road</span>
         <span className="brand-sub">Back to map</span>
       </a>
-      <nav className="nav" aria-label="Site">
-        {PRIMARY_NAV.map((item) => (
-          <a
-            key={item.view}
-            href={item.href}
-            className={`nav-btn${app.view === item.view ? ' is-active' : ''}`}
-          >
-            {item.label}
-          </a>
-        ))}
-      </nav>
+      <SiteNav variant="page" activeView={app.view} />
     </header>
   )
 }

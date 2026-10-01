@@ -26,6 +26,7 @@
   --header-h: 52px;
   --radius: 6px;
   --shadow: 0 1px 2px rgba(26, 34, 40, 0.06), 0 10px 28px rgba(26, 34, 40, 0.08);
+  --consent-bar-h: 4.75rem;
 }
 
 *,
@@ -161,6 +162,112 @@ a {
 .nav-btn.is-active {
   color: var(--parchment);
   background: var(--accent);
+}
+
+/* Site nav: inline on desktop, hamburger overflow ≤860px */
+.site-nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+.site-nav-inline {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.site-nav--map .site-nav-inline {
+  gap: 2px;
+  background: var(--parchment);
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: var(--shadow);
+}
+.site-nav--map .site-nav-inline .nav-btn {
+  text-decoration: none;
+}
+.site-nav-overflow {
+  display: none;
+  position: relative;
+}
+.nav-menu-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--parchment);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: 1.2;
+}
+.site-nav--page .nav-menu-btn {
+  box-shadow: none;
+  background: rgba(36, 63, 92, 0.08);
+  min-height: 36px;
+}
+.nav-menu-btn.is-open,
+.nav-menu-btn[aria-expanded='true'] {
+  color: var(--parchment);
+  background: var(--accent);
+}
+.nav-menu-icon {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  width: 14px;
+}
+.nav-menu-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 1px;
+  background: currentColor;
+}
+.site-nav-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 36;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  background: var(--parchment);
+  border: 1px solid rgba(26, 34, 40, 0.12);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.site-nav-dropdown .nav-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+  padding: 10px 12px;
+}
+@media (max-width: 860px) {
+  .site-nav-inline {
+    display: none;
+  }
+  .site-nav-overflow {
+    display: block;
+  }
+  .map-chrome-left {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+  .nav-menu-btn {
+    min-height: 44px;
+  }
 }
 
 /* Teaching strip */
@@ -913,18 +1020,6 @@ a.scripture-link,
   min-width: 0;
   flex-wrap: wrap;
 }
-.map-primary-nav {
-  display: flex;
-  gap: 2px;
-  flex-wrap: wrap;
-  background: var(--parchment);
-  border-radius: 12px;
-  padding: 4px;
-  box-shadow: var(--shadow);
-}
-.map-primary-nav .nav-btn {
-  text-decoration: none;
-}
 /* Dedicated chip so Map options is not bare text over the map / zoom stack */
 .map-options-btn {
   flex-shrink: 0;
@@ -1118,10 +1213,29 @@ a.scripture-link,
   color: var(--ink);
   z-index: 50;
   box-shadow: var(--shadow);
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   transform: translateX(100%);
   transition: transform 280ms var(--ease);
   padding: 22px 22px 48px;
+  overscroll-behavior: contain;
+}
+.drawer > * {
+  max-width: 100%;
+  min-width: 0;
+}
+.drawer p,
+.drawer li,
+.drawer h2,
+.drawer h3,
+.drawer .outline div,
+.drawer .narrowed,
+.drawer .dating-box,
+.drawer .cultural-summary,
+.drawer .cultural-body {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .drawer.is-open {
   transform: translateX(0);
@@ -1140,6 +1254,7 @@ a.scripture-link,
   text-transform: uppercase;
   color: var(--oxblood);
   margin: 0 0 4px;
+  padding-right: 44px;
 }
 .drawer h2 {
   font-family: var(--serif);
@@ -1147,6 +1262,7 @@ a.scripture-link,
   margin: 0 0 8px;
   font-weight: 600;
   letter-spacing: -0.02em;
+  padding-right: 44px;
 }
 .meta-row {
   display: flex;
@@ -1260,9 +1376,10 @@ a.scripture-link,
   color: var(--ink);
 }
 .close-drawer {
-  position: sticky;
-  top: 0;
-  float: right;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -1483,10 +1600,6 @@ a.scripture-link,
   .map-chrome-left {
     gap: 6px;
   }
-  .map-primary-nav .nav-btn {
-    padding: 6px 8px;
-    font-size: 0.8rem;
-  }
 }
 
 @media (max-width: 720px) {
@@ -1494,8 +1607,8 @@ a.scripture-link,
     padding: 8px 12px;
     height: auto;
     min-height: var(--header-h);
-    align-items: flex-start;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: nowrap;
   }
   .nav-btn {
     padding: 6px 9px;
@@ -1508,12 +1621,17 @@ a.scripture-link,
     height: min(88dvh, 760px);
     border-radius: 18px 18px 0 0;
     transform: translateY(100%);
+    padding: 18px 18px calc(28px + env(safe-area-inset-bottom, 0px));
   }
   .drawer.is-open {
     transform: translateY(0);
   }
   .sheet-handle {
     display: block;
+  }
+  .close-drawer {
+    top: 10px;
+    right: 12px;
   }
   .legend-card {
     display: block;
@@ -1988,27 +2106,34 @@ a.scripture-link,
   background: var(--sea, #5e7684);
 }
 
+/* Slim docked consent bar — under invite (60) / drawer (50) / map chrome (35).
+   html.consent-pending reserves bottom space so scrubber/legend stay usable. */
 .consent-banner {
   position: fixed;
-  z-index: 80;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
-  max-width: 520px;
-  margin: 0 auto;
-  padding: 0.95rem 1.05rem;
+  z-index: 28;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0.55rem 1rem calc(0.55rem + env(safe-area-inset-bottom, 0px));
   background: var(--parchment);
   color: var(--ink);
-  border: 1px solid rgba(26, 34, 40, 0.14);
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  display: grid;
-  gap: 0.75rem;
+  border: 0;
+  border-top: 1px solid rgba(26, 34, 40, 0.14);
+  border-radius: 0;
+  box-shadow: 0 -6px 24px rgba(26, 34, 40, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
 }
 .consent-banner p {
   margin: 0;
-  font-size: 0.88rem;
-  line-height: 1.45;
+  flex: 1 1 240px;
+  font-size: 0.8rem;
+  line-height: 1.4;
   color: var(--ink-soft);
 }
 .consent-banner a {
@@ -2018,7 +2143,35 @@ a.scripture-link,
 .consent-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  flex: 0 0 auto;
+}
+.consent-actions .primary-btn,
+.consent-actions .ghost-btn {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+html.consent-pending .app-shell.is-map .stage {
+  padding-bottom: var(--consent-bar-h);
+}
+html.consent-pending .app-shell:not(.is-map) {
+  padding-bottom: var(--consent-bar-h);
+}
+html.consent-pending .legend-card {
+  bottom: calc(28px + var(--consent-bar-h));
+}
+html.consent-pending .map-credit {
+  bottom: calc(8px + var(--consent-bar-h));
+}
+html.consent-pending .map-controls {
+  bottom: calc(16px + var(--consent-bar-h));
+}
+html.consent-pending .city-card {
+  bottom: calc(86px + var(--consent-bar-h));
+}
+html.consent-pending .caption-card,
+html.consent-pending .play-caption--overlay {
+  bottom: calc(12px + var(--consent-bar-h));
 }
 
 .swatch.is-road-live {
@@ -2044,7 +2197,15 @@ a.scripture-link,
     padding: 0.4rem 0.7rem;
   }
   .consent-banner {
-    bottom: 8px;
+    bottom: 0;
+    padding: 0.5rem 0.85rem calc(0.5rem + env(safe-area-inset-bottom, 0px));
+  }
+  html.consent-pending {
+    --consent-bar-h: 6.25rem;
+  }
+  html.consent-pending .map-controls {
+    /* zoom stack is top-right on narrow viewports — no bottom offset needed */
+    bottom: auto;
   }
   .play-caption--overlay {
     bottom: 72px;

@@ -6,6 +6,8 @@ import {
   type ConsentChoice,
 } from '../lib/analytics'
 
+const CONSENT_PENDING_CLASS = 'consent-pending'
+
 export function ConsentBanner() {
   const [choice, setChoice] = useState<ConsentChoice>(null)
   const [ready, setReady] = useState(false)
@@ -15,7 +17,16 @@ export function ConsentBanner() {
     setReady(true)
   }, [])
 
-  if (!ready || !analyticsEnabled() || choice !== null) return null
+  const visible = ready && analyticsEnabled() && choice === null
+
+  useEffect(() => {
+    const root = document.documentElement
+    if (visible) root.classList.add(CONSENT_PENDING_CLASS)
+    else root.classList.remove(CONSENT_PENDING_CLASS)
+    return () => root.classList.remove(CONSENT_PENDING_CLASS)
+  }, [visible])
+
+  if (!visible) return null
 
   return (
     <div className="consent-banner" role="dialog" aria-label="Analytics cookies">
